@@ -18,7 +18,7 @@
 |||
 |-|-|
 |**NAME**|박현주|
-|**EMAIL**|tkasid@gmail.com|
+|**EMAIL**|tkasid00@gmail.com|
 |**GITHUB**|https://github.com/tkasid00/fullstack_hj|
 
 
