@@ -32,10 +32,15 @@
 
 
 ---
-<!--## ✔기술 스택 기반 CS 역량-->
+✔기술 스택 기반 CS 역량
 ---
 
+
 ## ❗트러블슈팅(Github 발생)
+
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">트러블슈팅01(System.out.println 문법 오류)</summary>
 
 ### 📌트러블슈팅01(System.out.println 문법 오류)
 
@@ -52,9 +57,7 @@
 **느낀점**  
 - 자바의 출력문은 인자 개수에 제한이 있으므로, 여러 값을 출력할 때는 반드시 문자열 연결을 사용해야 함을 알게 됨.
 - 기본 문법을 정확히 이해하고 사용하는 것이 중요함을 다시 한 번 인식함.
-
-<br/>
-<br/>
+</details>
 
 
 ---
