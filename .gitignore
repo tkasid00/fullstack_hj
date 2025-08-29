@@ -14,3 +14,5 @@ eclipse/
 # 로그 파일
 *.log
 
+# 기타
+trouble/
