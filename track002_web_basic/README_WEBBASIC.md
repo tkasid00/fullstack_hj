@@ -33,7 +33,7 @@
 ## ❗트러블슈팅(Web_basic 발생)
 
 <details>
-<summary style="font-size:20px; font-weight:bold;">트러블슈팅01(이미지 경로 오류)</summary>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅01(이미지 경로 오류)</summary>
 
 **문제점**  
 - 이미지가 화면에 표시되지 않음.
@@ -59,7 +59,7 @@
 
 
 <details>
-<summary style="font-size:20px; font-weight:bold;">트러블슈팅02(태그 중첩 오류)</summary>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅02(태그 중첩 오류)</summary>
 
 **문제점**  
 - HTML에서 `<h3>` 태그가 `<p>` 태그 안에 중첩되어 사용됨.
@@ -86,7 +86,7 @@
 
 
 <details>
-<summary style="font-size:20px; font-weight:bold;">트러블슈팅03(a 태그 문법 오류)</summary>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅03(a 태그 문법 오류)</summary>
 
 **문제점**  
 - 깃허브 링크가 정상적으로 표시되지 않음.
