@@ -40,21 +40,19 @@
 
 
 <details>
-<summary style="font-size:20px; font-weight:bold;">트러블슈팅01(System.out.println 문법 오류)</summary>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅01(System.out.println 문법 오류)</summary>
 
-### 📌트러블슈팅01(System.out.println 문법 오류)
-
-**문제점**  
+**▪문제점**  
 - `System.out.println(  10 , "+" , 3 , "=" , (10+3)  );` 코드에서 컴파일 오류가 발생함.
 
-**해결 방안**  
+**▪해결 방안**  
 - `System.out.println`은 인자를 하나만 받을 수 있으므로, 여러 값을 출력하려면 문자열 연결(`+`)을 사용해야 함.
 - 아래와 같이 수정:
   ```java
   System.out.println(10 + " + " + 3 + " = " + (10 + 3));
   ```
 
-**느낀점**  
+**▪느낀점**  
 - 자바의 출력문은 인자 개수에 제한이 있으므로, 여러 값을 출력할 때는 반드시 문자열 연결을 사용해야 함을 알게 됨.
 - 기본 문법을 정확히 이해하고 사용하는 것이 중요함을 다시 한 번 인식함.
 </details>
