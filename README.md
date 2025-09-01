@@ -200,9 +200,84 @@ fatal: Exiting because of unfinished merge.
 - 단계별로 작업을 마무리하는 습관과 Git의 상태 메시지를 꼼꼼히 확인하는 것이 중요함.
 </details>
 
+
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅05(병합 이력 불일치 오류) </summary>
+
+**❗문제점**  
+- 새 컴퓨터에서 Git 저장소를 세팅하고 `git pull origin master` 명령어를 실행했을 때,  
+  `fatal: refusing to merge unrelated histories` 오류가 발생함.
+
+**🛑오류 코드**  
+```bash
+$ git pull origin master
+remote: Enumerating objects: 344, done.
+remote: Counting objects: 100% (62/62), done.
+remote: Compressing objects: 100% (53/53), done.
+remote: Total 344 (delta 26), reused 28 (delta 7), pack-reused 282 (from 1)
+Receiving objects: 100% (344/344), 4.66 MiB | 13.07 MiB/s, done.
+Resolving deltas: 100% (144/144), done.
+From https://github.com/tkasid00/fullstack_hj
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+fatal: refusing to merge unrelated histories
+```
+
+**🔍원인 분석**  
+- 로컬 저장소와 원격 저장소가 각각 독립적으로 생성되어 커밋 이력이 서로 연결되어 있지 않음.
+- 새 컴퓨터에서 `git init`으로 저장소를 만들고 원격 저장소와 연결한 뒤 pull을 시도했으나  
+  두 저장소의 커밋 이력이 달라 Git이 병합을 거부함.
+
+**👍해결 방안**  
+- `git pull origin master --allow-unrelated-histories` 명령어를 사용하여 강제로 병합을 진행함.
+- 병합 과정에서 충돌이 발생할 수 있으므로, 충돌 파일을 직접 수정한 뒤  
+  `git add .` → `git commit -m "병합 이력 불일치 해결"`로 병합을 마무리함.
+
+**📝느낀점**  
+- 새 환경에서 Git 저장소를 세팅할 때는 로컬과 원격 저장소의 이력이 일치하는지 반드시 확인해야 함.
+- `--allow-unrelated-histories` 옵션을 통해 병합할 수 있지만, 충돌 해결 등 추가 작업이 필요하므로  
+  병합 과정에 대한 이해와 신중한 접근이 중요함을 깨달음.
+</details>
+
+
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅06(깃허브 권한 거부 오류/403) </summary>
+
+**❗문제점**  
+- `git push origin dev-tkasid00` 명령어 실행 시  
+  `remote: Permission to tkasid00/fullstack_20250825.git denied to HSH703.`  
+  `fatal: unable to access ... error: 403` 오류가 발생함.
+
+**🛑오류 코드**  
+```bash
+PS D:\HYUNJU\workspace\fullstack_20250825> git push origin dev-tkasid00
+remote: Permission to tkasid00/fullstack_20250825.git denied to HSH703.
+fatal: unable to access 'https://github.com/tkasid00/fullstack_20250825.git/': The requested URL returned error: 403
+```
+
+**🔍원인 분석**  
+- 현재 로그인된 깃허브 계정(HSH703)에게 해당 저장소(tkasid00/fullstack_20250825)에 대한 푸시 권한이 없음.
+- 저장소 소유자 또는 협업자로 등록되지 않은 계정으로 푸시를 시도했기 때문에 권한 거부(403)가 발생함.
+
+**👍해결 방안**  
+- 저장소 소유자에게 협업자(Contributor)로 추가해 달라고 요청.
+- 또는 자신의 계정으로 포크(fork)한 저장소에 푸시하거나 올바른 계정으로 인증 정보를 변경함.
+- 인증 정보를 변경하려면 `git config --global user.name` 및 `git config --global user.email`을 올바른 계정으로 설정하고  
+  필요 시 GitHub에 로그인된 계정을 변경하거나 **캐시된 인증 정보를 삭제함.**
+
+**📝느낀점**  
+- 깃허브 저장소에 푸시하려면 반드시 해당 저장소에 대한 권한이 필요함을 알게 됨.
+- 협업 시에는 권한 관리와 계정 설정을 꼼꼼히 확인해야 하며 권한 문제 발생 시 당황하지 말고 원인을 파악해 해결하는 것이 중요함.
+</details>
+
+
+
+
 ---
 
-## 📑참고문헌
+## 📜참고문헌
 
 - [Git 공식 문서](https://git-scm.com/doc)  
 - [Markdown 가이드](https://www.markdownguide.org/basic-syntax/)  
