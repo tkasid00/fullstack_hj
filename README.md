@@ -56,10 +56,10 @@
 <details>
 <summary style="font-size:20px; font-weight:bold;">📌트러블슈팅01(커밋 오류)</summary>
 
-**❗문제점**  
+**[문제점]**  
 - 파일 수정 후 커밋하려 했으나 변경 사항이 스테이지에 올라가지 않아 커밋이 되지 않음.
 
-**🛑오류 코드**  
+**[오류 코드]**   
 ```bash
 $ git commit -m "git 수정 후 다시 올리기"
 On branch master
@@ -71,13 +71,13 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-**🔍원인 분석**  
+**[원인 분석]**  
 - 파일을 수정한 뒤 저장(ctrl+s)을 하지 않아 실제로 변경된 내용이 반영되지 않았음.
 
-**👍해결 방안**  
+**[해결 방안]**  
 - 파일을 저장한 뒤 `git add <파일명>` 또는 `git add .`로 변경 사항을 스테이지에 추가하고 커밋을 진행.
 
-**📝느낀점**  
+**[느낀점]**  
 - 커밋 전에는 반드시 파일이 저장되었는지 확인해야 하며, 작은 실수 하나가 커밋 과정에서 오류를 발생시킬 수 있음을 경험함.  
 - 기본적인 Git 워크플로우(수정→저장→add→commit)의 중요성을 다시 한 번 인식함.
 </details>
@@ -86,10 +86,10 @@ no changes added to commit (use "git add" and/or "git commit -a")
 <details>
 <summary style="font-size:20px; font-weight:bold;">📌트러블슈팅02(경로 문제)</summary>
 
-**❗문제점**  
+**[문제점]**  
 - `git add .` 명령어 실행 시 시스템 폴더에 접근 권한이 없어 수많은 warning과 fatal error가 발생함.
 
-**🛑오류 코드**  
+**[오류 코드]**  
 ```bash
 tj-bu-703-20@DESKTOP-L48OJRJ MINGW64 ~ (master)
 $ git add .
@@ -121,15 +121,15 @@ error: unable to index file 'AppData/Local/Comms/UnistoreDB/USS.jtx'
 fatal: adding files failed
 ```
 
-**🔍원인 분석**  
+**[원인 분석]**  
 - 작업 디렉토리를 상위 폴더(홈 디렉토리)로 지정한 상태에서 `git add .`를 실행하여 시스템 폴더까지 Git이 스캔함.
 - Windows 사용자 폴더에는 권한이 제한된 시스템 디렉토리가 많아, 접근 시 오류가 발생함.
 
-**👍해결 방안**  
+**[해결 방안]**  
 - 반드시 프로젝트 폴더에서 Git 명령어를 실행하여, 불필요한 시스템 폴더가 Git의 관리 대상에 포함되지 않도록 경로를 재설정함.
 - 작업 폴더를 정확하게 지정한 후 `git add .`를 실행하면 정상적으로 동작함.
 
-**📝느낀점**  
+**[느낀점]** 
 - Git 명령어를 사용할 때는 반드시 현재 작업 경로를 확인해야 하며 실수로 상위 폴더에서 실행하면 시스템 파일까지 스캔되어 권한 문제로 오류가 발생할 수 있음을 알게 됨.  
 - 프로젝트 폴더 구조와 경로 관리의 중요성을 체감함.
 </details>
@@ -140,10 +140,10 @@ fatal: adding files failed
 
 
 
-**❗문제점**  
+**[문제점]**  
 - `git pull origin master` 실행 시 병합되지 않은 변경 사항이 있어 merge conflict가 발생함.
 
-**🛑오류 코드**  
+**[오류 코드]**  
 ```bash
 $ git pull origin master
 remote: Enumerating objects: 5, done.
@@ -159,14 +159,14 @@ CONFLICT (content): Merge conflict in day002.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-**🔍원인 분석**  
+**[원인 분석]**  
 - 로컬과 원격 저장소의 동일 파일에 서로 다른 변경 사항이 있어 자동 병합이 불가능한 상태에서 pull을 시도함.
 
-**👍해결 방안**  
+**[해결 방안]**  
 - 충돌 파일을 직접 수정하여 병합한 뒤,  
   `git add .` → `git commit -m "오류 해결"` → `git pull origin master` → `git push origin master` 순서로 정상적으로 병합 및 푸시함.
 
-**📝느낀점**  
+**[느낀점]**  
 - 협업 환경에서는 충돌이 자주 발생할 수 있으므로 충돌 해결 방법과 병합 과정에 익숙해지는 것이 중요함.  
 - 충돌 상황을 두려워하지 않고 차분하게 원인 파악과 해결 절차를 밟는 습관이 필요함.  
 - 특히 실무에서는 팀원과의 적극적인 소통이 문제 해결과 원활한 협업에 매우 중요하다는 것을 깨달음.
@@ -177,10 +177,10 @@ Automatic merge failed; fix conflicts and then commit the result.
 <summary style="font-size:20px; font-weight:bold;">📌트러블슈팅04(병합 미완료 에러) </summary>
  
 
-**❗문제점**  
+**[문제점]**  
 - 병합이 완료되지 않은 상태에서 추가 pull을 시도하여 "You have not concluded your merge (MERGE_HEAD exists)" 에러가 발생함.
 
-**🛑오류 코드**  
+**[오류 코드]**  
 ```bash
 $ git pull origin master
 error: You have not concluded your merge (MERGE_HEAD exists).
@@ -188,14 +188,14 @@ hint: Please, commit your changes before merging.
 fatal: Exiting because of unfinished merge.
 ```
 
-**🔍원인 분석**  
+**[원인 분석]**  
 - 이전 병합 작업이 완료되지 않은 상태에서 추가로 pull을 시도함.
 - Git은 병합 중인 상태를 명확히 관리하므로, 병합이 끝나지 않은 상황에서는 추가 작업이 불가능함.
 
-**👍해결 방안**  
+**[해결 방안]**  
 - 병합 중인 파일을 수정 및 저장한 뒤 `git add .` → `git commit -m "merge 완료"`로 병합을 마무리한 후 pull/push를 재시도함.
 
-**📝느낀점**  
+**[느낀점]**  
 - Git은 병합 중인 상태를 명확히 관리하므로 병합이 끝나지 않은 상황에서는 추가 작업이 불가능함을 알게 됨.  
 - 단계별로 작업을 마무리하는 습관과 Git의 상태 메시지를 꼼꼼히 확인하는 것이 중요함.
 </details>
@@ -205,11 +205,11 @@ fatal: Exiting because of unfinished merge.
 <details>
 <summary style="font-size:20px; font-weight:bold;">📌트러블슈팅05(병합 이력 불일치 오류) </summary>
 
-**❗문제점**  
+**[문제점]**  
 - 새 컴퓨터에서 Git 저장소를 세팅하고 `git pull origin master` 명령어를 실행했을 때,  
   `fatal: refusing to merge unrelated histories` 오류가 발생함.
 
-**🛑오류 코드**  
+**[오류 코드]**  
 ```bash
 $ git pull origin master
 remote: Enumerating objects: 344, done.
@@ -224,17 +224,17 @@ From https://github.com/tkasid00/fullstack_hj
 fatal: refusing to merge unrelated histories
 ```
 
-**🔍원인 분석**  
+**[원인 분석]**  
 - 로컬 저장소와 원격 저장소가 각각 독립적으로 생성되어 커밋 이력이 서로 연결되어 있지 않음.
 - 새 컴퓨터에서 `git init`으로 저장소를 만들고 원격 저장소와 연결한 뒤 pull을 시도했으나  
   두 저장소의 커밋 이력이 달라 Git이 병합을 거부함.
 
-**👍해결 방안**  
+**[해결 방안]**  
 - `git pull origin master --allow-unrelated-histories` 명령어를 사용하여 강제로 병합을 진행함.
 - 병합 과정에서 충돌이 발생할 수 있으므로, 충돌 파일을 직접 수정한 뒤  
   `git add .` → `git commit -m "병합 이력 불일치 해결"`로 병합을 마무리함.
 
-**📝느낀점**  
+**[느낀점]**  
 - 새 환경에서 Git 저장소를 세팅할 때는 로컬과 원격 저장소의 이력이 일치하는지 반드시 확인해야 함.
 - `--allow-unrelated-histories` 옵션을 통해 병합할 수 있지만, 충돌 해결 등 추가 작업이 필요하므로  
   병합 과정에 대한 이해와 신중한 접근이 중요함을 깨달음.
@@ -245,29 +245,29 @@ fatal: refusing to merge unrelated histories
 <details>
 <summary style="font-size:20px; font-weight:bold;">📌트러블슈팅06(깃허브 권한 거부 오류/403) </summary>
 
-**❗문제점**  
+**[문제점]**  
 - `git push origin dev-tkasid00` 명령어 실행 시  
   `remote: Permission to tkasid00/fullstack_20250825.git denied to HSH703.`  
   `fatal: unable to access ... error: 403` 오류가 발생함.
 
-**🛑오류 코드**  
+**[오류 코드]**  
 ```bash
 PS D:\HYUNJU\workspace\fullstack_20250825> git push origin dev-tkasid00
 remote: Permission to tkasid00/fullstack_20250825.git denied to HSH703.
 fatal: unable to access 'https://github.com/tkasid00/fullstack_20250825.git/': The requested URL returned error: 403
 ```
 
-**🔍원인 분석**  
+**[원인 분석]**  
 - 현재 로그인된 깃허브 계정(HSH703)에게 해당 저장소(tkasid00/fullstack_20250825)에 대한 푸시 권한이 없음.
 - 저장소 소유자 또는 협업자로 등록되지 않은 계정으로 푸시를 시도했기 때문에 권한 거부(403)가 발생함.
 
-**👍해결 방안**  
+**[해결 방안]**  
 - 저장소 소유자에게 협업자(Contributor)로 추가해 달라고 요청.
 - 또는 자신의 계정으로 포크(fork)한 저장소에 푸시하거나 올바른 계정으로 인증 정보를 변경함.
 - 인증 정보를 변경하려면 `git config --global user.name` 및 `git config --global user.email`을 올바른 계정으로 설정하고  
   필요 시 GitHub에 로그인된 계정을 변경하거나 **캐시된 인증 정보를 삭제함.**
 
-**📝느낀점**  
+**[느낀점]**  
 - 깃허브 저장소에 푸시하려면 반드시 해당 저장소에 대한 권한이 필요함을 알게 됨.
 - 협업 시에는 권한 관리와 계정 설정을 꼼꼼히 확인해야 하며 권한 문제 발생 시 당황하지 말고 원인을 파악해 해결하는 것이 중요함.
 </details>
