@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAG </title>
+
+</head>
+<body style="margin: 0; padding: 30px;
+            font-family: 'Segoe UI', sans-serif;   
+            background: linear-gradient(135deg, #fdfbdb, #8ad1f5) no-repeat;">  
+                <!--" 안에는 "사용 불가능 ' 사용 가능 / 각도는 deg로 표현
+                        background-image 사용 시 반복 출력 방지하려면 image 지우고 no-repeat 붙이면 됨
+                        발생하는 공백은 background: #333 이 부분에 컬러 넣어서 확인 가능-->
+
+    <div>
+
+        <h1 style="text-align: center; color: #e1306c; 
+                    margin-bottom: 40px;">사용자 프로필 카드</h1>       
+
+        <div style="background-color: #fff; width: 250px; margin: 0 auto;
+                padding: 20px;
+                border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                text-align: center;">
+
+            <p> <img src="img/friends/jack.png"
+                    style="width: 90px; height: 90px; border-radius: 50%;
+                            border: 3px solid #e1306c;"
+                    alt="프로필 사진"/>                
+            </p>
+                        <!--padding은 영역이 확대돼서 겹칠 우려 있음! 텍스트 상황에서는 margin이 유리-->
+            <h2 style="margin-top: 10px; margin-bottom: 5px;
+                        font-size: 18px; color: #333;">Jack</h2>
+
+            <p style="font-size: 14px; color: #666; 
+            margin-bottom: 10px;">백엔드 개발자|Node.js & DB전문가</p>
+            
+            <p style="font-size: 14px; color:#666;
+            margin-bottom: 10px;">팔로워 : 32,000명</p>
+            
+            <a href="https://github.com/tkasid00/fullstack_hj"
+                     target="_blank"
+                     title="프로필 바로가기"
+                     style="margin-top: 5px;
+                    font-size: 13px; color:#e1306c;
+                     text-decoration:none;">
+
+                     깃허브 보기
+                     </a>
+        </div>
+    </div>
+    
+</body>
+</html>

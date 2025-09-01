@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+</head>
+<body>
+    <div>
+        <h3>1. 여백 - margin / padding </h3>
+        <p style="color:blueviolet; margin: 50px; background: beige;">
+            margin : 바깥쪽 여백</p>
+        <p style="color:blue; padding: 50px; background: skyblue;">
+            padding : 안쪽 여백</p>
+    </div>
+
+    <div>
+        <h3>글자 스타일</h3>
+        <dl>  <!--제목 내용 제목 내용-->
+            <dt style="color:mediumseagreen">1. 글자 색상</dt>
+            <dd>color:red</dd>
+            <dt>2. 글자 크기</dt>
+            <dd style="font-size: 20px;">font-size:20px</dd>
+            <dt>3. 정렬</dt>
+            <dd style="text-align:justify; border: 1px solid darkslategray;">text-align:center /left/right/justify 
+                <!--수평정렬은 양쪽 여백이 존재하지 않게 쭉 잡아 늘려줌. 띄어쓰기 공백 자동 증가-->
+            <dt>4. 밑줄</dt>
+            <dd>text-decoration:none;
+                <a href="#" style="text-decoration: none;">깃허브</a></dd>
+            <dt>5. 글꼴</dt>
+            <!--1, 2, 3순위 자동 표시-->
+            <dd style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">font-family:san-serif;</dd> 
+            <dt>6. 굵게</dt>
+            <dd style="font-weight: bold;">font-weight:bold;</dd>
+        </dl>
+    </div>
+
+    <div> 
+        <h3>3. 배경 꾸미기</h3>
+        <p style="background-color:darkcyan;">background-color:gold;</p>
+        <p style="background:darkolivegreen;">background:black;</p>
+        <p style="background:linear-gradient(to right, darkslategray, skyblue);">background:linear-gradient(to right, mint, skyblue)</p>
+        <p style="background:dimgrey url(./img/five.png) repeat center /20px 20px;">
+            background:dimgrey url(./img/five.png) repeat center /20px 20px
+            <br/>
+            색상                경로                 반복   중앙배치 가로 세로 사이즈
+         </p>
+
+    </div>
+
+    <div style="width: 300px; border: 3px solid darkolivegreen;
+    border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,5);
+    padding: 50; text-align: center;">
+        <h3>박스 디자인</h3>
+        <p>가로:width:300px</p>
+        <p>선:3px solod red</p>
+        <p>둥근 모서리:border-radius:20px</p>
+        <p>그림자 효과:box-shadow: 0 4px 12px rgba(0,0,0,0.5)</p>
+    </div>
+
+   <!--Q1. 안에 여백 20px-->
+   <!--Q2. 페이지 정가운데-->
+    
+</body>
+</html>
