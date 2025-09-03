@@ -30,9 +30,5 @@ public class Casting001 {
 		
 		
 		
-		
-		
-		
-		
 	}
 }
