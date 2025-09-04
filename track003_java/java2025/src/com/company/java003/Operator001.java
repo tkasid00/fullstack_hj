@@ -57,10 +57,30 @@ public class Operator001 {
 		//4. 삼항연산자 (조건)? 참 : 거짓
 		System.out.println(a==10? "10이다" : "10이 아니다");
 		
-		//Q. 숫자를 입력받아 양수, 음수, 0
-		Scanner scanner = new Scanner(System.in);
-		int q3 = scanner.nextInt();
-		String result = q3>0? "양수":q3<0? "음수" : "0";		
+		//Q3. 숫자를 입력받아 양수, 음수, 0
+//		Scanner scanner = new Scanner(System.in);
+//		int q3 = scanner.nextInt();
+//		String result = q3>0? "양수":q3<0? "음수" : "0";		
 		
+		
+		//5. 대입연산자
+		a=10; b=3;
+		System.out.println("1: " + (a+=b));  //1.a+b 2.a=13 
+		System.out.println("2: " + (a-=b));  //1.a-b 2.a=10 
+		
+		//6. 단항
+		int a1=1, b1=1, c1=1, d1=1;
+		System.out.println(++a1); // 증가한 다음 a 출력 > 1 
+		System.out.println(a1); // 앞줄에서 a는 2가 됐으니까 > 2
+		
+		System.out.println(b1++); // bl 먼저 출력한 다음 증가> 1 
+		System.out.println(b1); // 앞줄에서 증가를 했으니까 > 2
+		
+		System.out.println(--c1); // 감소 후 출력 > 0
+		System.out.println(c1); // 앞에서 감소 > 0
+		
+		System.out.println(d1--); //출력하고 감소 > 1
+		System.out.println(d1); //앞에서 감소 후 출력 > 0
+				
 	}
 }
