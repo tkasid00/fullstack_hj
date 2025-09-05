@@ -30,7 +30,7 @@
 ---
 ## ✔기술 스택 기반 CS 역량
 ---
-## ❗트러블슈팅(Web_basic 발생)
+## 😱트러블슈팅(Web_basic 발생)
 
 <details>
 <summary style="font-size:20px; font-weight:bold;">📌트러블슈팅01(이미지 경로 오류)</summary>
