@@ -273,6 +273,30 @@ fatal: unable to access 'https://github.com/tkasid00/fullstack_20250825.git/': T
 </details>
 
 
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅07(이미지 경로 오류)</summary>
+
+**[문제점]**  
+- 이미지가 페이지에 표시되지 않음
+
+**[오류 코드]**  
+```bash
+브라우저 콘솔에 GET ./track001_github/3319946_수정.gif 404 (Not Found) 오류 발생
+```
+
+**[원인 분석]**  
+- ./track001_github/... 경로는 현재 HTML 파일 기준의 상대 경로이며 실제 디렉토리 구조에서는 track001_github 폴더가 상위 디렉토리에 위치
+- 따라서 경로가 잘못 지정되어 이미지 파일을 찾지 못함
+
+
+**[해결 방안]**  
+- 경로를 ../track001_github/~로 수정하여 상위 디렉토리에서 이미지 파일을 참조하도록 변경.
+
+
+**[느낀점]**  
+- 상대 경로는 현재 파일 위치 기준이므로 디렉토리 구조를 정확히 파악하는 것이 중요함
+- 작은 경로 실수도 UI에 큰 영향을 줄 수 있으니 꼼꼼한 확인이 필요함
+</details>
 
 
 ---
