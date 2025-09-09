@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kor">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>버터</title>
 
     <style>
-        *{margin: 0; padding: 0;}
-        body {background-image:linear-gradient(to bottom, #d4f3f5, #f1e8fa);}
-        h1 {text-align: center; font-family:'Times New Roman', Times, serif;
-            color:darkslategray; padding: 20px;}
-        .cats {margin: 30px auto;}
-        .card img {width: 150px; height: 110px; object-fit: cover; padding: 20px;}
-        .butter {background-image: linear-gradient(135deg,  #a6ccc5, #f1e8fa);
-        width: 250px; height: 350px; margin:30p;}
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        body {background-color: #d6e7fc; padding: 30px;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+        .card.butter {width: 250px; height: auto; padding: 20px;
+            border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-image: linear-gradient(135deg, #d1e0f1, #e2ffff);
+            float:left;}
+        img {width: 200px; height: 200px; object-fit: cover; margin: 10px auto;
+                border: 3px solid #e2ffff; border-radius: 20px;}
+
+        h1 {text-align: center; padding-bottom:30px;}
+        h2 {text-align: center; font-size: 20px; 
+            background-color: rgb(155, 196, 196); color: #235e23;}
+        h3 {font-size: 15px; padding-top: 10px ; color: #515e51;}
+        ul li {font-size: 14px; font-style: italic;}
+    
 
     </style>
 </head>
@@ -23,9 +31,9 @@
     <div class="cats">
         <h1>고양이 프로필 카드</h1>
         <div class="card butter">
-            <p><img src="./img/friends/butter02.png" title="버터"></p>
+            <p><img src="./img/friends/butter02.png"  class = "butterim" title="버터"></p>
             <h2>버터</h2>
-            <h3>특이사항</h3>
+            <h3>*특이사항</h3>
             <ul>
                 <li>공기청정기에 장난감 집어넣음</li>
                 <li>밥그릇 아래층으로 내던짐</li>
