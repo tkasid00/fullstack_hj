@@ -211,7 +211,7 @@ for (i = 1; i <= 10; i++) {
 </details>
 
 <details>
-<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅05(전체 입력 반복 오류)</summary>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅06(전체 입력 반복 오류)</summary>
 
 **[문제점]**  
 - 2번 입력값(num2)이 유효하지 않을 경우 1번 입력부터 다시 받는 문제가 발생함
@@ -254,6 +254,84 @@ for(;;) {
 - continue는 루프 구조와 위치에 따라 원치 않는 흐름 제어를 초래할 수 있음.
 - 유효성 검사 단계와 순서를 정확하게 파악하고 배치해야 함.
 </details>
+
+
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅07(== 연산자 논리 오류)</summary>
+
+**[문제점]**  
+- 입력받은 두 id값을 비교 중 항상 일치하는 결과 발생.
+
+**[오류 코드]**  
+  ```java
+    if(id == id && pass == pass){ }
+  ```
+
+**[원인 분석]**  
+- == 연산자는 문자열(String)에서는 주소(reference) 비교를 수행함.
+- id와 pass가 String일 경우 ==은 우리가 원하는 값이 같은지를 판단하지 않고 객체가 같은 메모리를 참조하는지만 봄.
+
+**[해결 방안]**  
+- 각각 다른 String에 대입하는 방식을 사용하여 아래와 같이 수정함.
+  ```java
+  if(tempid.equals(id) && temppass.equals(pass)){ }
+  ```
+
+**[느낀점]**  
+- ==과 .equals()의 차이를 명확히 이해하는 것이 Java 프로그래밍에서 매우 중요함.
+- 논리 오류는 눈에 잘 띄지 않지만 프로그램의 의도를 완전히 벗어날 수 있어 코드에 대한 확실한 이해가 필요함.
+</details>
+
+
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅08(nextInt() 버퍼 오류)</summary>
+
+**[문제점]**  
+- id 입력을 건너뛰는 현상 발생
+
+**[오류 코드]**  
+```java
+  a = sc.nextInt(); 
+         
+  switch(a) {
+    case 1 :
+        System.out.print("아이디 입력 : ");
+        id = sc.nextLine(); 
+        System.out.print("비밀번호 입력 : ");
+        pw = sc.nextLine();}
+
+  ```
+
+**[원인 분석]**  
+- Scanner의 nextInt()는 숫자만 읽고 줄바꿈 문자(엔터)는 버퍼에 남겨둠.
+- 이후 nextLine()을 호출하면 남아 있는 엔터가 그대로 읽혀져 입력을 받지 않고 넘어가게 됨.
+
+**[해결 방안]**  
+- 1) next() 사용
+  ```java
+  System.out.print("아이디 입력 : ");
+  id = sc.next();
+  System.out.print("비밀번호 입력 : ");
+  pw = sc.next();
+  ```
+
+- 2) 버퍼 비우기 : nextLine() 앞에 nextLine() 한 번 더 호출. 
+  ```java
+  a = sc.nextInt();
+  sc.nextLine();
+
+  System.out.print("아이디 입력 : ");
+  id = sc.nextLine();
+  System.out.print("비밀번호 입력 : ");
+  pw = sc.nextLine();
+  ```
+
+**[느낀점]**  
+- nextInt() → nextLine() 전환 시 항상 버퍼 정리를 신경 써야 함.
+- 눈에 띄지 않는 줄바꿈 문자 하나가 입력 로직을 완전히 망가뜨릴 수 있음.
+- 입력 타입이 섞일 경우 입력 흐름을 명확히 파악하고 테스트하는 습관이 중요함.
 
 ---
 
