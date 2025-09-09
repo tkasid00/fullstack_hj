@@ -210,6 +210,50 @@ for (i = 1; i <= 10; i++) {
 - 앞으로는 간단한 조건이라도 명확하게 if, else 등의 키워드를 사용하여 정적 분석기나 컴파일러가 이해할 수 있도록 코드를 작성하는 습관을 들일 것.
 </details>
 
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅05(전체 입력 반복 오류)</summary>
+
+**[문제점]**  
+- 2번 입력값(num2)이 유효하지 않을 경우 1번 입력부터 다시 받는 문제가 발생함
+
+**[오류 코드]**  
+```java
+Scanner scanner = new Scanner(System.in); 
+int num1, num2 = 0; 
+char op = '\u0000'; 
+
+for(;;) { System.out.print("1. 정수를 하나 입력해주세요 >"); 
+              num1 = scanner.nextInt(); if(num1<0 || num1>100) {continue;} 
+          System.out.print("2. 정수를 하나 입력해주세요 >"); 
+              num2 = scanner.nextInt(); if(num2<0 || num2>100) {continue;} 
+          System.out.print("3. 연산자를 입력해주세요(+,-,*,/) >"); 
+            op = scanner.next().charAt(0); if(op=='+'|| op=='-'||op=='*'||op=='/'){continue;}
+          break;}
+
+```
+
+**[원인 분석]**  
+- for(;;) 루프 내에서 모든 입력(1, 2, 3)을 순차적으로 처리하고 있음.
+- 각 입력값에 대해 유효성 검사를 한 후 continue를 사용했지만 모든 조건이 하나의 루프에 묶여 있어서 한 조건이 실패해도 루프가 처음부터 다시 시작됨.
+- 이로 인해 이미 유효했던 입력값도 다시 입력하게 되는 UX 문제 발생.
+
+**[해결 방안]**  
+- 아래와 같이 수정함.
+```java
+for(;;) {
+          if(!(num1 >=0 && num1<=100)) {System.out.print("1. 정수를 하나 입력해주세요 >"); 
+                                        num1 = scanner.nextInt(); continue;} 
+          if(!(num2 >=0 && num2<=100)) { System.out.print("2. 정수를 하나 입력해주세요 >"); 
+                                        num2 = scanner.nextInt(); continue;} 
+          if(!(op=='+'|| op=='-'||op=='*'||op=='/')) { System.out.print("3. 연산자를 입력해주세요(+,-,*,/) >"); 
+                                        op = scanner.next().charAt(0); continue;}
+          break;}
+```
+
+**[느낀점]**  
+- continue는 루프 구조와 위치에 따라 원치 않는 흐름 제어를 초래할 수 있음.
+- 유효성 검사 단계와 순서를 정확하게 파악하고 배치해야 함.
+</details>
 
 ---
 
