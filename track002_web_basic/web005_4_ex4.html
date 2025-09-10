@@ -8,7 +8,6 @@
 <body>
     
 
-
     <style>
 
     *{margin:0; padding: 0; box-sizing: border-box;} /*기본 세팅*/
@@ -224,6 +223,46 @@
 
 
 
+        /*애니메이션*/
+  /* Q1: 물방울 요소를 화면 아래에서 시작하도록 고정하려면?
+      - 위치: fixed
+      - 시작 위치: bottom -100px
+      - 크기: 20px × 20px
+      - 배경색: 청록색 반투명 (rgba)
+      - 모양: 원형
+      - 애니메이션: rise (8초, 반복, ease-in)
+      - z-index: 0 (다른 요소보다 뒤에 배치)
+    */
+        .bubble {position: fixed; 
+                width: 20px; height: 20px; background:rgba(0, 121, 107, 0.2);;
+                border-radius: 50%; bottom: -100px;
+                animation: rise 8s infinite ease-in;
+                z-index: 10;}
+
+
+
+    /* Q2: 물방울이 위로 떠오르며 크기와 투명도가 변하도록 애니메이션을 정의하려면?
+      - 시작: 아래 위치, scale(1), opacity 0.5
+      - 중간: 위로 이동 -300px, scale(1.2), opacity 1
+      - 끝: 더 위로 -600px, scale(0.8), opacity 0
+    */ 
+            @keyframes rise{
+            0%{transform: translateY(0) scale(1); opacity: 0.5;}
+            50%{transform: translateY(-300px) scale(1.2); opacity: 1;}
+            100%{transform: translateY(-600px) scale(0.8); opacity: 0;}
+        }
+        
+        
+    /* Q3: 여러 개의 물방울을 화면에 흩뿌리듯 배치하려면?
+      - nth-of-type를 사용해 위치(left), 크기(width/height), 애니메이션 지연(animation-delay) 설정
+      - 각 물방울마다 다른 위치와 크기, 시작 시간 부여
+    */      
+    .bubble:nth-of-type(1) {left: 10%; animation-delay: 0s;}
+    .bubble:nth-of-type(2) {left: 25%; animation-delay: 2s; width: 15px; height: 15px;}
+    .bubble:nth-of-type(3) {left: 40%; animation-delay: 4s; width: 25px; height: 25px;}    
+    .bubble:nth-of-type(4) {left: 65%; animation-delay: 1s; width: 18px; height: 18px;}
+    .bubble:nth-of-type(5) {left: 75%; animation-delay: 3s; width: 22px; height: 22px;}
+    
     </style>
 
 
@@ -233,13 +272,13 @@
    <div class = "container">
         <h1>나의 포트폴리오</h1> 
 
-         <div class="card">
+        <div class="card">
             <p><img src="./img/portfolio/portfolio1.jpg" alt="포트폴리오1썸네일"/></p>
             <h2>쇼핑몰 웹앱</h2>
             <p>React + Firebase 기반의 쇼핑몰 웹 애플리케이션</p>
             <p>사용 기술: React, Firebase, Styled-components</p>
                   <a href="#" class="more-btn" target="_blank">더보기</a>
-         </div>
+        </div>
 
         
 
@@ -265,10 +304,15 @@
             <p>이 포트폴리오는 실제 프로젝트를 기반으로 구성되었으며, 각 프로젝트는 GitHub에서 확인할 수 있습니다.</p>
         </div>
 
+        
    </div>
     
 
-
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
 
 
 </body>

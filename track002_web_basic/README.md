@@ -156,6 +156,81 @@
 </details>
 
 
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅05(배경 색상 충돌 오류)</summary>
+
+
+**[문제점]**  
+-.item 클래스의 background-image(그라데이션)와 .i1 클래스의 background-color(단색 배경)이 충돌하여 i1 배경색이 의도한 대로 적용되지 않고 그라데이션이 덮어져서 보임.
+
+**[오류 코드/상황]**  
+- 해당 html : 
+```bash
+.item {
+  background-image: linear-gradient(135deg, #584545, #fff);
+  color: #201919;
+  padding: 5px;
+  }
+
+.i1 {
+  background-color: #e6cdcd;
+  }
+
+```
+
+**[원인 분석]**  
+- CSS에서 background-image와 background-color가 함께 있을 때 background-image가 background-color 위에 그려짐.
+- .i1 클래스에서 background-color만 지정하면 그라데이션을 덮지 못함.
+
+**[해결 방안]**  
+- 1) i1에 background-image: none;을 추가해서 그라데이션을 제거하고 단색 배경만 적용하기
+```bash 
+.i1 {
+  background-image: none;
+  background-color: #e6cdcd;
+ }
+```
+- 2) .item에 background-image를 없애고 필요한 요소에만 개별적으로 그라데이션을 적용하도록 분리.
+
+**[느낀점]**  
+- CSS 배경 속성은 여러 값이 겹칠 때 우선순위를 잘 이해해야 함.
+- background-color와 background-image는 동시에 쓰면 이미지가 위에 그려져 컬러가 보이지 않는 상황이 발생함을 깨달음.
+- 작은 스타일 문제도 의도한 UI에 큰 영향을 미치니, 스타일 충돌을 항상 주의해야 할것.
+</details>
+
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅06(애니메이션 미작동 문제)</summary>
+
+
+**[문제점]**  
+- 페이지에 떠오르는 bubble 애니메이션(rise)을 적용했으나 물방울이 화면에 보이지 않거나 애니메이션이 실행되지 않음.
+
+**[오류 코드/상황]**  
+```html
+.bubble {
+  position: fixed;
+  bottom: -100px;
+  animation: rise 8s infinite ease-in;
+  z-index: 0; /* ❗ 낮은 우선순위 */
+}
+```
+
+**[원인 분석]**  
+- 페이지 내 다른 요소들이 z-index 우선순위상 위에 있어서 .bubble 요소가 화면 뒤에 가려짐.  
+- CSS에서 z-index는 요소의 쌓임 순서를 결정하는데, .bubble에 설정된 z-index: 0은 가장 낮은 값에 가까워서 position: relative 또는 absolute, fixed를 가진 다른 요소들보다 뒤로 밀림.
+- 그림자와 position: relative, z-index 기본값 등을 가지고 있는 카드 요소(.card)가 존재해 .bubble을 가려버림.
+
+**[해결 방안]**  
+- .bubble의 z-index 값을 0에서 10으로 높여 시각적으로 위에 오도록 조정:
+
+**[느낀점]**  
+- CSS에서 position이 설정된 요소는 z-index가 기본적으로 0이 되며 다른 요소들과의 겹침 순서에 영향을 미치는 것을 알았음.
+- 애니메이션이 보이지 않는 경우 단순히 keyframes만 보는 게 아니라 레이어 순서도 꼭 함께 점검해야 함.
+- 특히 fixed 요소는 전체 화면 기준으로 움직이므로 다른 요소들과의 z-index 충돌 가능성을 항상 염두에 둬야 함.
+- 디버깅 시 개발자 도구(F12)로 요소가 겹쳐 보이지 않는 건 아닌지 직접 확인하는 습관이 중요함.
+</details>
+
 
 ---
 
