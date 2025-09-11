@@ -378,6 +378,133 @@ for(int i=1; i<=10; i++) {
 </details>
 
 
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅10(자바 배열 출력 오류)</summary>
+
+**[문제점]**  
+- 배열 계산 중 정수값이 아닌 주소값이 출력되는 문제 발생
+
+**[오류 코드]**  
+  ```java
+  System.out.print(arr + "\t");
+  ```
+
+**[원인 분석]**  
+- System.out.print(arr + "\t");는 배열 arr 전체를 문자열로 변환하려고 시도함.
+- 자바에서 배열을 직접 출력하면 char[]@해시코드 형태의 문자열이 출력됨.
+- 자바에서 배열을 출력할 때는 Arrays.toString() 또는 반복문을 사용해야 함.
+- char[]는 System.out.println()에서 자동으로 문자열처럼 출력되기도 하지만 + 연산자와 함께 쓰면 주소값처럼 나타남.
+
+
+**[해결 방안]**  
+- 반복문으로 직접 출력함.
+  ```java
+  for (int i = 0; i < arr.length; i++) {
+    System.out.print(arr[i] + "\t");
+  }
+  ```
+
+**[느낀점]**  
+- 자바에서 배열을 출력할 때는 배열의 구조와 toString()의 동작 방식을 이해하는 것이 중요하다는 걸 배움.
+- 단순한 출력이라도 데이터 타입에 따라 다르게 처리해야 한다는 점에서 프로그래밍은 세심함이 필요함.
+</details>
+
+
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅11(배열 인덱스 초과 오류)</summary>
+
+**[문제점]**  
+- 다음과 같은 오류 메시지 발생
+```java
+ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+	at com.company.java007_ex.ArrayEx008.main(ArrayEx008.java:17)
+```
+
+**[오류 코드]**
+```java
+int i = 0;
+
+for(i = 0; i < name.length; i++) {
+    aver[i] = (int) ((kor[i] + eng[i] + mat[i]) / 3.0);
+}
+
+System.out.println(aver[i]);
+```
+
+**[오류 메시지 분석]**  
+- ArrayIndexOutOfBoundsException: 배열의 유효한 인덱스 범위를 벗어난 접근이 발생했을 때 나타나는 예외.
+- Index 5 out of bounds for length 5: aver[5]를 접근하려 했지만 aver 배열의 인덱스는 0~4까지만 존재.
+- 오류 발생 위치는 main 메서드의 17번째 줄.
+
+
+**[원인 분석]**  
+- i는 for 루프 외부에서 선언되어 루프 종료 후에도 값이 유지.
+- 루프가 종료되면 i == 5가 되며, System.out.println(aver[i]);에서 aver[5]를 접근하게 됨.
+- aver 배열의 크기는 5이며 인덱스는 0부터 시작하기 때문에 5는 범위를 초과함.
+
+
+**[해결 방안]**  
+- 1) 다음과 같이 인덱스 조정함 : 단순 오류 메시지 제거 시 사용
+  ```java
+  for (i = 0; i < name.length; i++) {
+    aver[i] = (int) ((kor[i] + eng[i] + mat[i]) / 3.0);
+  }
+  System.out.println(aver[i - 1]);
+  ```
+- 2) 루프 안에서 출력 : 현재 코드에서 원하는 결과값을 내기 위해서는 이 방법이 더 정확함
+```java
+for (int i = 0; i < name.length; i++) {
+    aver[i] = (int) ((kor[i] + eng[i] + mat[i]) / 3.0);
+    System.out.println(aver[i]); 
+}
+```
+**[느낀점]**  
+- 변수의 범위와 루프 종료 후 상태를 잘 이해하는 것이 중요함.
+- 자바는 컴파일 시 오류를 잡아주지 못하는 런타임 예외가 많음.
+- 배열을 다룰 때는 항상 인덱스 범위를 명확히 인식하고 있어야 함.
+</details>
+
+
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅12(배열 초기화 오류)</summary>
+
+**[문제점]**  
+- 다음 오류 메시지 출력
+ ```java
+ Exception in thread "main" java.lang.NullPointerException
+	at ArrayExUpgrade1.main(ArrayExUpgrade1.java:7)
+ ```
+
+**[오류 코드]**  
+```java
+        char [] answer = {'A', 'C', 'B', 'D', 'A'}; 
+        char [] correct = null; 
+        Scanner sc = new Scanner(System.in); 
+        for(int i=0; i<answer.length; i++) { 
+            System.out.print("입력 > "); 
+            correct[i] = sc.next().charAt(0); 
+        } 
+```
+
+**[원인 분석]**  
+- correct 배열을 선언했지만 메모리 공간을 할당하지 않았음.
+- null 상태에서는 어떤 인덱스 접근도 불가능하며 접근 시 NullPointerException이 발생.
+
+**[해결 방안]**  
+- 배열 크기 지정하여 초기화 함.
+  ```java
+  char[] correct = new char[5];
+  ```
+
+**[느낀점]**  
+- 자바에서 배열은 명시적으로 메모리 할당을 해줘야 함.
+- null 상태의 객체나 배열을 접근하면 런타임 예외가 발생하므로 초기화 여부 확인 필요.
+- 코드 작성 시 배열의 크기와 초기화 시점을 명확히 하는 습관이 중요함.
+</details>
+
 ---
 
 ## ✔참고문헌
