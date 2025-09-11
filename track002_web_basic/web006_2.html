@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ho">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOTSTRAP2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</head>
+
+
+<body>
+    <div class="m-3" style="background-color: rgb(101, 139, 139);">
+        <h3 class="container">1.conatiner vs container-fuid 전체 박스(아파트)</h3>
+        <div class="container bg-warning text-white p-3 m-3">container</div>
+        <div class="container-fluid bg-success text-white p-3">container-fluid</div>
+            <!--bg-warning 배경색 text-white 글자색 p-3 사방패딩 m-3 사방마진-->
+    </div>
+
+    <div class="m-3" style="background-color: rgb(225, 236, 236);">
+        <h3>2. 아파트 층</h3>
+        <div class="container bg-warning">
+                <div class="row bg-success text-white p-3">2층</div>
+                <div class="row bg-danger text-white p-3">1층</div>
+
+        </div>
+    </div>
+
+    
+    <div class="m-3" style="background-color: rgb(227, 240, 240);">
+        <h3>3. col-sm-*(* 숫자 : 12 맞추기)</h3>
+        <div class="container bg-warning">
+                <div class="row bg-success text-white p-3">
+                    <div class="col-sm-2 bg-warning">4층 1칸</div>
+                    <div class="col-sm-10 bg-primary">4층 2칸</div>
+                </div>
+                <div class="row bg-danger text-white p-3">
+                    <div class="col-sm-5 bg-warning">3층 1칸</div>
+                    <div class="col-sm-5 bg-primary">3층 1칸</div>
+                    <div class="col-sm-2 bg-success">3층 1칸</div>
+                </div>
+                <div class="row bg-success text-white p-3">
+                    <div class="col-sm-3 bg-primary">2층 1칸</div>
+                    <div class="col-sm-3 bg-success">2층 2칸</div>
+                    <div class="col-sm-3 bg-danger">2층 3칸</div>
+                    <div class="col-sm-3 bg-warning">2층 4칸</div>
+                </div>
+                <div class="row bg-danger text-white p-3">
+                            <div class="col-sm-4 bg-primary text-white">1층 1칸</div>
+                            <div class="col-sm-4 bg-warning text-white">1층 2칸</div>
+                            <div class="col-sm-4 bg-primary text-white">1층 3칸</div>
+
+                </div>
+    
+        </div>
+    </div>
+
+
+
+</body>
+</html>

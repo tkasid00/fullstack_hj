@@ -1,0 +1,7 @@
+@charset "UTF-8";
+       
+       /*mycontainer 가로 50% 페이지 정중앙
+            h3 왼쪽 선, 배경색, 패딩*/
+
+.mycontainer {width: 50%; margin: 2em auto; background-color: rgb(208, 219, 202); padding: 20px; border-radius: 20px;}
+h3{border-left: 10px solid hsl(152, 39%, 49%); background-color: antiquewhite; padding: 10px;}

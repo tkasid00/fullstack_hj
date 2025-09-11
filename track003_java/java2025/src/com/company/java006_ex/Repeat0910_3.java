@@ -11,7 +11,7 @@ public class Repeat0910_3 {
 		for (;;) {
 			System.out.print("1을 입력해 주세요 : ");
 			i = scanner.nextInt();
-			if (i == 1) {
+ 		if (i == 1) {
 				System.out.println("종료합니다");
 				break;
 			}
