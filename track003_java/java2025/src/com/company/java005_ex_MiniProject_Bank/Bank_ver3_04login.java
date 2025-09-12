@@ -2,7 +2,8 @@ package com.company.java005_ex_MiniProject_Bank;
 
 import java.util.Scanner;
 
-public class Bank_ver3_02withdraw {
+public class Bank_ver3_04login {
+
 	public static void main(String[] args) {
 
 		int num1 = 0;
@@ -11,6 +12,7 @@ public class Bank_ver3_02withdraw {
 		double balance = 0;
 		char yn = '\u0000';
 		Scanner scanner = new Scanner(System.in);
+		boolean login = false;
 
 		lev = balance >= 0 && balance < 10000 ? "BRONZ"
 				: balance >= 10000 && balance < 100000 ? "SILVER"
@@ -18,13 +20,35 @@ public class Bank_ver3_02withdraw {
 
 		for (;;) {
 			System.out.print(
-					"_____________________\n (주) JAVATEXT BANK   \n______*WELCOME*______\n\n* 1.신규 개설 \n* 2.내 계좌 조회 \n* 3.입금 \n* 4.출금 \n* 5.계좌 삭제 \n* 6.등급 안내 \n* 9.종료\n_____________________\n");
+					"_____________________\n (주)JAVATEXT BANK   \n______*WELCOME*______\n* 0.로그인 \n* 1.신규 개설 \n* 2.내 계좌 조회 \n* 3.입금 \n* 4.출금 \n* 5.계좌 삭제 \n* 6.등급 안내 \n* 9.종료\n_____________________\n");
 			System.out.print("메뉴를 선택해 주세요> ");
 			num1 = scanner.nextInt();
 
 			if (num1 == 9) {
 				System.out.println("종료합니다.");
 				break;
+			}
+
+			else if (num1 == 0) {
+
+				System.out.print("ID : ");
+				tempid = scanner.next();
+				System.out.print("비밀번호 : ");
+				temppass = scanner.next();
+
+				if (id == null && pass == null) {
+					System.out.println("계정이 존재하지 않습니다\n계정을 생성해 주세요");
+				}
+
+				else if (tempid.equals(id) && temppass.equals(pass)) {
+					System.out.println("사용자 정보가 일치합니다");
+					login = true;
+				}
+
+				else if (!(id == null && pass == null || tempid.equals(id) && temppass.equals(pass))) {
+					System.out.println("ID와 비밀번호를 확인해 주세요");
+					continue;
+				}
 
 			} else if (num1 == 1) {
 				System.out.print("ID를 생성해 주세요 : ");
@@ -33,24 +57,14 @@ public class Bank_ver3_02withdraw {
 				pass = scanner.next();
 				System.out.print("개설 초기 금액을 입금해 주세요 : ");
 				balance = scanner.nextDouble();
-				System.out.println("축하합니다!\n계좌가 성공적으로 생성되었습니다");
+				System.out.println("축하합니다!\n계좌가 성공적으로 생성되었습니다\n로그인 후 이용해 주세요");
 				lev = balance >= 0 && balance < 10000 ? "BRONZ"
 						: balance >= 10000 && balance < 100000 ? "SILVER"
 								: balance >= 100000 && balance < 1000000 ? "GOLD" : "VIP";
+			} else if (login == false && (num1 == 2 || num1 == 3 || num1 == 4 || num1 == 5 || num1 == 6)) {
+				System.out.println("로그인이 필요합니다");
 
-			} else if (num1 == 2 || num1 == 3 || num1 == 4 || num1 == 5 || num1 == 6) {
-
-				System.out.print("ID : ");
-				tempid = scanner.next();
-				System.out.print("비밀번호 : ");
-				temppass = scanner.next();
-
-				if (!(tempid.equals(id) && temppass.equals(pass))) {
-					System.out.println("ID와 비밀번호를 확인해 주세요");
-					continue;
-				}
-
-//								else if (tempid.equals(id) && temppass.equals(pass)) { 로그인 안물어보기 어케하지  }
+			} else if (login == true && (num1 == 2 || num1 == 3 || num1 == 4 || num1 == 5 || num1 == 6)) {
 
 				if (num1 == 2) {
 					System.out.printf("%s \nID : %s \nPASS : %s \n잔액 : %d \n등급 : %s\n", "==계좌 조회", id, pass,
@@ -70,10 +84,10 @@ public class Bank_ver3_02withdraw {
 					if (!newlev.equals(lev)) {
 						System.out.println("축하합니다! 등급이 올랐습니다!" + "\n" + lev + "->" + newlev + "\n승급 축하 이자 5%가 지급됩니다 : +"
 								+ (int) newbalance);
+						balance = balance + newbalance;
 					}
 
 					lev = newlev;
-					balance = balance + newbalance;
 
 				} else if (num1 == 4) {
 					System.out.printf("출금 : ");
@@ -138,6 +152,7 @@ public class Bank_ver3_02withdraw {
 						} 
 					}
 
+						//등급 변동 없게 하기
 
 				} else if (num1 == 5) {
 					System.out.print("계좌를 삭제하시겠습니까?(Y/N) : ");
