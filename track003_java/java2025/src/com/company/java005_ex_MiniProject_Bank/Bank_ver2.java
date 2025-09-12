@@ -4,15 +4,17 @@ import java.util.Scanner;
 
 public class Bank_ver2 {
 	public static void main(String[] args) {
-		
+		Scanner scanner=new Scanner(System.in);
 		//변수
 		int num1 = 0;
 		int add = 0;
 		String id = null, pass = null, tempid = null, temppass = null;
 		double balance = 0;
 		char yn = '\u0000';
-		Scanner scanner=new Scanner(System.in);
-		
+
+		String lev = balance >= 0 && balance < 10000 ? "BRONZ"
+				: balance >= 10000 && balance < 100000 ? "SILVER"
+						: balance >= 100000 && balance < 1000000 ? "GOLD" : "VIP";
 		
 		for (;;) {
 			System.out.print(

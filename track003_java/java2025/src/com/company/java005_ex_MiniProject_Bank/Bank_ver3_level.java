@@ -25,8 +25,10 @@ public class Bank_ver3_level {
 			if (num1 == 9) {
 				System.out.println("종료합니다.");
 				break;
-
-			} else if (num1 == 1) {
+				
+			} 
+			
+			else if (num1 == 1) {
 				System.out.print("ID를 생성해 주세요 : ");
 				id = scanner.next();
 				System.out.print("비밀번호를 생성해 주세요 : ");
@@ -91,7 +93,7 @@ public class Bank_ver3_level {
 
 			} else {
 				System.out.println("존재하지 않는 메뉴입니다");
-			}
+			} 
 
 		} // for
 
