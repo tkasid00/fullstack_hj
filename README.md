@@ -42,14 +42,22 @@
 | **AI 프롬프트 엔지니어링** | **AI 모델의 동작 원리와 프롬프트 설계**, ChatGPT, Copilot 등 도구를 활용한 **코드 생성·문서화·아이디어 브레인스토밍** |
 
 ---
-<!-- JAVA, HTML+CSS+JS/JQUERTY...-->
-<!--## 📌포트폴리오
+
+## 📌포트폴리오
+
+
+### 1. 🎥 Stray to Home project (ver.control)
+
+[![Watch the video](https://img.youtube.com/vi/abc123XYZ/0.jpg)](https://www.youtube.com/embed/abc123XYZ?autoplay=1)
+
+👆 썸네일을 클릭하면 영상을 확인할 수 있습니다.
+🛠️ 사용 기술 : JAVA
 
 <br/>
 <br/>
 <br/>
 
---- -->
+---
 
 ## 😱트러블슈팅(Github 발생)
 
