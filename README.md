@@ -51,6 +51,7 @@
 [![Watch the demo](https://img.youtube.com/vi/vPgugGnh1l8/0.jpg)](https://www.youtube.com/watch?v=vPgugGnh1l8)
 
 👆 썸네일을 클릭하면 영상을 확인할 수 있습니다.
+<br/>
 🛠️ 사용 기술 : JAVA
 
 <!--[![Watch the demo](./track002_web_basic/img/sum/javasto.jpg)](https://www.youtube.com/watch?v=vPgugGnh1l8)    //썸네일 깨질 경우 교체
