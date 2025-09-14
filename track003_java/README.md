@@ -505,6 +505,55 @@ for (int i = 0; i < name.length; i++) {
 - 코드 작성 시 배열의 크기와 초기화 시점을 명확히 하는 습관이 중요함.
 </details>
 
+
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅13(레벨 갱신 누락 오류)</summary>
+
+**[문제점]**  
+- 캐릭터의 상태(happy, reliance, healthy, clean)에 따라 레벨(lv)이 올라가야 하는데 모든 조건을 만족해도 lv값이 항상 1로 설정되는 현상이 발생함.
+
+**[오류 코드]**  
+```java
+
+  int lv = 0; //메인 부분에 위치
+
+  if(happy < 10 && reliance < 10 && healthy < 20 && clean < 10) {
+    lv = 1;
+  } else if(lv == 1 && happy >= 10 && happy < 30 && reliance >= 10 && reliance < 30 && healthy >= 10 && healthy < 30 && clean >= 10 && clean < 30) {
+    lv = 2;
+  } else if(happy >= 30 && happy < 50 && reliance >= 30 && reliance < 50 && healthy >= 30 && healthy < 50 && clean >= 30 && clean < 50) {
+    lv = 3;
+  } else if(happy >= 50 && reliance >= 50 && healthy >= 50 && clean >= 50) {
+    lv = 4;
+  }
+```
+
+**[원인 분석]**  
+- lv를 계산하는 조건문이 main() 시작 부분에만 있고 이후 happy, reliance 등의 값이 변경되어도 다시 계산되지 않아 다른 수식에서 수치 변경이 발생해도 lv는 갱신되지 않음.
+- 또한 어느 한 수치가 다른 레벨값에 먼저 도달할 경우 레벨 조건 기준을 벗어나 제대로 계산이 되지 않는 문제 발생.
+
+**[해결 방안]**  
+- 아래와 같이 역순으로 계산하도록 수정하고 수치 변동 구간 이후 재계산이 이루어지도록 계산식을 다시 삽입함.
+
+  ```java
+      if (lv < 5) {
+	    if (happy >= 50 && reliance >= 50 && healthy >= 50 && clean >= 50) {lv = 4;} 
+	    else if (happy >= 30 && reliance >= 30 && healthy >= 30 && clean >= 30) {lv = 3;}
+	    else if (happy >= 10 && reliance >= 10 && healthy >= 10 && clean >= 10) {lv = 2;}
+	    else {lv = 1;}
+	  }
+      }
+  ```
+
+**[느낀점]**  
+- 단순한 조건문 오류가 아니라 상태 변화 이후에도 값을 갱신하지 않는 구조적 문제였다는 것을 배움.
+- 프로그램의 흐름과 변수의 생명주기를 이해하는 것이 얼마나 중요한지 체감함.
+- 앞으로는 조건문 작성 시 논리 흐름과 실행 타이밍을 더 신중하게 고려해야겠다고 느꼈음.
+- 이 경험을 통해 상태 기반 로직은 항상 변화 이후에 다시 평가되어야 한다는 원칙을 명확히 인식하게 됨.
+
+</details>
+
 ---
 
 ## ✔참고문헌
