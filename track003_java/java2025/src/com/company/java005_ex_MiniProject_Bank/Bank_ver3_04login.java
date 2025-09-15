@@ -49,6 +49,7 @@ public class Bank_ver3_04login {
 					System.out.println("ID와 비밀번호를 확인해 주세요");
 					continue;
 				}
+				
 
 			} else if (num1 == 1) {
 				System.out.print("ID를 생성해 주세요 : ");
@@ -70,7 +71,30 @@ public class Bank_ver3_04login {
 					System.out.printf("%s \nID : %s \nPASS : %s \n잔액 : %d \n등급 : %s\n", "==계좌 조회", id, pass,
 							(int) balance, lev);
 
-				} else if (num1 == 3) {
+				} else if (num1 == 6) {
+					System.out.println("==등급 안내");
+					System.out.println("[BRONZ]\n예금액 0~9999원 달성!\n출금 수수료 : 10%");
+					System.out.println("[SILVER]\n예금액 10000~99999원 달성!\n출금 수수료 : 7%");
+					System.out.println("[GOLD]\n예금액 100000~999999원 달성!\n출금 수수료 : 5%");
+					System.out.println("[VIP]\n예금액 1000000원 이상 달성!\n출금 수수료 : 3%\n");
+					System.out.println(id + "님의 현재 등급은" + lev + "입니다");
+				
+
+			} else if (num1 == 5) {
+				System.out.print("계좌를 삭제하시겠습니까?(Y/N) : ");
+				yn = scanner.next().charAt(0);
+				if (yn == 'N' || yn == 'n') {
+				} else if (yn == 'Y' || yn == 'y') {
+					id = null;
+					pass = null;
+					balance = 0;
+					System.out.println("계좌를 성공적으로 삭제했습니다");
+				} else {
+					System.out.println("Y 혹은 N을 입력해 주세요");
+				}
+
+			}
+				else if (num1 == 3) {
 
 					System.out.printf("입금 : ");
 					add = scanner.nextInt();
@@ -90,93 +114,45 @@ public class Bank_ver3_04login {
 					lev = newlev;
 
 				} else if (num1 == 4) {
-					System.out.printf("출금 : ");
-					add = scanner.nextInt();
+				    System.out.printf("출금 : ");
+				    add = scanner.nextInt();
 
-					if ((double) add > balance) {
-						System.out.println("잔액이 부족합니다");
-					} else if ((double) add == balance) {
-						System.out.println("잔액이 부족합니다\n수수료를 확인해 주세요");
-					} else {
-						switch (lev) {
-						case "BRONZ":
-							System.out.println(id + "님의 현재 등급은 BRONZ이며\n출금 수수료 10%가 부과됩니다");
-							break;
-						case "SILVER":
-							System.out.println(id + "님의 현재 등급은 SILVER이며\n출금 수수료 7%가 부과됩니다");
-							break;
-						case "GOLD":
-							System.out.println(id + "님의 현재 등급은 GOLD이며\n출금 수수료 5%가 부과됩니다");
-							break;
-						case "VIP":
-							System.out.println(id + "님의 현재 등급은 VIP이며\n출금 수수료 3%가 부과됩니다");
-							break;
-						}
+				    double fee = 0;
+				    switch (lev) {
+				        case "BRONZ": fee = add * 0.1; break;
+				        case "SILVER": fee = add * 0.07; break;
+				        case "GOLD": fee = add * 0.05; break;
+				        case "VIP": fee = add * 0.03; break;
+				    }
 
-						System.out.print("출금을 진행하시겠습니까?(Y/N) : ");
-						yn = scanner.next().charAt(0);
-						double fee = 0;
-						double totaladd = 0;
+				    double totaladd = add + fee;
 
-						switch (lev) {
-						case "BRONZ":
-							fee = add * 0.1;
-							break;
-						case "SILVER":
-							fee = add * 0.07;
-							break;
-						case "GOLD":
-							fee = add * 0.05;
-							break;
-						case "VIP":
-							fee = add * 0.03;
-							break;
+				    if (totaladd > balance) {
+				        System.out.println("잔액이 부족합니다");
+				    } 
+				    
+				    else if (totaladd == balance) {
+				        System.out.println("잔액이 부족합니다\n수수료를 확인해 주세요");
+				    } else {
+				        System.out.printf("%s님의 현재 등급은 %s이며\n출금 수수료 %.0f%%가 부과됩니다\n", id, lev, (fee / add) * 100);
+				        System.out.print("출금을 진행하시겠습니까?(Y/N) : ");
+				        yn = scanner.next().charAt(0);
 
-						}
-						
-						totaladd = add + fee;
-						balance -= totaladd;
-						
-						if (yn == 'N' || yn == 'n') {
-						} else if (lev == "BRONZ" && (yn == 'Y' || yn == 'y')) {
-							System.out.println("==출금 완료 \n잔액:" + (int)balance);
-						} else if (lev == "SILVER" && (yn == 'Y' || yn == 'y')) {
-							System.out.println("==출금 완료 \n잔액:" + (int)balance);
-						} else if (lev == "GOLD" && (yn == 'Y' || yn == 'y')) {
-
-							System.out.println("==출금 완료 \n잔액:" + (int)balance);
-						} else if (lev == "VIP" && (yn == 'Y' || yn == 'y')) {
-							System.out.println("==출금 완료 \n잔액:" + (int)balance);
-						} else {
-							System.out.println("Y 혹은 N을 입력해 주세요");
-						} 
-					}
-
-						//등급 변동 없게 하기
-
-				} else if (num1 == 5) {
-					System.out.print("계좌를 삭제하시겠습니까?(Y/N) : ");
-					yn = scanner.next().charAt(0);
-					if (yn == 'N' || yn == 'n') {
-					} else if (yn == 'Y' || yn == 'y') {
-						id = null;
-						pass = null;
-						balance = 0;
-						System.out.println("계좌를 성공적으로 삭제했습니다");
-					} else {
-						System.out.println("Y 혹은 N을 입력해 주세요");
-					}
-
-				} else if (num1 == 6) {
-					System.out.println("==등급 안내");
-					System.out.println("[BRONZ]\n예금액 0~9999원 달성!\n출금 수수료 : 10%");
-					System.out.println("[SILVER]\n예금액 10000~99999원 달성!\n출금 수수료 : 7%");
-					System.out.println("[GOLD]\n예금액 100000~999999원 달성!\n출금 수수료 : 5%");
-					System.out.println("[VIP]\n예금액 1000000원 이상 달성!\n출금 수수료 : 3%\n");
-					System.out.println(id + "님의 현재 등급은" + lev + "입니다");
+				        if (yn == 'Y' || yn == 'y') {
+				            balance -= totaladd;
+				            System.out.println("==출금 완료");
+				            System.out.println("출금액 : " + add);
+				            System.out.println("수수료 : " + (int) fee);
+				            System.out.println("잔액 : " + (int) balance);
+				        } else if (yn == 'N' || yn == 'n') {
+				            System.out.println("출금이 취소되었습니다");
+				        } else {
+				            System.out.println("Y 혹은 N을 입력해 주세요");
+				        }
+				    }
 				}
 
-			} else {
+				}   else {
 				System.out.println("존재하지 않는 메뉴입니다");
 			}
 
