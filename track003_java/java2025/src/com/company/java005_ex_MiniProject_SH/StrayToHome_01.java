@@ -1,4 +1,4 @@
-package com.company.java005_ex_MiniProject_Bank;
+package com.company.java005_ex_MiniProject_SH;
 
 import java.util.Scanner;
 

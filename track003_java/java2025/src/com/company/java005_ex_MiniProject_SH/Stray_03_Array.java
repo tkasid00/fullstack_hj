@@ -1,4 +1,4 @@
-package com.company.java005_ex_MiniProject_Bank;
+package com.company.java005_ex_MiniProject_SH;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -35,12 +35,6 @@ public class Stray_03_Array {
 		int[] reliance = new int[3];
 		int[] bonus = new int[3];
 
-		// 레벨 조건
-//	if(happy < 10 || reliance < 10 || healthy < 20 || clean < 10) {lv=1;}
-//	else if(lv==1 && (happy >= 10 && happy < 30) || (reliance >= 10 && reliance < 30) || (healthy >= 10 && healthy < 30) || (clean >= 10 && clean < 30)) {lv=2;}
-//	else if((happy >= 30 && happy < 50) && (reliance >= 30 && reliance < 50) && (healthy >= 30 && healthy < 50) && (clean >= 30 && clean < 50)) {lv=3;}
-//	else if((happy >=50 && reliance >=50 && healthy >=50 && clean >=50)){lv=4;}
-
 		// 역순으로 계산하면 레벨 미반영 문제 해결됨...이걸 생각 못해서 머리터질뻔
 		if (lv[i] < 5) {
 			if (happy[i] >= 50 && reliance[i] >= 50 && healthy[i] >= 50 && clean[i] >= 50) {
@@ -54,10 +48,11 @@ public class Stray_03_Array {
 			}
 		}
 
-		// 자리 잘 찾아가는지 임시로 확인!
+		
 		while (num != 9) {
-			System.out.println(Arrays.toString(id));
-			System.out.println(Arrays.toString(pass));
+			// 자리 잘 찾아가는지 임시로 확인!
+//			System.out.println(Arrays.toString(id));
+//			System.out.println(Arrays.toString(pass));
 
 			System.out.print("  /|_/|   From Stray\n" + "_( o.o )__To Home___♡♡\n" + "=========================" +
 

@@ -14,6 +14,15 @@
         /*visual*/
         div#demo {height: 300px; overflow: hidden;}
 
+        /*Q1. about me 각 부분들 여백 주기*/
+        .info { background-color: aliceblue;}
+        .info h4 {margin:5% 0;}
+        /*Q2. keyword 나와 있는 ul 태그에 class="keyword" */
+        .keyword li{list-style: none; margin-right: 10px;}
+
+        /*Q3. h3태그에 밑줄*/        
+        .info h3 {text-decoration: underline; padding: 10px 0; font-size: 2.2em;}
+
 
     </style>
 </head>
@@ -100,7 +109,7 @@
 
     <div class="container">
 
-            <h3>About Me</h3>
+            <h3 class="info p-5 text-center">About Me</h3>
 
             <div class="row">
                 <div class="col-sm-4">
@@ -118,42 +127,83 @@
                     <p>MSA기반 플러터(Dart)활용 자바(JAVA)프론트엔드 백엔드 풀스택 웹(앱)개발 과정(25.08.25~26.02.27)</p>
 
                     <h4>KeyWord</h4>
-                    <ul class="d-flex">
+                    <ul class="d-flex keyword">
                       <li><input type="button" value="열정" class="btn btn-danger"></li>
                       <li><input type="button" value="성실" class="btn btn-warning"></li>
                       <li><input type="button" value="끈기" class="btn btn-info"></li>
                     </ul>
 
                 </div>
-                      <div class="col-sm-4">
-                        <h4>Skills</h4>
-                            <div class="progress">
-                                <div class="progress-bar bg-info progress-bar-striped" style="width:80%">JAVA 80%</div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning progress-bar-striped" style="width:80%">SPRING 90%</div>
-                            </div>
-                            <div class="progress">
-                                  <div class="progress-bar bg-danger progress-bar-striped" style="width:80%">ORACLE 90%</div>
-                            </div>
-                            <div class="progress">
-                                  <div class="progress-bar bg-success progress-bar-striped" style="width:80%">REACT 85%</div>
-                            </div>
-                            <div class="progress">
-                                  <div class="progress-bar bg-dark progress-bar-striped" style="width:80%">AWS 85%</div>
-                            </div>
-
-
-                      </div>
+                    <div class="col-sm-4">
+                        <h4>SKILLS</h4>
+                        <div class="progress my-3">
+                          <div class="progress-bar bg-info progress-bar-striped" style="width:80%">JAVA 80%</div>
+                        </div> 
+                      <div class="progress my-3">
+                        <div class="progress-bar bg-warning progress-bar-striped" style="width:90%">SPRING 90%</div>
+                      </div> 
+                      <div class="progress my-3">
+                        <div class="progress-bar bg-danger progress-bar-striped" style="width:90%">ORACLE 90%</div>
+                     </div> 
+                     <div class="progress my-3">
+                        <div class="progress-bar bg-primary progress-bar-striped" style="width:85%">REACT 85%</div>
+                     </div>    
+                     <div class="progress my-3">
+                       <div class="progress-bar bg-success progress-bar-striped" style="width:85%">AWS 85%</div>
+                     </div>                              
+                    </div>
             </div>
+
 
     </div>
 
+    
+
 
 </section><!--end div info-->
-  <section class="portfolio"></section><!--end div portfolio-->
-  <section class="contact"></section><!--end div contact-->
-  <footer class="footer"></footer><!--end div footer-->
+
+
+  <section class="contact m-5">
+                <div class="container">
+                  <h3 class="text-center">Contact Me</h3>
+                  <p>열정적인 개발자 홍길동에게 문의주세요!</p>
+
+
+                  <form action="/action_page.php">
+                      <div class="mb-3 mt-3">
+                         <label for="title" class="form-label"> 제목:</label>
+                         <input type="email" class="form-control" id="title" placeholder="제목을 적어주세요" name="title">
+                      </div>
+                   <div class="mb-3">
+                       <label for="comment">Comments:</label>
+                     <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                    </div>
+                   <div class="mb-3 text-end">
+                      <button type="submit" class="btn btn-primary">메일 보내기</button>
+                    </div></form>
+                 
+
+
+                </div>
+
+
+  </section>   <!--end div contact-->
+
+
+  <!-- portfolio -->
+  <section  class="portfolio">
+            <h3>Gallery</h3>
+              <div>
+                 <p>
+                  <img src="./로그인이미지주소">
+                 </p>
+              </div>
+        
+  </section>
+
+  <footer class="footer text-center bg-secondary text-white p-5">
+      &copy; copyrights company 2025 all. rights reserved
+  </footer><!--end div footer-->
 
 
 </body>
