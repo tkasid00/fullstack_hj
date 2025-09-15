@@ -48,7 +48,11 @@
 
 ### 1. 🎥 Stray to Home project (ver.control)
 
-[![Watch the demo](https://img.youtube.com/vi/vPgugGnh1l8/0.jpg)](https://www.youtube.com/watch?v=vPgugGnh1l8)
+<a href="https://www.youtube.com/watch?v=vPgugGnh1l8" target="_blank">
+  <img src="https://img.youtube.com/vi/vPgugGnh1l8/0.jpg" alt="Watch the demo">
+</a>
+<br/>
+
 
 👆 썸네일을 클릭하면 영상을 확인할 수 있습니다.
 <br/>
