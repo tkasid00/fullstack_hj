@@ -554,6 +554,55 @@ for (int i = 0; i < name.length; i++) {
 
 </details>
 
+
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅14(인덱스 크기 초과 오류)</summary>
+
+**[문제점]**  
+- 배열의 크기를 초과하여 인덱스에 접근하면서 ArrayIndexOutOfBoundsException 예외가 발생함.
+**[오류 코드]**  
+```java
+int[][] datas = {  {  10, 10, 10 ,10}, 
+            {  20, 20, 20 ,20}, 
+            {  30, 30, 30 ,30},  
+}; 
+int[][] result = new int[datas.length+1][datas[0].length+1];
+
+for(int i =0; i<result.length;i++) {
+    for (int j=0; j<result[i].length; j++) {
+        result[i][j] = datas[i][j];
+        System.out.print(result[i][j]);
+    }
+}
+
+```
+
+**[원인 분석]**  
+- result 배열은 datas 배열보다 크기가 1씩 더 크도록 선언되었지만 datas[i][j]를 그대로 참조하고 있어 i 또는 j가 datas의 범위를 벗어날 때 예외가 발생함. 
+- result.length는 4, datas.length는 3이므로 i=3일 때 datas[3][j]를 참조하려고 하면서 오류가 발생함.
+
+**[해결 방안]**  
+- 다음과 같이 for 구문을 나눠 배열이 겹치는 부분과 초과하는 부분의 계산을 별도로 처리함.
+  ```java
+		for (int i = 0; i < datas.length; i++) {
+			for (int j = 0; j < datas[i].length; j++) {
+				result[i][j] = datas[i][j];
+			}
+
+		} 
+		for (int i = 0; i < result.length - 1; i++) {
+			for (int j = 0; j < result[i].length - 1; j++) {
+				result[i][result.length] += result[i][j];
+				result[3][j] += result[i][j];
+				result[3][result.length] += result[i][j];
+			}
+  ```
+
+**[느낀점]**  
+- 배열을 다룰 때는 항상 인덱스 범위를 정확히 파악하고 있어야 한다는 걸 다시 한 번 느낌. 
+- 특히 2차원 배열은 행과 열의 크기를 혼동하기 쉬우므로 디버깅 시 배열의 구조를 시각적으로 그려보는 것도 도움이 됨. 
+</details>
 ---
 
 ## ✔참고문헌
