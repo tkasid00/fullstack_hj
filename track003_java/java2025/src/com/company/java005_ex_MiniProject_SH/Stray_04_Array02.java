@@ -3,9 +3,11 @@ package com.company.java005_ex_MiniProject_SH;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Stray_03_Array {
+public class Stray_04_Array02 {
 
 	public static void main(String[] args) {
+
+
 
 		Scanner scanner = new Scanner(System.in);
 
@@ -48,7 +50,6 @@ public class Stray_03_Array {
 			}
 		}
 
-		
 		while (num != 9) {
 			// 자리 잘 찾아가는지 임시로 확인!
 //			System.out.println(Arrays.toString(id));
@@ -65,33 +66,47 @@ public class Stray_03_Array {
 			if (num == 9) {
 				System.out.println("오늘의 돌봄을 종료합니다.");
 				break;
-			}
+			} else if (num == 0) {
 
-			else if (num == 0) {
+				int find = -1;
 
 				System.out.print("ID : ");
 				tempid = scanner.next();
 				System.out.print("비밀번호 : ");
 				temppass = scanner.next();
 
-				if (id[i] == null && pass[i] == null) {
-					System.out.println("등록되지 않은 보호자입니다\n보호자로 등록해주세요");
+				// 등록된 모든 보호자 중에서 일치하는지 검사! 이거 안하면 마지막 사람만 이용 가능해짐
+				for (int k = 0; k < id.length; k++) {
+					if (tempid.equals(id[k]) && temppass.equals(pass[k])) {
+						find = k;
+						break;
+					}
 				}
 
-				else if (tempid.equals(id[i]) && temppass.equals(pass[i])) {
-					System.out.println("보호자 정보가 일치합니다");
-					login = true;
-				}
-
-				else if (!(id[i] == null && pass[i] == null || tempid.equals(id[i]) && temppass.equals(pass[i]))) {
-					System.out.println("ID와 비밀번호를 확인해 주세요");
+				if (find == -1) {
+					System.out.println("ID와 비밀번호를 확인해 주세요\n신규 보호자 등록은 1번에서 가능합니다");
 					continue;
+				} else {
+					System.out.println("보호자 정보가 일치합니다");
+					i = find;
+					login = true;
 				}
 
 			} else if (num == 1) {
 
 				int find = -1;
-				for (int k = 0; k < id.length; k++) {    if (id[k] == null) {find = k;break;}    }
+				for (int k = 0; k < id.length; k++) {
+					if (id[k] == null) {
+						find = k;
+						break;
+					}
+				}
+				if (find == -1) {
+					System.out.println("보호자 정원을 초과했습니다");
+					break;
+				}
+
+				i = find;
 
 				System.out.println("보호자 등록을 시작합니다");
 				System.out.print("ID를 생성해 주세요 : ");
@@ -125,8 +140,6 @@ public class Stray_03_Array {
 
 			else if (login == true && (num == 2 || num == 3 || num == 4 || num == 5 || num == 6 || num == 7)) {
 
-				// ■1. 사용자 인증
-				// 2. 2,3,4,5 각각에 해당하는 처리
 				switch (num) {
 				case 2:
 					System.out.printf("보호자 : %s\n이름 : %s\n나이 : %d\n종 : %s\n특징 : %s\n", id[i], catname[i], age[i],
@@ -216,7 +229,7 @@ public class Stray_03_Array {
 							bonus[i] += 5;
 							break;
 						case 5:
-							System.out.println(catname + "가 옆구리에 기대어 누웠습니다\n체온이 따뜻합니다");
+							System.out.println(catname[i] + "가 옆구리에 기대어 누웠습니다\n체온이 따뜻합니다");
 							happy[i] += 5;
 							reliance[i] += 10;
 							bonus[i] += 10;
@@ -424,28 +437,52 @@ public class Stray_03_Array {
 							System.out.println("검진을 진행합니다(보너스+10)");
 							switch (lv[i]) {
 							case 1:
-								System.out.println("건강 상태가 좋지 않습니다\n치료를 진행합니다(건강+15 행복-3 신뢰-7)");
-								healthy[i] += 15;
-								happy[i] -= 3;
-								reliance[i] -= 7;
-								bonus[i] += 10;
+
+								if (healthy[i] >= 50) {
+									System.out.println("건강에는 이상이 없지만 많은 주의를 필요로 합니다\n영양제와 상비약을 처방받았습니다(행복-3 신뢰-7)");
+									happy[i] -= 3;
+									reliance[i] -= 7;
+									bonus[i] += 10;
+								}
+
+								else {
+									System.out.println("건강 상태가 좋지 않습니다\n치료를 진행합니다(건강+15 행복-3 신뢰-7)");
+									healthy[i] += 15;
+									happy[i] -= 3;
+									reliance[i] -= 7;
+									bonus[i] += 10;
+								}
 								break;
 							case 2:
-								System.out.println("건강 상태가 개선되고 있습니다\n치료를 진행합니다(건강+10 행복-5 신뢰-5)");
-								healthy[i] += 10;
-								happy[i] -= 5;
-								reliance[i] -= 5;
-								bonus[i] += 10;
+								if (healthy[i] >= 50) {
+									System.out.println("건강에 이상이 없습니다\n고양이가 어리둥절해 합니다(행복-5 신뢰-7)");
+									happy[i] -= 5;
+									reliance[i] -= 7;
+									bonus[i] += 10;
+								} else {
+									System.out.println("건강 상태가 개선되고 있습니다\n치료를 진행합니다(건강+10 행복-5 신뢰-5)");
+									healthy[i] += 10;
+									happy[i] -= 5;
+									reliance[i] -= 5;
+									bonus[i] += 10;
+								}
 								break;
 							case 3:
-								System.out.println("건강 상태가 양호해졌습니다\n치료를 진행합니다(건강+5 행복-7 신뢰-3)");
-								healthy[i] += 5;
-								happy[i] -= 7;
-								reliance[i] -= 3;
-								bonus[i] += 10;
+								if (healthy[i] >= 50) {
+									System.out.println("건강에 이상이 없습니다\n고양이가 하악질을 했습니다(행복-5 신뢰-3)");
+									happy[i] -= 5;
+									reliance[i] -= 3;
+									bonus[i] += 10;
+								} else {
+									System.out.println("건강 상태가 양호해졌습니다\n치료를 진행합니다(건강+5 행복-7 신뢰-3)");
+									healthy[i] += 5;
+									happy[i] -= 7;
+									reliance[i] -= 3;
+									bonus[i] += 10;
+								}
 								break;
 							case 4:
-								System.out.println("매우 건강합니다!\n고양이가 화가 났습니다(행복-10)");
+								System.out.println("매우 건강합니다!\n고양이가 냥냥펀치를 날릴 준비를 합니다(행복-10)");
 								happy[i] -= 10;
 								bonus[i] += 10;
 								break;

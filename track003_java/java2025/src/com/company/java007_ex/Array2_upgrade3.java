@@ -10,30 +10,10 @@ public class Array2_upgrade3 {
 		};  // 3층 4칸
 
 		int[][] result = new int[datas.length + 1][datas[0].length + 1];
+		int totalMax= Integer.MIN_VALUE;
 		
-		for(int i =0; i<datas.length; i++) {
-			for(int j=0; j< datas.length;j++) {
-				result[i][j] = datas[i][j];
-			}
-		}
-		
-		
-	//	result[0][4] = result[0][1]~[0][4] 중에서 제일 큰 값
-		//비교를어케하지 
-		result[0][1] result[0][2] result[0][3] result[0][4]
-				
-					
-				
 
-				
-				
-				
-				
-		for(int i =0; i<result.length-1; i++) {
-			for(int j=0; j< result.length-1;j++) {
-				result[][]
-			}
-		}
+
 		
 		
 //		2. 구현 조건
