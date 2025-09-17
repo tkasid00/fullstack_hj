@@ -18,7 +18,7 @@
 
     <style>
            * { margin:0; padding:0; box-sizing: border-box;}
-           body {background-color: rgb(29, 27, 27);}
+           body {background-color: rgb(29, 27, 27); overflow: hidden;}
 
            .container.first {border-radius: 10px; 
                         border-bottom: 2px solid #FFF8DC;
@@ -105,6 +105,41 @@
             transform: translateX(-10px);}
 
 
+                .bubble {
+                        position: fixed;   bottom: -100px;
+                        width: 2px;  height: 2px;  background: #FFF; 
+                        border-radius: 50%;
+                        animation: rise 8s infinite ease-in;
+                        z-index: 0;
+                        }
+
+                        @keyframes rise{
+                        0%{  transform:translateY(0)        scale(1);          opacity:0.5; }
+                        50%{ transform:translateY(-300px)   scale(1.2);        opacity:1;   }
+                        100%{transform:translateY(-600px)   scale(0.8);        opacity:0;   }
+                        } 
+                        .bubble:nth-of-type(1) { left: 10%; animation-delay: 0s; }
+                        .bubble:nth-of-type(2) { left: 25%; animation-delay: 2s; width: 15px; height: 15px; }
+                        .bubble:nth-of-type(3) { left: 40%; animation-delay: 4s; width: 25px; height: 25px; }
+                        .bubble:nth-of-type(4) { left: 60%; animation-delay: 1s; width: 18px; height: 18px; }
+                        .bubble:nth-of-type(5) { left: 75%; animation-delay: 3s; width: 22px; height: 22px; }
+
+                        .star {
+                            position: absolute;
+                            width: 2px;
+                            height: 2px;
+                            background: white;
+                            border-radius: 50%;
+                            animation: twinkle 2s infinite ease-in-out;
+                            }
+
+                            @keyframes twinkle {
+                            0%, 100% { opacity: 0.2; }
+                            50% { opacity: 1; }
+                            }
+
+
+
     </style>
 
 
@@ -132,9 +167,10 @@
 
                           <!-- 포스트잇 -->
                                 <div class="postit-wrapper">
-                                    <div class="postit-note"><button class="btn btn-primary">Primary</button></div>
-                                    <div class="postit-note"><button class="btn btn-secondary">Secondary</button></div>
-                                    <div class="postit-note"><button class="btn btn-success">Success</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Portfolio</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">AboutMe</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Gallery</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Contact</button></div>
                                 </div>
 
                                 <p>
@@ -172,9 +208,10 @@
 
                 <section class="container second">
                                 <div class="postit-wrapper">
-                                    <div class="postit-note"><button class="btn btn-primary">Primary</button></div>
-                                    <div class="postit-note"><button class="btn btn-secondary">Secondary</button></div>
-                                    <div class="postit-note"><button class="btn btn-success">Success</button></div>
+                                  <div class="postit-note"><button class="btn btn-basic">Portfolio</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">AboutMe</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Gallery</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Contact</button></div>
                                 </div>
                                 
                     <div class="row">
@@ -200,9 +237,10 @@
             <div class="carousel-item"><!--슬라이드3-->
                 <section class="container third">
                                 <div class="postit-wrapper">
-                                <div class="postit-note"><button class="btn btn-primary">Primary</button></div>
-                                <div class="postit-note"><button class="btn btn-secondary">Secondary</button></div>
-                                <div class="postit-note"><button class="btn btn-success">Success</button></div>
+                                  <div class="postit-note"><button class="btn btn-basic">Portfolio</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">AboutMe</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Gallery</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Contact</button></div>
                                 </div>
                     <div class="column">
 
@@ -242,5 +280,20 @@
 
 
     </div> <!-- end demo -->
+
+
+        <script>
+            // 별 100개 생성
+            for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.top = `${Math.random() * window.innerHeight}px`;
+            star.style.left = `${Math.random() * window.innerWidth}px`;
+            star.style.animationDuration = `${1 + Math.random() * 2}s`;
+            document.body.appendChild(star);
+            }
+        </script>
+
+
 </body>
 </html>
