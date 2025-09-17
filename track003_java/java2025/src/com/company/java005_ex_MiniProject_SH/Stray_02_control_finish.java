@@ -2,7 +2,7 @@ package com.company.java005_ex_MiniProject_SH;
 
 import java.util.Scanner;
 
-public class Stray_02_control {
+public class Stray_02_control_finish {
 
 
 	public static void main(String[] args) {
