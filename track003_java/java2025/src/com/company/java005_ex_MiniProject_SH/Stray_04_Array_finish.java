@@ -3,7 +3,7 @@ package com.company.java005_ex_MiniProject_SH;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Stray_04_Array02 {
+public class Stray_04_Array_finish {
 
 	public static void main(String[] args) {
 
@@ -37,7 +37,7 @@ public class Stray_04_Array02 {
 		int[] reliance = new int[3];
 		int[] bonus = new int[3];
 
-		// 역순으로 계산하면 레벨 미반영 문제 해결됨...이걸 생각 못해서 머리터질뻔
+
 		if (lv[i] < 5) {
 			if (happy[i] >= 50 && reliance[i] >= 50 && healthy[i] >= 50 && clean[i] >= 50) {
 				lv[i] = 4;
@@ -103,7 +103,7 @@ public class Stray_04_Array02 {
 				}
 				if (find == -1) {
 					System.out.println("보호자 정원을 초과했습니다");
-					break;
+					continue;
 				}
 
 				i = find;

@@ -3,10 +3,13 @@ package com.company.java005_ex_MiniProject_SH;
 import java.util.Arrays;
 import java.util.Scanner;
 
-
-public class Stray_04_Array03{
+public class Stray_04_mathod_01_lvup {
 	
-	public static void updatelv (int lv[], int happy[], int reliance[], int healthy[], int clean[], int i){
+	
+	
+	public static void process_lvup(int i, int happy[], int reliance[],int healthy[], int clean[], int lv[]) {
+		
+		
 		if (lv[i] < 5) {
 			if (happy[i] >= 50 && reliance[i] >= 50 && healthy[i] >= 50 && clean[i] >= 50) {
 				lv[i] = 4;
@@ -18,12 +21,10 @@ public class Stray_04_Array03{
 				lv[i] = 1;
 			}
 		}
-
 	}
+	
 
-
-	//메서드 정리중
-
+	////////////////////////////
 	public static void main(String[] args) {
 
 
@@ -56,15 +57,14 @@ public class Stray_04_Array03{
 		int[] reliance = new int[3];
 		int[] bonus = new int[3];
 
+		
+		process_lvup(i, happy, reliance, healthy, clean, lv); 
 
 
-		updatelv (lv, happy, reliance, healthy, clean, i);
-		
-		
 		while (num != 9) {
 			// 자리 잘 찾아가는지 임시로 확인!
-//			System.out.println(Arrays.toString(id));
-//			System.out.println(Arrays.toString(pass));
+			System.out.println(Arrays.toString(id));
+			System.out.println(Arrays.toString(pass));
 
 			System.out.print("  /|_/|   From Stray\n" + "_( o.o )__To Home___♡♡\n" + "=========================" +
 
@@ -114,7 +114,7 @@ public class Stray_04_Array03{
 				}
 				if (find == -1) {
 					System.out.println("보호자 정원을 초과했습니다");
-					break;
+					continue;
 				}
 
 				i = find;
@@ -191,21 +191,20 @@ public class Stray_04_Array03{
 					} else {
 						System.out.println("1.식사(행복+10 건강+3 보너스+10)\n" + "2.간식(행복+5 신뢰+5 건강-3 보너스+7)\n"
 								+ "3.놀아주기(행복+5 신뢰+5 건강5+ 보너스+15)\n" + "4.쓰다듬기(행복+3 신뢰+3 보너스+5)\n"
-								+ "5.같이 낮잠 자기(행복+5 신뢰+10 보너스+10)\n" + "6.화장실 청소(위생+3 보너스+10)\n"
+								+ "5.같이 낮잠 자기(행복+5 신뢰+10 보너스+10)\n" + "6.화장실 청소(건강+3 위생+3 보너스+10)\n"
 								+ "7.빗질(행복+3 신뢰+3 위생+10 보너스+10)\n" + "8.양치(행복-5 신뢰-5 건강+10 위생+10 보너스+20\n"
 								+ "9.다른 활동을 한다");
 						System.out.print("▶돌봄을 선택해 주세요: ");
 
 						int j = scanner.nextInt();
 						
-						updatelv (lv, happy, reliance, healthy, clean, i);
-						
+						process_lvup(i, happy, reliance, healthy, clean, lv); 
 
 
 						switch (j) {
 						case 1:
 							System.out.println("사료를 주었습니다\n" + catname[i] + "이/가 만족스러워하며 다리에 비비고 지나갑니다");
-							happy[i] += 5;
+							happy[i] += 10;
 							healthy[i] += 3;
 							bonus[i] += 10;
 							break;
@@ -260,18 +259,9 @@ public class Stray_04_Array03{
 							bonus[i] += 20;
 							break;
 						}
-						updatelv (lv, happy, reliance, healthy, clean, i);
-//						if (lv[i] < 5) {
-//							if (happy[i] >= 50 && reliance[i] >= 50 && healthy[i] >= 50 && clean[i] >= 50) {
-//								lv[i] = 4;
-//							} else if (happy[i] >= 30 && reliance[i] >= 30 && healthy[i] >= 30 && clean[i] >= 30) {
-//								lv[i] = 3;
-//							} else if (happy[i] >= 10 && reliance[i] >= 10 && healthy[i] >= 10 && clean[i] >= 10) {
-//								lv[i] = 2;
-//							} else {
-//								lv[i] = 1;
-//							}
-//						}
+						
+						process_lvup(i, happy, reliance, healthy, clean, lv); 
+
 
 					}
 					break;
@@ -402,8 +392,15 @@ public class Stray_04_Array03{
 								}
 								break;
 
-							}		updatelv (lv, happy, reliance, healthy, clean, i);
+							}
+							
+							process_lvup(i, happy, reliance, healthy, clean, lv); 
 
+
+						}  else {
+						System.out.println("N 또는 Y를 입력해 주세요");
+
+					}
 					}
 					break;
 				// 병원 방문 건강과 스트레스 교환
@@ -470,9 +467,11 @@ public class Stray_04_Array03{
 								bonus[i] += 10;
 								break;
 							}
-							updatelv (lv, happy, reliance, healthy, clean, i);
 
-						} else {System.out.println("Y 또는 N을 입력해 주세요");}
+							process_lvup(i, happy, reliance, healthy, clean, lv); 
+
+
+						}
 
 					}
 
@@ -524,5 +523,10 @@ public class Stray_04_Array03{
 				System.out.println("존재하지 않는 활동입니다");
 			}
 		} // end for
+
 	}// end main
+
+
+
+
 }// end class
