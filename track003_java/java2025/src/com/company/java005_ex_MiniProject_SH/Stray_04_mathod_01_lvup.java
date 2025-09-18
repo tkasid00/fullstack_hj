@@ -77,6 +77,8 @@ public class Stray_04_mathod_01_lvup {
 			if (num == 9) {
 				System.out.println("오늘의 돌봄을 종료합니다.");
 				break;
+				
+				
 			} else if (num == 0) {
 
 				int find = -1;
