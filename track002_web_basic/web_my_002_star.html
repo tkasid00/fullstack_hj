@@ -36,7 +36,30 @@
 
                         }
 
-            .intro {margin-top: 50px;}      
+            .intro {margin-top: 50px;}   
+            .cover {border-radius: 10px; width: 320px; padding: 10px; margin : 0 20px; 
+                    box-shadow: 0 0 20px rgba(214, 212, 212, 0.247);
+                    background-color:rgba(51, 39, 8, 0.055);
+                    
+                    
+                    /* position: absolute;: 30px; */
+                   }
+
+            .name {font-family: Verdana, sans-serif;
+                    color: #1b1c1d;
+                    font-size : 35px;
+                    }      
+   
+            .coverExplain {font-family: Verdana, sans-serif;
+                             color: #1b1c1d;
+                            font-size : 25px;
+                            padding-left: 20px;
+                            padding-top: 10px;
+
+                    }        
+            .coverExplainUnder {color: #1b1c1d;
+                            font-size : 20px;
+                            padding-left: 20px;}  
 
           
 
@@ -97,7 +120,7 @@
             }
 
             .postit-note {
-                background-color: #fff89a;
+                /* background-color: #fff89a; */
                 padding: 8px 12px;
                 border: 1px solid #ccc;
                 border-radius: 6px;
@@ -105,7 +128,25 @@
                 transform: rotate(-3deg);
                 width: 120px;
                 text-align: center;
+                
             }
+
+            .postit-note:nth-child(1) {
+                background-color:rgb(230, 230, 76) /* 1번째 */
+                }
+            
+            .postit-note:nth-child(2) {
+                background-color:rgb(96, 96, 214) /* 1번째 */
+                }
+            
+            .postit-note:nth-child(3) {
+                background-color:rgb(211, 101, 119) /* 1번째 */
+                }
+            
+            .postit-note:nth-child(4) {
+                background-color:rgb(5, 146, 165) /* 1번째 */
+                }        
+
 
 
 
@@ -151,17 +192,22 @@
                     <section class="container first"> <!--표지-->
                         <div class="intro">
 
-                                <h3 class="p-3">박현주 | Full-Steck Developer</h3>
+                                <h3 class="name p-3">박현주 | Full-Steck Developer</h3>
+                                <!-- <p class="nameunder"></p> -->
+
                                 <p>
-                                <img src="./img/portfolio/profile.png" alt=" " width="300px" border-radius="10px"> 
+                                    <br/>
+                                <img src="./img/portfolio/profile.png" alt="표지프로필이미지" class="cover"> 
+                                    <br/>
+                                    <br/>
                                 </p>
                                 
                                 <div>
-                                    <h4>사용자 경험을 우선하는 웹 개발자</h4>
+                                    <h4 class="coverExplain">사용자 경험을 우선하는 웹 개발자</h4>
                                 </div>
                                 
                                 <div>
-                                    <ul>
+                                    <ul class="coverExplainUnder">
                                         <li>email : tkasid00@gmail.com</li>
                                         <li>Github : https://github.com/tkasid00/fullstack_hj</li>
 
