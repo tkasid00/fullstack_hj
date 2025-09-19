@@ -443,6 +443,44 @@ fatal: unable to access 'https://github.com/tkasid00/fullstack_20250825.git/': T
 </details>
 
 
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅08(repo 안의 repo 문제)</summary>
+
+**[문제점]**  
+- 초기 깃허브 깃에 복사하는 연습 당시 경로 선택이 잘못되어 상위 폴더에 .git이 중복해서 존재하개 됨.
+- repo 안에 또 다른 repo가 들어있는 상태로 git commit 시 submodule 관련 메시지가 뜨면서 정상적인 커밋이 거부됨.
+
+**[오류 코드]**  
+```bash
+deleted:    ../day001.md
+modified:   fullstack_hj (modified content, untracked content)
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+```bash
+rm: cannot remove '.gitmodules': No such file or directory
+error: could not lock config file workspace/.git/config
+```
+
+**[원인 분석]**  
+- workspace 폴더 자체가 깃 repo(.git)로 초기화되어 있었음.
+- 그 안에 fullstack_hj라는 또 다른 repo가 존재하면서 Git이 하위 repo를 submodule 비슷하게 처리.
+- 실제로 .gitmodules 파일은 없었기 때문에 정식 submodule은 아니지만 Git은 fullstack_hj 폴더를 별도의 repo로 보고 혼란을 일으킨 것.
+
+
+**[해결 방안]**  
+- 의도한 repo는 fullstack_hj 뿐이므로 상위 workspace repo를 제거.
+    1) cd /d/hjhome/workspace
+    2) rm -rf .git   # 상위 .git 제거, workspace는 단순 폴더로 만듦
+    3) cd fullstack_hj
+    4) git status 
+
+
+**[느낀점]**  
+- 상대 경로는 현재 파일 위치 기준이므로 디렉토리 구조를 정확히 파악하는 것이 중요함
+- 작은 경로 실수도 UI에 큰 영향을 줄 수 있으니 꼼꼼한 확인이 필요함
+</details>
+
+
 ---
 
 ## 📜참고문헌
