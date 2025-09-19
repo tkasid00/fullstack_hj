@@ -216,8 +216,21 @@
                        background-image: linear-gradient(180deg, #cebef3, #a7c3f7);
                        } 
             .portcard h4 {padding-bottom: 10px;
-                            font-size: 22px; font-weight: bold;}       
-            .portcard p {margin : 5px; font-size: 16px;}           
+                            font-size: 22px; font-weight: bold;}     
+
+            .portcard p {margin : 5px; font-size: 16px; 
+                        text-decoration: none;
+                        display: flex;
+                        flex-wrap: wrap; 
+                        gap: 10px;
+                        }  
+
+            .portcard a {text-align: center;
+                text-decoration: none;
+                        background: #b791f3; color: #fff;
+                        padding: 4px 7px;
+                        border-radius: 20px; font-size: 16px;
+                        }         
             
             
 
@@ -372,7 +385,7 @@
                     <div class="row">
 
                         <div class="page col-sm-6">
-                            <div class="second-page">페이지01
+                            <div class="second-page">포트폴리오 시안01
 
                                 <!--여기에 포트폴리오 카드 +설명 작성. 2분할-->
                                 <div>
@@ -392,7 +405,9 @@
                                         <p>- 고양이 상태(행복, 건강, 위생, 신뢰) 관리 </p>
                                         <p>- 돌봄 활동 및 환경 개선 시스템</p>
                                         <br/>
-                                        <p>👉 발전 과정과 전체 코드는 [README 페이지](링크)에서 보실 수 있습니다.</p>
+                                        <p>👉 발전 과정과 전체 코드는 
+                                            <a href="https://github.com/tkasid00/fullstack_hj/tree/master/track004_portfolio/fromStraytoHome#readme" target="_blank">[README 페이지]</a>
+                                               에서 보실 수 있습니다.</p>
 
                                     </div>     
 
@@ -404,7 +419,7 @@
                         </div>
 
                         <div class="page col-sm-6">
-                            <div class="second-page">페이지02
+                            <div class="second-page">포트폴리오 시안02
 
                                 <div class="portcard">
                                     <h4>🐾from Stray to Home</h4>
@@ -412,7 +427,7 @@
                                     <p>작은 임시보호 체험 시뮬레이션!</p> 
                                     <p>다양한 활동을 통해</p>
                                     <p>고양이의 삶을 바꿔주세요</p> 
-                                    <p><a href="https://github.com/tkasid00/fullstack_hj/tree/master/track004_portfolio/fromStraytoHome#readme" target="_blank">리드미에서 확인하기</a></p>
+                                    <p class="portlink"><a href="https://github.com/tkasid00/fullstack_hj/tree/master/track004_portfolio/fromStraytoHome#readme" target="_blank">리드미에서 확인하기</a></p>
                                 </div>
 
 
