@@ -446,6 +446,121 @@
                                 
                 </section>
             </div><!--end 슬라이드3-->
+
+
+          <div class="carousel-item"><!--슬라이드4-->
+
+                 <section class="container third">
+
+                    <div class="column">
+
+
+                        <div class="page col-sm-2">
+                            <div class="third-page">페이지01</div>
+                        </div>
+
+                        <div class="page col-sm-10">
+                            <div class="third-page">페이지02
+
+
+
+                            <!-- contact  - form  text-start   text-center   text-end  -->
+                                    <section  class="contact m-5">
+                                        <div class="container">
+                                            <h3 class="text-center">Contact Me</h3>
+
+                                                        <script type="text/javascript"
+                                                                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+                                                        </script>
+                                                    <script type="text/javascript">
+                                                        (function(){
+                                                            emailjs.init({
+                                                                publicKey: "9OtYly-E0cRHC9E3T",
+                                                            });
+                                                        })();
+
+
+                                                        //////////////////
+
+                                                        function sendEmail( e ){
+                                                            e.preventDefault();   //무조건 전송 기능 막기
+
+                                                        var templateParams = {
+                                                        name:document.getElementById("name").value ,
+                                                        email:document.getElementById("email").value ,
+                                                        title:document.getElementById("title").value ,
+                                                        message:document.getElementById("message").value
+                                                        };
+
+                                                        emailjs.send('tkasid00', 'template_r04ie29', templateParams).then(
+                                                        (response) => {
+                                                            alert("메일이 성공적으로 전송되었습니다");
+                                                            console.log('SUCCESS!', response.status, response.text);
+                                                        },
+                                                        (error) => {
+                                                            alert("메일 전송을 실패했습니다");
+                                                            console.log('FAILED...', error);
+                                                        },
+                                                        );
+
+
+                                                        }
+
+
+                                                    </script>
+
+
+                                            <form onsubmit="sendEmail(event)">
+                                                <div class="mb-3 mt-3">
+                                                    <label for="name" class="form-label">이름:</label>
+                                                    <input type="text" class="form-control" id="name" 
+                                                        placeholder="이름을 적어주세요!" name="name">
+                                                </div>
+
+                                                <!-- <div class="mb-3 mt-3">
+                                                    <label for="email" class="form-label">Refly to email</label>
+                                                    <input type="email" class="form-control" id="email" 
+                                                        placeholder="이메일을 적어주세요!" name="email">
+                                                </div>            -->
+
+                                                <div class="mb-3 mt-3">
+                                                    <label for="title" class="form-label">제목:</label>
+                                                    <input type="text" class="form-control" id="title" 
+                                                        placeholder="제목을 적어주세요!" name="title">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="comment">Comments:</label>
+                                                    <textarea class="form-control" rows="5" id="message" placeholder="내용을 적어주세요!"  name="comment"></textarea>            
+                                                </div>
+                                                <div class="mb-3 text-end">
+                                                    <button type="submit" class="btn btn-success">메일보내기</button>
+                                                </div>
+                                            </form> 
+                                        </div><!--end container-->
+                                    </section>
+
+
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                                <div class="postit-wrapper">
+                                  <div class="postit-note"><button class="btn btn-basic">cover</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">AboutMe</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Gallery</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Contact</button></div>
+                                </div>
+                </section>
+            
+            </div><!--end 슬라이드4-->
+
+
+
+
             
             
 
@@ -467,6 +582,9 @@
 
 
     </div> <!-- end demo -->
+
+
+
 
 
         <script>
