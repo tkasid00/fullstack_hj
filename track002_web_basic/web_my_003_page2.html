@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+            <!--외부 적용법-->
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+    <style>
+           * { margin:0; padding:0; box-sizing: border-box;}
+           body {background-color: rgb(29, 27, 27); overflow: hidden;}
+
+           .container.first {border-radius: 10px; 
+                        border-bottom: 2px solid #FFF8DC;
+                        border-right: 2px solid #FFF8DC;
+                        margin: 50px auto;
+                        padding: 30px;
+                        width: 700px; height: 900px;
+                        background-color:#2C4F4F;
+                        position: relative;
+
+                        border-left:50px solid #162727;
+                        border-bottom-left-radius: 20px;
+
+                        z-index: 20;
+
+                        }
+            /* .container.second{ background-color: white;  
+            border-radius:20px; padding:20px; box-shadow:0 0 5px rgba(0,0,0,0.5);} */ 
+
+            .container.second{border-radius: 15px; 
+                        margin: 50px auto;
+                        padding: 30px;
+                        width: 1800px; height: 900px;
+                        background-color: #2C4F4F;  
+                        box-shadow:0 0 5px rgba(0,0,0,0.5);
+                        position: relative;
+                        border-bottom-left-radius: 20px;
+                        z-index: 20;}
+            
+            .container.third{border-radius: 15px; 
+                        margin: 100px auto;
+                        padding: 30px;
+                        width: 1800px; height: 870px;
+                        background-color: #2C4F4F;  
+                        box-shadow:0 0 5px rgba(0,0,0,0.5);
+                        position: relative;
+                        border-bottom-left-radius: 20px;
+                        z-index: 20;}            
+
+            .row .page { background-color: white;  
+                     border-radius:15px; padding:20px; 
+                     box-shadow:0 0 5px rgba(0,0,0,0.5);
+                     padding: 30px;
+                     height: 900px;
+                     margin-top: -40px;} 
+                     
+            .column .page { background-color: white;  
+                     border-radius:15px; 
+                     box-shadow:0 0 5px rgba(0,0,0,0.5);
+                     padding: 20px;
+                     width: 1300px;
+                     margin-top: -70px;
+                     margin-right: 50px;}
+                     
+            .page.col-sm-10{height: 850px;
+                            margin-top: 0px;
+                        transform: translateX(-5px)}       
+            .page.col-sm-2{height: 15px;
+                border-left: 3px solid #777373;
+                border-bottom:  1px solid #5a5353;
+            transform: translateX(-10px);}
+
+
+
+            /*  포스트잇 파트  */
+            .postit-wrapper {
+                position: absolute;
+                top: 30px;
+                right: -100px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                z-index: 1; /* 낮게 유지 */
+            }
+
+            .postit-note {
+                padding: 8px 12px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+                transform: rotate(-3deg);
+                width: 120px;
+                text-align: center;
+                
+            }
+
+            .postit-note:nth-child(1) {
+                background-color:rgb(230, 230, 76) 
+                }
+            .postit-note:nth-child(2) {
+                background-color:rgb(96, 96, 214) 
+                }
+            .postit-note:nth-child(3) {
+                background-color:rgb(211, 101, 119) 
+                }
+            .postit-note:nth-child(4) {
+                background-color:rgb(5, 146, 165) 
+                }        
+
+
+                /* 전체 배경 애니메이션 :  별빛 효과 */
+                .star {
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    background: white;
+                    border-radius: 50%;
+                    animation: twinkle 2s infinite ease-in-out;
+                    }
+
+                    @keyframes twinkle {
+                    0%, 100% { opacity: 0.2; }
+                    50% { opacity: 1; }
+                    }
+
+
+
+         /* 여기까지가 레이아웃 기초 완료! */
+
+
+                 /* 표꾸 표지꾸미기 */
+
+            .intro {margin-top: 50px;}   
+            .cover {border-radius: 10px; width: 320px; padding: 10px; margin : 0 20px; 
+                    box-shadow: 0 0 20px rgba(214, 212, 212, 0.247);
+                    background-color:rgba(51, 39, 8, 0.055);
+                    
+                    
+                    /* position: absolute;: 30px; */
+                   }
+
+            .name {font-family: Verdana, sans-serif;
+                    color: #1b1c1d;
+                    font-size : 35px;
+                    }      
+   
+            .coverExplain {font-family: Verdana, sans-serif;
+                            color: #1b1c1d;
+                            font-size : 25px;
+                            padding-left: 20px;
+                            padding-top: 10px;
+
+                    }        
+            .coverExplainUnder a {color: #1b1c1d;
+                            font-size : 20px;
+                            padding-left: 20px;
+                            text-decoration: none;}  
+
+
+                /* 자소설...너무힘드러따...... */
+
+            /* .card .whoiam {margin : 50px;}     */
+            .abutme.one {text-align: center; margin-bottom: 40px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+            .one h1{font-size: 30px; color:  #1a2a52; font-weight: bold;
+                        padding-bottom: 10px;}
+            .one p {font-size: 20px; color: 555;}    
+            .one a {text-decoration: none; color: #1a2a52; font-weight: bold;
+                    margin : 0 20px; }
+
+            .two h2 {text-align: left;
+                    border-left: 5px solid #1a2a52 ;
+                    margin: 20px 70px;
+                    padding-left: 10px;
+                    font-size: 25px;}
+            .two p {font-size: 16px;
+                    margin: 5px 50px;}
+            .skills {display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;}
+            .skill {
+                    background: #1a2a52; color: #fff;
+                    padding: 8px 14px;
+                    border-radius: 20px; font-size: 16px;}
+            .skill:nth-child(1) {margin-left: 50px;}  
+
+            .keywords {display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;}
+
+            .keyword {
+                    background: #1a2a52; color: #fff;
+                    padding: 8px 14px;
+                    border-radius: 20px; font-size: 16px;}
+            .keyword:nth-child(1) {margin-left: 50px;} 
+
+
+
+
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+            
+
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner"> 
+            <div class="carousel-item active"><!--슬라이드1-->
+            
+                    <section class="container first"> <!--표지-->
+                        <div class="intro">
+
+                                <h3 class="name p-3">박현주 | Full-Steck Developer</h3>
+                                <!-- <p class="nameunder"></p> -->
+
+                                <p>
+                                    <br/>
+                                <img src="./img/portfolio/profile.png" alt="표지프로필이미지" class="cover"> 
+                                    <br/>
+                                    <br/>
+                                </p>
+                                
+                                <div>
+                                    <h4 class="coverExplain">사용자 경험을 우선하는 웹 개발자</h4>
+                                </div>
+                                
+                                <div>
+                                    <ul class="coverExplainUnder">
+                                        <li><a href="mailto:tkasid00@gmail.com">Email : tkasid00@gmail.com</a></li>
+                                        <li><a href="https://github.com/tkasid00/fullstack_hj.git" target="_blank">Github : https://github.com/tkasid00/fullstack_hj</a></li>
+
+                                    </ul>
+                                </div>
+
+                            
+                        </div>
+
+                                                  <!-- 포스트잇 -->
+                                <div class="postit-wrapper">
+                                    <div class="postit-note"><button class="btn btn-basic">cover</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">AboutMe</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Gallery</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Contact</button></div>
+                                </div>
+
+                    </section><!--표지-->
+
+
+            </div><!--end 슬라이드1-->
+
+            <div class="carousel-item"><!--슬라이드2-->
+
+                <section class="container third">
+
+                    <div class="column">
+
+
+                        <div class="page col-sm-2">
+                            <div class="third-page"></div>
+                        </div>
+
+                        <div class="page col-sm-10"> 패이지02
+
+                                
+                                    <div class="abutme one">
+                                        <h1>안녕하세요, Full-Stack Web Developer 박현주입니다</h1>
+                                            <p>사용자 경험을 중시하며 꾸준히 성장하는 개발자를 목표로 하고 있습니다.</p>
+                                            <div class="links">
+                                                <a href="mailto:tkasid00@gmail.com">Email</a>
+                                                <a href="https://github.com/tkasid00/fullstack_hj.git" target="_blank">GitHub</a> 
+                                            </div>                                                               
+                                    </div>
+                                    <div class="abutme two">
+                                        <h2> About Me</h2>
+                                        <p>저는 웹의 기본기(HTML, CSS, JavaScript)를 중심으로 다양한 프로젝트를 진행하며 성장해 왔습니다.</p>
+                                        <p>가독성과 직관적인 설계에 집중하고 있으며 앞으로는 더 폭 넓은 언어를 학습하여</p>
+                                        <p>풀스택 개발자로 역량을 넓혀가고자 합니다.</p>
+                                        <br/>
+                                    </div>
+
+                                    <div class="abutme two">
+                                        <h2>Skills</h2>
+                                        <div class="skills">
+                                            <div class="skill">HTML</div>
+                                            <div class="skill">CSS</div>
+                                            <div class="skill">JavaScript</div>
+                                            <div class="skill">Git/GitHub</div>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="abutme two">
+                                        <br/>
+                                    <h2>Strengths</h2>
+                                    <div class="keywords">
+                                        <div class="keyword">꾸준함</div>
+                                        <div class="keyword">문제 해결</div>
+                                        <div class="keyword">학습 열정</div>
+                                        <div class="keyword">사용자 중심</div>
+                                        <div class="keyword">창의적 발상</div>
+                                    </div>
+                                    </div>
+
+                                    <div class="aboutme two">
+                                        <br/>
+                                    <h2>Vision</h2>
+                                    <p>작은 개선으로도 사용자에게 의미 있는 경험을 줄 수 있는 개발자로 성장하고 싶습니다.</p>
+                                    <p>협업을 통해 배우며 더 나은 웹 서비스를 만들기 위해 계속 도전하겠습니다.</p>
+                                    </div>
+                                 
+
+                            
+                        </div>
+
+
+                    </div>
+
+                                <div class="postit-wrapper">
+                                  <div class="postit-note"><button class="btn btn-basic">cover</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">AboutMe</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Gallery</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Contact</button></div>
+                                </div>
+                </section>
+
+
+            </div><!--end 슬라이드2-->
+
+
+
+
+            <div class="carousel-item"><!--슬라이드3-->
+               <section class="container second">
+
+                    <div class="row">
+
+                        <div class="page col-sm-6">
+                            <div class="second-page">페이지01</div>
+                        </div>
+
+                        <div class="page col-sm-6">
+                            <div class="second-page">페이지02
+
+
+
+
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+                        <div class="postit-wrapper">
+                                  <div class="postit-note"><button class="btn btn-basic">Portfolio</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">AboutMe</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Gallery</button></div>
+                                    <div class="postit-note"><button class="btn btn-basic">Contact</button></div>
+                                </div>
+                                
+                </section>
+            </div><!--end 슬라이드3-->
+            
+            
+
+
+
+
+
+
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+
+
+    </div> <!-- end demo -->
+
+
+        <script>
+            // 별 100개 생성
+            for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.top = `${Math.random() * window.innerHeight}px`;
+            star.style.left = `${Math.random() * window.innerWidth}px`;
+            star.style.animationDuration = `${1 + Math.random() * 2}s`;
+            document.body.appendChild(star);
+            }
+        </script>
+
+
+</body>
+</html>
