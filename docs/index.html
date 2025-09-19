@@ -240,18 +240,17 @@
                 </script>
 
 
-        <form onsubmit="sendEmail(event)">
+            <form onsubmit="sendEmail(event)">
             <div class="mb-3 mt-3">
-                <label for="name" class="form-label">이름:</label>
+                <label for="name" class="form-label">제목:</label>
                 <input type="text" class="form-control" id="name" 
                        placeholder="이름을 적어주세요!" name="name">
             </div>
 
             <div class="mb-3 mt-3">
-                <label for="email" class="form-label">Refly to email</label>
+                <label for="email" class="form-label">제목:</label>
                 <input type="email" class="form-control" id="email" 
                        placeholder="이메일을 적어주세요!" name="email">
-            </div>           
 
             <div class="mb-3 mt-3">
                 <label for="title" class="form-label">제목:</label>
@@ -260,7 +259,7 @@
             </div>
             <div class="mb-3">
                 <label for="comment">Comments:</label>
-                <textarea class="form-control" rows="5" id="message" placeholder="내용을 적어주세요!"  name="comment"></textarea>            
+                <textarea class="form-control" rows="5" id="comment" placeholder="내용을 적어주세요!"  name="comment"></textarea>            
             </div>
             <div class="mb-3 text-end">
                 <button type="submit" class="btn btn-success">메일보내기</button>
