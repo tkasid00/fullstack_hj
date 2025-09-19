@@ -476,8 +476,9 @@ error: could not lock config file workspace/.git/config
 
 
 **[느낀점]**  
-- 상대 경로는 현재 파일 위치 기준이므로 디렉토리 구조를 정확히 파악하는 것이 중요함
-- 작은 경로 실수도 UI에 큰 영향을 줄 수 있으니 꼼꼼한 확인이 필요함
+- 깃은 폴더 안에 .git이 있으면 무조건 repo로 인식하기 때문에 프로젝트 관리용 폴더(workspace)와 실제 repo 를 혼동하면 문제가 생김.
+- 앞으로는 GitHub에서 repo를 만들면 바로 그 repo 폴더 안에서만 작업해야 한다는 걸 확실히 배움.
+- 단순한 실수였지만 submodule 에러 메시지를 경험해본 덕분에 구조를 이해하게 되었고 앞으로는 git status로 현재 repo 위치를 꼭 확인해야겠다고 느꼈음.
 </details>
 
 
