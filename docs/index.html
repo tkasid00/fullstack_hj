@@ -120,7 +120,9 @@
                 background-color:rgb(5, 146, 165); 
                 }        
 
-            .postit-note button{ font-weight: bold; }    
+            .postit-note button{ font-weight: bold; 
+                                    font-family:NanumBarunpenB;
+                                    font-size: 20px;}    
 
 
                 /* 전체 배경 애니메이션 :  별빛 효과 */
@@ -154,15 +156,14 @@
 
             .coverpage {text-align: center;}     
 
-            .name {font-family: Verdana, sans-serif;
-                    color: #1b1c1d;
-                    font-size : 35px;
-                    text-shadow: 0 0 2px #ffffff80;
-                    font-weight: bold;
-                   
+            .name {font-family: 'NanumSquareEB';
+                    color: #212324;
+                    font-size : 38px;
+                     text-shadow: 0 0 2px #ffffff28;
+                    text-align: center;
                     }      
    
-            .coverExplain {font-family: Verdana, sans-serif;
+            .coverExplain {font-family: 'NanumSquareEB';
                             color: #1b1c1d;
                             font-size : 25px;
                             padding-left: 20px;
@@ -173,26 +174,30 @@
             .coverExplainUnder a {color: #1b1c1d;
                             font-size : 20px;
                             padding-left: 20px;
-                            text-decoration: none;}  
+                            text-decoration: none;
+                            text-shadow: 0 0 2px #ffffff28;
+                            font-family: 'NanumSquareEB'
+                            }  
+
 
 
                 /* 자소설...너무힘드러따...... */
 
-            /* .card .whoiam {margin : 50px;}     */
+            .card .whoiam {font-family: 'NanumGothic';}     
             .abutme.one {text-align: center; margin-bottom: 40px;
-                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+                        }
             .one h1{font-size: 30px; color:  #1a2a52; font-weight: bold;
                         padding-bottom: 10px; padding-top: 35px;}
             .one p {font-size: 20px; color: #555;}    
             .one a {text-decoration: none; color: #1a2a52; font-weight: bold;
-                    margin : 0 20px; }
+                    margin : 0 20px; font-size: 20px;}
 
             .two h2 {text-align: left;
                     border-left: 5px solid #1a2a52 ;
                     margin: 20px 70px;
                     padding-left: 10px;
                     font-size: 25px;}
-            .two p {font-size: 16px;
+            .two p {font-size: 18px;
                     margin: 5px 50px;}
             .skills {display: flex;
                     flex-wrap: wrap;
@@ -215,7 +220,7 @@
 
 
 
-                /* 포폴페이지 작업 시작*/
+                /* 포폴페이지 작업 시작 시안02부터*/
 
             .portcard {width: 280px; height: 250px; 
                        /* border:3px solid #1a2a52; */
@@ -239,30 +244,77 @@
                         border: 1px dashed #ccc;
                         }           
 
-            .portcard h4 {padding-bottom: 15px;
-                            font-size: 21px; font-weight: bold;}     
+            .portcard h4 {padding-bottom: 5px;
+                            font-family: 'nanumhippie';
+                            font-size: 25px; font-weight: bold;}     
 
-            .portcard p {margin : 5px auto; font-size: 16px;
+            .portcard p {justify-content: center;
+                        margin : 5px auto; 
+                        font-size: 20px;
+                        font-weight: bold;
                         display: flex;
                         flex-wrap: wrap; 
                         gap: 10px;
-                        text-align: center;
-                        
+                        font-family: 'NanumBarunpenB';
                         }  
 
-            .portcard a {text-align: center;
+            .portcard a {justify-content: center;
                         text-decoration: none;
                         background: #b791f3; color: #fff;
-                        padding: 4px 7px;
-                        border-radius: 20px; font-size: 16px;
-                        margin: 10px 30px 0;
+                        padding: 4px 10px;
+                        border-radius: 20px; font-size: 20px;
+                        margin: 0px 30px;
+                        font-family: 'NanumBarunpenB';
                         }
+
+
+                        /*여기는 시안01*/
             .portexplain h5 {font-weight: bold; font-size: 20px; margin-bottom: 10px;}           
             
             .portexplain p {margin : 5px;}
 
             .portexplain h6 {font-weight: bold; font-size: 16px; }
             
+
+                @font-face {
+                font-family: 'nanumdiligence';
+                src: url(./font/나눔손글씨\ 성실체.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'nanumhippie';
+                src: url(./font/나눔손글씨\ 바른히피.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'NanumGothic';
+                src: url(./font/NanumGothic.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'NanumGothicExtraBold';
+                src: url(./font/NanumGothicExtraBold.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'MaruBuri-SemiBold';
+                src: url(./font/MaruBuri-SemiBold.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'MaruBuri-Regular';
+                src: url(./font/MaruBuri-Regular.ttf) format('truetype');
+                }
+                
+                @font-face {
+                font-family: 'NanumSquare_acB';
+                src: url(./font/NanumSquare_acB.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'NanumSquareEB';
+                src: url(./font/NanumSquareEB.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'NanumBarunpenB';
+                src: url(./font/NanumBarunpenB.otf) format('truetype');
+                }
+
+
 
     </style>
 
@@ -441,6 +493,9 @@
                                 <!--여기에 포트폴리오 카드 +설명 작성. 2분할-->
                                 <div>
                                     <div> <!--영상 링크-->
+                                        <br/>
+                                        <br/>
+                                        <br/>
                                         <iframe width="540" height="295" src="https://www.youtube.com/embed/LvjvYhLRxfk?si=qHBw1Nt5pAmpyUgT" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                     </div>
 
