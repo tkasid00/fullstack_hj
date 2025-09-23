@@ -56,9 +56,8 @@ public class MemberVarEx001 {
 
 2. 인스턴스메서드, 클래스메서드 구분하시오.
 -> 인스턴스메서드 : showAll001()
-	클래스메서드 : public으로 시작하는 모든 메서드
+	클래스메서드 : static이 들어가는 모든 메서드
 	
 3. 오류나는 이유는? 
-->public은 공용이라 개별 지정인 this는 사용 불가
- basicpay=pay;도 동일 원리
+->static은 this 사용 불가 > this는 new로 heap 영역을 할당받은 다음 사용 가능하기 때문에 바로 사용 가능한 static과 시점이 맞지 않음. 
  */
