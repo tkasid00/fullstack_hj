@@ -6,12 +6,12 @@ class Student {
     int eng = 85;                 
     static int studentCount = 0;    
 
-    static int total = kor + eng;      //static에 인스턴스 변수 kor, eng 사용 불가  
+    static int total = kor + eng;      //static에 인스턴스 변수 kor, eng 사용 불가  ->this. 붙여서 타입 확인 가능
 
     static int maxScore = 100;     
 
-    public Student() {
-        studentCount++;             
+    public Student() { //*****생성자 : 클래스명과 동일+리턴값 없음!!!*****
+        studentCount++;       //static 사용 가능
     }
 
     public int getTotalScore() {
@@ -23,7 +23,7 @@ class Student {
     }
 
    public static void showName() {
-         System.out.println(name);  
+         System.out.println(name);  //인스턴스 사용x
    }
 
     public void showInfo() {
@@ -65,11 +65,19 @@ public class MemberVarEx002 {
 [method: 정보, static, final : 공용정보]
 >Student.class, MemberVarEx002.class
 >static : Student.showStudentCount(), Student.showName()
+		Student.studentCount, Student.maxScore	
 ------------------------------------
-[heap: 동적]            	| [stack : 잠깐빌리기]
-							showInfo
-2번지					<-s2[2번지] 40줄
-1번지					<-sl[1번지] 39줄
-						|main
+[heap: 동적]            		| [stack : 잠깐빌리기]
+2번지						<-s2[2번지] 40줄
+1번지						<-sl[1번지] 39줄
+{name="홍", kor=90, eng=85<명시적 초기화값
+showInfo(), getTotalScore()}
+							|main
 ------------------------------------
+
+
+초기화 순서 : 			기본값 		명시적 초기화		초기화 블록				생성자
+studentCount			0				0(x)		  0(x)					0
+maxScore				0				100			  100(x)				100
+s1(name, kor, eng)		null, 0		홍길동, 90, 85	홍길동, 90, 85(x)		홍길동, 90, 85(x)
 */
