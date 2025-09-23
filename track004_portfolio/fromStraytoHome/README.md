@@ -1,5 +1,5 @@
 
-### 1-2. 🎥 from Stray to Home (Java Console Project) (ver.control)
+### 1-1. 🎥 from Stray to Home (Java Console Project) (ver.control)
 
 [![Watch the demo](https://img.youtube.com/vi/vPgugGnh1l8/0.jpg)](https://www.youtube.com/watch?v=vPgugGnh1l8)
 
