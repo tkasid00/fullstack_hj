@@ -308,9 +308,16 @@
       //Q3) document.querySelector 이용해서 coconut 선택 
       //  coconut를 클릭하면 width:200px; 로 수정
 
-          document.querySelector("#coconut").onclick=function(){
-            //coconut.style.width="200px";
-            this.style.width="200px";}  
+          // document.querySelector("#coconut").onclick=function(){
+          //   //coconut.style.width="200px";
+          //   this.style.width="200px";}  
+
+
+            let coconut = document.querySelector("#coconut");
+            coconut.onclick=function(){
+              if(coconut.style.width=="200px"){coconut.style.width="1230px"}
+              else {coconut.style.width="200px";}
+            }
 
 
 
