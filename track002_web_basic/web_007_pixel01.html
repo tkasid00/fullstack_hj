@@ -14,26 +14,51 @@
     <style>
 
         *{margin: 0; padding: 0; box-sizing: border-box; }
-
+        
         .backline{ margin: 30px; padding: 30px; 
                     border: 3px solid;   
-                    height: 700px;  width :1000px;   
+                    height: 800px;  width :1200px;   
+                    margin: 0 auto;
+                    background-color: rgb(39, 37, 37);
+                    border: 20px solid rgb(49, 47, 47);
         }
-        .backimg {object-fit:fill;
+        .backimg {object-fit:fill;  
             height: 100%; width: 100%;
+            position: relative;
                 }
 
-        .underline{ margin: 30px; padding: 30px; width: 1000px ;
-            border: 3px solid;        
+        .door {position: absolute;
+                height: 300px;
+                top: 228px;
+                right: 550px;} 
+
+        .woodbox {position: absolute;
+                    height: 350px;
+                     top: 280px;
+                    left: 820px;}        
+        
+        .woodchair {position: absolute;  height: 300px;
+                    top: 410px;
+                    left: 480px
+        }   
+
+        .woodtable {position: absolute;  height: 270px;
+                    top: 470px;
+                    left: 550px}   
+
+
+        .underline{ margin: 30px; width: 1200px ;
+                     border: 3px solid;        margin: 0 auto;
+                     height: 120px;
+                     background-color: rgb(39, 37, 37);
         }
-        .boxis {  display: flex;        /* 박스들을 가로로 배치 */
-                  flex-direction: row;
-                    justify-content: space-between;}
-
-        .box { margin: 10px; padding: 10px; border: 5px solid;
-                width: 120px; height: 100px;  }
-
-
+        .boxis { display: flex; /* 박스들을 가로로 배치 */ 
+                flex-direction: row; justify-content: space-between; 
+            } 
+        .box { margin: 10px; padding: 10px; 
+            border: 5px solid; width: 120px; height: 100px;
+            background-color: rgb(63, 58, 58);
+            border: 10px solid rgb(49, 47, 47);}
         
     </style>
 
@@ -44,6 +69,19 @@
         <div class="backline">
             <img src = "img/pixel/background03.png" alt = "배경이미지" class="backimg">
          </div> 
+         <div>
+            <img src="./img/pixel/door.png" alt = "문" class="door">
+         </div>
+         <div>
+            <img src="./img/pixel/woodchair.png"alt = "나무의자" class="woodchair">
+         </div>
+         <div>
+            <img src="./img/pixel/woodtable.png"alt = "나무책상" class="woodtable">
+         </div>
+         <div>
+            <img src="./img/pixel/woodbox.png"alt = "나무협탁" class="woodbox">
+         </div>
+
 
     </section>
 
@@ -54,6 +92,9 @@
             <div class="box">box3</div>
             <div class="box">box4</div>
             <div class="box">box5</div>
+            <div class="box">box6</div>
+            <div class="box">box7</div>
+            <div class="box">box8</div>
 
         </div>
 
