@@ -15,25 +15,25 @@ public class UserInfo {
 		this.balance = balance;
 
 	}
-	
-	//4
 
-	
-	//g+s
-	public String getId() { return id; } 
-	@Override
-	public String toString() {
-		return "UserInfo [id=" + id + ", pass=" + pass + ", balance=" + balance + "]";
-	}
-
+	public String getId() { return id; }  
+	public void setId(String id) { this.id = id; }  
 	public String getPass() { return pass; }  
 	public void setPass(String pass) { this.pass = pass; }  
 	public double getBalance() { return balance; }  
-	public void setBalance(double balance) { this.balance = balance; }  
-	public void setId(String id) { this.id = id; } 
+	public void setBalance(double balance) { this.balance = balance; }
+
+	@Override
+	public String toString() {
+		return "UserInfo [id=" + id + ", pass=" + pass + ", balance=" + balance + "]";
+	}   
+	
+	
+	
+} 
 
 
-}
+
 
 
 /*유저 정보 1인분 보관

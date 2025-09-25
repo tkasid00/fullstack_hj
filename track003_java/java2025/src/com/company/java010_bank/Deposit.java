@@ -20,14 +20,15 @@ public class Deposit {
 	public void exec() {
 		
 		Scanner  scanner= new Scanner(System.in);
-		
-	
-		
+				
 		System.out.print("입금 : ");
 		double add = scanner.nextDouble();
+
 		double newbalance = this.userInfo.getBalance() + add;
 			System.out.println("==입금 완료 \n잔액:" + newbalance);
 			 this.userInfo.setBalance(newbalance);
+			 
+//				this.userInfo.setBalance(this.userInfo.getBalance()+add);		
 		
 	
 	}//exec

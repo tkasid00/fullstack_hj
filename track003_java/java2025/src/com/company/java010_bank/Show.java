@@ -13,7 +13,7 @@ public class Show {
 		
 		
 
-		System.out.println("\nID : " +this.userInfo.getId()
+		System.out.println("ID : " +this.userInfo.getId()
 							+"\nPASS : " + this.userInfo.getPass()
 							+ "\nBALANCE : "+ this.userInfo.getBalance());
 		
