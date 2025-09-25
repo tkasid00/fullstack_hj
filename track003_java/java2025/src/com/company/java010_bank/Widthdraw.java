@@ -16,6 +16,7 @@ public class Widthdraw {
 		Scanner  scanner= new Scanner(System.in);
 		System.out.print("출금 : ");
 		double add = scanner.nextDouble();
+		
 		double newbalance = this.userInfo.getBalance() - add;
 			System.out.println("==입금 완료 \n잔액:" + newbalance);
 			 this.userInfo.setBalance(newbalance);
