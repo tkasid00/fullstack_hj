@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>DBDBIG</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<div class="p-3 bg-primary text-white ">
+  <h1>007. CONTROL</h1>
+  <ol>
+    <li>IF</li>
+    <li>SWITCH</li>
+    <li>FOR/WHILE/DO WHILE</li>
+  </ol>
+</div>
+<!--                                    -->
+<!--                                    -->
+<div class="container card  my-3">
+  <h3  class="card-header">007. CONTROL - Step1. IF</h3>
+  <div class="card-body">
+    <h4>Step1. IF</h4>
+      <script>
+       // if(조건){조건이 true }
+       // else    {조건이 false}
+        let data=1;
+        if(data==1){console.log("1이다");}
+        else{console.log("1이 아니다");}
+      
+      </script>
+  </div>
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX</h4>
+    <pre>
+      평균을 입력하세요 __입력받기
+      만약 평균이 60점 이상(60점포함)이라면 합격, 아니면 불합격 출력
+    </pre>
+    <input type="button" value="ex1"  id="ex1"  title="버튼을 클릭하세요" class="btn btn-success"      />
+    <script>
+
+        window.addEventListener("load", function(){
+          document.getElementById("ex1").onclick=function(){
+            let result="불합격";
+            let aver = prompt("평균을 입력하세요");
+              if(aver>=60){result = "합격"}
+            alert(result);
+          }
+        });
+
+
+    </script>
+  </div>
+</div>
+
+
+
+
+<!--                                    -->
+<!--                                    -->
+<div class="container card  my-3">
+  <h3  class="card-header">007. CONTROL - Step2. SWITCH</h3>
+  <div class="card-body">
+    <h4>Step2. SWITCH</h4>
+      <script>
+      /*
+      swtich(  처리하고 싶은 대상    ){
+          case 대상의상태:    처리;  break;
+          case 대상의상태:    처리;  break;
+          case 대상의상태:    처리;  break;
+          default : 기본처리
+      } */
+     let data2=2;
+        switch(data2) {
+          case 1 :console.log("1이다"); break;
+          case 2 :console.log("2다"); break;
+          case 3 :console.log("3이다"); break;
+          default :console.log("1,2,3이 아니다"); break;
+        }
+ 
+      </script>
+  </div>
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX</h4>
+    <pre>
+      4,5,6 중에 입력하세요
+      4번 월드콘  ,  5번 구구콘 , 6번 설레임 알림창을 띄우시오.
+    </pre>
+    <input type="button" value="switch1"  id="switch1"  title="버튼을 클릭하세요" class="btn btn-success"      />
+    <script>
+
+      window.addEventListener("load", function(){
+         let icecream = document.getElementById("switch1");
+         
+         icecream.addEventListener("click", function(){
+              let result2=null;
+              let ice=prompt("숫자 4,5,6 중에 입력하세요");
+//              alert(typeof(ice)); -> 문자열
+              switch(ice) {
+                case "4": result2="월드콘"; break;
+                case "5": result2="구구콘"; break;
+                case "6": result2="설레임"; break;
+                default : result2="4,5,6이 아닙니다"; break;
+              }
+//            문자열 숫자로 바꾸기
+              // switch(Number(ice)) {
+              //   case "4": result2="월드콘"; break;
+              //   case "5": result2="구구콘"; break;
+              //   case "6": result2="설레임"; break;
+              //   default : result2="4,5,6이 아닙니다"; break;
+              // }
+
+              alert(result2);
+          }
+        );
+         });
+         
+      
+    </script>
+  </div>
+</div>
+
+
+
+
+<!--                                    -->
+<!--                                    -->
+<div class="container card  my-3">
+  <h3  class="card-header">007. CONTROL - Step3. FOR/WHILE/DO WHILE</h3>
+  <div class="card-body">
+    <h4>Step3. FOR/WHILE/DO WHILE</h4>
+      <script>
+      /*
+        STEP1 for  - 반복횟수 알때
+        for(  초기문; 조건문; 증감문 ){  }
+
+        STEP2 while- 반복횟수 모를때
+        초기문;
+        while(  조건문 ){     증감문;  }
+
+        STEP3 do while- 한번은 실행을 해야할때
+        초기문;
+        do{     증감문;  } while(  조건문 );
+
+        STEP4 향상된 for
+        for( index  in 객체 ){   }*/
+        console.log("step1-for");
+        for(let i=1;i<4;i++){console.log(i);}
+
+        console.log("step2-while");
+        let i1=1;
+        while(i1<4){console.log(i1);i1++}
+        
+        console.log("step3-do while");
+        let i2=1;
+        do{console.log(i2);i2++}while(i2<4);
+
+        console.log("step4-향상된 for1");        
+        const list = ['a', 'b', 'c'];
+        for(let i in list ){console.log(i + "/" +list[i]); }
+
+        console.log("step4-향상된 for2");
+        list.forEach( (ele, index, list)=>{   //element->index->i 순으로
+            console.log(ele + "/" + index + "/" + list);
+            //console.log(list); - 전체 리스트
+        }) ;    
+
+ 
+      </script>
+  </div>
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX</h4>
+    <pre>
+    for, while, do while
+    Q1)		1	2	3	4	5
+    Q2)		5	4	3	2	1
+    Q3)		2	4	6
+    Q4)		hello1		hello2		hello3
+    Q5)		const list1 = [1	2	3	4	5];
+    </pre>
+    <script>
+      // for, while, do while
+      //A1)		1	2	3	4	5
+      for(let j=1;j<6;j++){console.log(j);}
+      let j1=1; 
+      while(j1<6){console.log(j1);j1++}
+      let j2=1;
+      do{console.log(j2);j2++}while(j2<6);
+     
+         console.log("--")
+
+      //A2)		5	4	3	2	1
+      for(let j3=5;j3>0;j3--){console.log(j3);}
+      let j4=5;
+      while(j4>0){console.log(j4);j4--;}
+      let j5=1;
+      do{console.log(j5);j5--;}while(j5>0);
+
+      console.log("--")
+
+      //A3)		2	4	6
+      for(let l=1; l<4; l++){console.log( l*2 );}
+      l1=1;
+      while(l1<4){console.log(l1*2);l1++}
+      l2=1;
+      do{console.log(l2*2);l2++}while(l2<4)
+
+           console.log("--")
+
+      //A4)		hello1		hello2		hello3
+      for(let k=1;k<4;k++){console.log("hello"+k);}
+      let k1=1;
+      while(k1<4){console.log("hello"+k1);k1++}
+      let k2=1;
+      do {console.log("hello"+k2);k2++} while(k2<4)
+
+         console.log("--")
+
+      // 향상된 for , forEach
+      //A5)		const list1 = [1	2	3	4	5];
+
+      const list1 = [1,	2,	3,	4,	5];
+      for(let i in list1 ){console.log(i)}
+
+       console.log("--전체")
+
+      list1.forEach((ele, index, list1)=>{
+        console.log(ele + "/" + index + "/" + list1);
+      });
+
+       console.log("--lsit1")
+      
+       list1.forEach((ele, index, list1)=>{
+        console.log(list1);
+      });
+
+       console.log("--index")
+           list1.forEach((ele, index, list1)=>{
+        console.log(index);
+      });
+
+       console.log("--ele")
+
+                 list1.forEach((ele, index, list1)=>{
+        console.log(ele);
+      });
+
+
+    </script>
+  </div>
+</div>
+
+
+</body>
+</html>
