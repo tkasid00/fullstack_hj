@@ -93,6 +93,7 @@
                 gap: 12px;
                 z-index: 1; /* 낮게 유지 */
                 
+                
             }
             
 
@@ -225,12 +226,13 @@
             .portcard {width: 280px; height: 250px; 
                        /* border:3px solid #1a2a52; */
                        padding: 20px; text-align: center;
-                        box-shadow: 4px 6px 12px rgba(0,0,0,0.3);
+                       box-shadow: 4px 6px 12px rgba(0,0,0,0.3);
                        background-image: linear-gradient(180deg, #cebef3, #a7c3f7);
                        transform: rotate(-2deg);
+                       transform-origin: center center; 
                        position: relative;
+                       margin-top: 10px;
                        } 
-
 
             .portcard::before {  /*마스킹테이프 연출*/
                         content: "";
@@ -549,24 +551,32 @@
                         </div>
 
                         <div class="page col-sm-6">
-                            <div class="second-page">포트폴리오 시안02
+                            <div class="second-page">
 
-                                <div class="portcard">
-                                    <h4>🐾from Stray to Home</h4>
-                                    <p>Java를 통해 구현한</p> 
-                                    <p>작은 임시보호 체험 시뮬레이션!</p> 
-                                    <p>다양한 활동을 통해</p>
-                                    <p>고양이의 삶을 바꿔주세요</p> 
-                                    <p class="portlink"><a href="https://github.com/tkasid00/fullstack_hj/tree/master/track004_portfolio/fromStraytoHome#readme" target="_blank">리드미에서 확인하기</a></p>
+                                <div class="row g-4">
+                                    <div class="col-6">
+                                    <div class="portcard">
+                                        <h4>🐾from Stray to Home</h4>
+                                        <p>Java를 통해 구현한</p> 
+                                        <p>작은 임시보호 체험 시뮬레이션!</p> 
+                                        <p>다양한 활동을 통해</p>
+                                        <p>고양이의 삶을 바꿔주세요</p> 
+                                        <p class="portlink"><a href="https://github.com/tkasid00/fullstack_hj/tree/master/track004_portfolio/fromStraytoHome#readme" target="_blank">리드미에서 확인하기</a></p>
+                                    </div>
+
+                                    </div>
+                                    <div class="col-6"><div class="portcard">포트폴리오02</div></div>
+                                    <div class="col-6"><div class="portcard">포트폴리오03</div></div>
+                                    <div class="col-6"><div class="portcard">포트폴리오04</div></div>
+                                    <div class="col-6"><div class="portcard">포트폴리오05</div></div>
+                                    <div class="col-6"><div class="portcard">포트폴리오06</div></div>
                                 </div>
-
 
                                 
                             </div>
                         </div>
 
                     </div>
-
 
                                                   <!-- 포스트잇 -->
                                     <div class="postit-wrapper">
