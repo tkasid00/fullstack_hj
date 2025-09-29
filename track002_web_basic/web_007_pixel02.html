@@ -15,59 +15,75 @@
 
         *{margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* .backline{ margin: 30px; padding: 30px; 
-                    border: 3px solid;   
-                    height: 800px;  width :1200px;   
-                    margin: 0 auto;
-                    background-color: rgb(39, 37, 37);
-                    border: 20px solid rgb(49, 47, 47);
-                    position: relative;
+            body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* 가로 중앙 */
+            align-items: center;     /* 세로 중앙 */
+            background: #111;        /* 캔버스 바깥 배경 */
+            }
 
-        } */
+            .backline {
+            position: relative;
+            width: 1200px;
+            height: 800px;
 
+            background: url("img/pixel/background03.png") no-repeat left top;
+            background-size: 100% 100%;  /* 고정된 크기에 배경 꽉 채움 */
 
-        .backline {
-                    position: relative;   /* 기준점 */
-                    width: 1200px;
-                    height: 800px;
-                    margin: 0 auto;
-                    background: url("img/pixel/background03.png") no-repeat center/cover;
-                    border: 20px solid rgb(49, 47, 47);
-                    background-color: rgb(39, 37, 37);
-                   }
-        .backimg {object-fit:fill;  
-            height: 100%; width: 100%;
-   
-                }
+            border: 20px solid rgb(49, 47, 47);
+            background-color: rgb(39, 37, 37);
+            overflow: hidden; /* 혹시 모를 스크롤 방지 */
+            }
 
         .door {position: absolute;
                 height: 300px;
-                top: 228px;
-                right: 550px;} 
+                top: 278px;
+                left: 1170px;} 
 
         .woodbox {position: absolute;
                     height: 350px;
-                     top: 280px;
+                     top: 340px;
                     left: 820px;}        
         
         .woodchair {position: absolute;  height: 300px;
-                    top: 410px;
-                    left: 480px;
+                    top: 440px;
+                    left: 520px;
         }   
 
         .woodtable {position: absolute;  height: 270px;
-                    top: 470px;
-                    left: 550px;}   
+                    top: 500px;
+                    left: 620px;}   
         .window {position: absolute;  height: 300px;
                     top: 100px;
-                    left: 550px;} 
+                    left: 600px;} 
         .woodstick {position: absolute;  height: 300px; width: 80px;
                     } 
         
         .key {position: absolute;  height: 70px;
                     top: 290px;
-                    left: 610px;
+                    left: 650px;
         }   
+        
+
+        .trashbin {position: absolute;  height: 200px;
+                    top: 420px;
+                    left: 1350px;
+        } 
+        
+        .hanger {position: absolute;  height: 350px; 
+                    top: 260px;
+                    left: 330px;
+        }  
+
+
+
+        .carpet {position: absolute;  height: 150px; width: 300px;
+                    top: 570px;
+                    left: 1120px;
+        }       
 
 
 
@@ -85,20 +101,22 @@
             border: 10px solid rgb(49, 47, 47);}
 
         .woodstick:nth-child(4){top: 40px;
-                    left: 670px;
+                    left: 720px;
                     transform: rotate(-100deg);}
 
         .woodstick:nth-child(3){top: 100px;
-                    left: 660px;
+                    left: 710px;
                     transform: rotate(-80deg);}
                     
         .woodstick:nth-child(2){top: 140px;
-                    left: 650px;
+                    left: 700px;
                     transform: rotate(85deg);}
 
          .woodstick:nth-child(1){top: 180px;
-                    left: 670px;
-                    transform: rotate(95deg);}       
+                    left: 720px;
+                    transform: rotate(95deg);}    
+                    
+       
     </style>
 
 
@@ -132,9 +150,16 @@
             <img src="./img/pixel/woodstick.png"alt = "판자" class="woodstick">
             <img src="./img/pixel/woodstick.png"alt = "판자" class="woodstick">
             <img src="./img/pixel/woodstick.png"alt = "판자" class="woodstick">
-
          </div>
-
+        <div>
+            <img src="./img/pixel/trashbin.png" alt ="쓰레기통" class="trashbin">
+         </div>        
+        <div>
+            <img src="./img/pixel/hanger.png" alt ="옷걸이" class="hanger">
+         </div>            
+        <div>
+            <img src="./img/pixel/carpet.png" alt ="카펫" class="carpet">
+         </div>   
 
     </section>
 
