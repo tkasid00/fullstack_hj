@@ -17,8 +17,10 @@ class Parent7  extends Object{
 	   int x = 200;
 	   public Child7() { super(); }
 	   @Override  void method() { System.out.println("Child Method"); }
+	   //대체 메서드
+	   void papaMethod() {super.method();}
 	}
-////////////////////////////////////////////////////////////////////////////	
+//////////////////////////////////////////////////////////////////////////
 	public class PolyEx005 {
 	   public static void main(String[] args) {
 	      Parent7 p = new Child7();     
@@ -32,5 +34,12 @@ class Parent7  extends Object{
 	      p.method();  // Q6. 출력되는 내용     >Child Method(오버라이드)
 	      System.out.println("c.x = " + c.x);   // Q7. 출력되는 내용  >c.x = 200
 	      c.method();   // Q8. 출력되는 내용   >Child Method
+
+	      // Q9. 메인에서 부모 메서드 호출
+//	      ((Parent7)p).method(); -> 오버라이드로 덮어씌워진 메서드 직접 호출 불가
+	      //void papaMethod() {super.method();} 자식 클래스에 대체 메서드 생성해서 타입캐스팅 해야됨!
+	      c.papaMethod();
+	      ((Child7)p).papaMethod();
+	      
 	   }
 	}

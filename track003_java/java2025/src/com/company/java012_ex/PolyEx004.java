@@ -3,9 +3,9 @@ package com.company.java012_ex;
 /*
  		Object
  		  ↑
- 		 Papa{money = 10000, sing()}
+ 		 Papa{money = 10000, sing(GOD)}
  		  ↑
- 		 Son{money = 1500, @sing()}-{money = 10000, ----}
+ 		 Son{money = 1500, @sing(빅뱅)}-{money = 10000, ----}
  */
 
 class Papa extends Object{  
@@ -29,14 +29,14 @@ class Papa extends Object{
 	      //	>부모 = 자식 / 업캐스팅 / 타입캐스팅x 
 	      // Q4. 인스턴스화한 실제 메모리 빌려온그림
 	      //							   보장 범위 = 실제 생성 범위 
-	      //	>mypapa : {money = 10000, sing()}  =  1000번지{money = 1500, [@sing()}-{money = 10000,] sing()} <[여기만 만들어짐]
+	      //	>mypapa : {money = 10000, sing()}  =  1000번지{money = 1500, [@sing(빅뱅)}-{money = 10000,] ---} <[여기만 만들어짐]
 	      
 	      System.out.println(mypapa.money); // Q5.  출력   >10000
 	      mypapa.sing();  //Q6. 출력 >빅뱅-거짓말(오버라이드)
 	      
 	       //Q7. mypapa.money 를 이용해서  1500 출력되게 해주세요. 
 	      System.out.println(((Son)mypapa).money);
-//	      >mypapa : {money = 10000, sing()}  =  1000번지{money = 1500, [@sing()}-{money = 10000,] sing()} <[여기만 만들어짐]
+//	      >mypapa : {money = 10000, sing()}  =  1000번지{money = 1500, [@sing(빅뱅)}-{money = 10000,] ---} <[여기만 만들어짐]
 //												근데 	 money = 1500, 이건 청소한 채로 남아 있어서 타입캐스팅으로 사용 가능!     		
 
 	      	
