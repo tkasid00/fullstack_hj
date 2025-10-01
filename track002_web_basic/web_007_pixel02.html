@@ -85,17 +85,15 @@
                     left: 780px;
         }       
 
-
-
         .underline{ margin: 30px; width: 1200px ;
                      border: 3px solid;        margin: 0 auto;
                      height: 120px;
                      background-color: rgb(39, 37, 37);
         }
-        .boxis { display: flex; /* 박스들을 가로로 배치 */ 
+        .slots { display: flex; /* 박스들을 가로로 배치 */ 
                 flex-direction: row; justify-content: space-between; 
             } 
-        .box { margin: 10px; padding: 10px; 
+        .slot { margin: 10px; padding: 10px; 
             border: 5px solid; width: 120px; height: 100px;
             background-color: rgb(63, 58, 58);
             border: 10px solid rgb(49, 47, 47);}
@@ -118,6 +116,11 @@
                     
        
     </style>
+
+    <script>
+        window.addEventListener("load", function(){});
+
+    </script>
 
 
 </head>
@@ -145,10 +148,10 @@
                         </div>
 
                         <div>
-                            <img src="./img/pixel/woodstick.png"alt = "판자" class="woodstick">
-                            <img src="./img/pixel/woodstick.png"alt = "판자" class="woodstick">
-                            <img src="./img/pixel/woodstick.png"alt = "판자" class="woodstick">
-                            <img src="./img/pixel/woodstick.png"alt = "판자" class="woodstick">
+                            <img src="./img/pixel/woodstick.png"alt = "판자" class="woodstick" id="woodstick1">
+                            <img src="./img/pixel/woodstick.png"alt = "판자" class="woodstick" id="woodstick2">
+                            <img src="./img/pixel/woodstick.png"alt = "판자" class="woodstick" id="woodstick3">
+                            <img src="./img/pixel/woodstick.png"alt = "판자" class="woodstick" id="woodstick4">
                         </div>
                         <div>
                             <img src="./img/pixel/trashbin.png" alt ="쓰레기통" class="trashbin">
@@ -167,15 +170,15 @@
     </section>
 
     <section class="underline">
-        <div class="boxis">
-            <div class="box">box1</div>
-            <div class="box">box2</div>
-            <div class="box">box3</div>
-            <div class="box">box4</div>
-            <div class="box">box5</div>
-            <div class="box">box6</div>
-            <div class="box">box7</div>
-            <div class="box">box8</div>
+        <div class="slots">
+            <div class="slot">slot1</div>
+            <div class="slot">slot2</div>
+            <div class="slot">slot3</div>
+            <div class="slot">slot4</div>
+            <div class="slot">slot5</div>
+            <div class="slot">slot6</div>
+            <div class="slot">slot7</div>
+            <div class="slot">slot8</div>
 
         </div>
 
