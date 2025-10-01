@@ -60,6 +60,7 @@
                     top: 60px;
                     left: 250px;} 
         .woodstick {position: absolute;  height: 300px; width: 80px;
+                    transition: transform 1s ease;
                     } 
         
         .key {position: absolute;  height: 70px;
@@ -79,11 +80,14 @@
         }  
 
 
-
         .carpet {position: absolute;  height: 150px; width: 300px;
                     top: 510px;
                     left: 780px;
         }       
+
+        .crowbar {position: absolute;  height: 100px; width: 300px;
+                    top: 510px;
+                    left: 780px;}
 
         .underline{ margin: 30px; width: 1200px ;
                      border: 3px solid;        margin: 0 auto;
@@ -117,8 +121,32 @@
        
     </style>
 
-    <script>
-        window.addEventListener("load", function(){});
+    <script> 
+        window.addEventListener("load", function(){
+            let woodstick1 = document.querySelector("#woodstick1");
+             woodstick1.addEventListener("click", function(){
+                woodstick1.style.transform= "rotate(95deg) translateX(250px)";
+                });           
+            let woodstick2 = document.querySelector("#woodstick2");
+             woodstick2.addEventListener("click", function(){
+                woodstick2.style.transform= "rotate(85deg) translateX(290px)";  
+                });
+            let woodstick3 = document.querySelector("#woodstick3");
+             woodstick3.addEventListener("click", function(){
+                woodstick3.style.transform= "rotate(-80deg) translateX(-370px)";
+                });
+            let woodstick4 = document.querySelector("#woodstick4");
+             woodstick4.addEventListener("click", function(){
+                woodstick4.style.transform= "rotate(-97deg) translateX(-420px)";                              
+             });
+
+
+            let carpet = document.querySelector("#carpet");
+             carpet.addEventListener("click", function(){
+                carpet.style.transform= "translateX(100px) translateY(100px)";                              
+             });
+
+        });
 
     </script>
 
@@ -130,12 +158,6 @@
             
                         <div>
                             <img src="./img/pixel/door.png" alt = "문" class="door">
-                        </div>
-                        <div>
-                            <img src="./img/pixel/woodchair.png"alt = "나무의자" class="woodchair">
-                        </div>
-                        <div>
-                            <img src="./img/pixel/woodtable.png"alt = "나무책상" class="woodtable">
                         </div>
                         <div>
                             <img src="./img/pixel/woodbox.png"alt = "나무협탁" class="woodbox">
@@ -154,13 +176,22 @@
                             <img src="./img/pixel/woodstick.png"alt = "판자" class="woodstick" id="woodstick4">
                         </div>
                         <div>
+                            <img src="./img/pixel/woodchair.png"alt = "나무의자" class="woodchair">
+                        </div>
+                        <div>
+                            <img src="./img/pixel/woodtable.png"alt = "나무책상" class="woodtable">
+                        </div>
+                        <div>
                             <img src="./img/pixel/trashbin.png" alt ="쓰레기통" class="trashbin">
                         </div>        
                         <div>
                             <img src="./img/pixel/hanger.png" alt ="옷걸이" class="hanger">
-                        </div>            
+                        </div>      
                         <div>
-                            <img src="./img/pixel/carpet.png" alt ="카펫" class="carpet">
+                            <img src="./img/pixel/crowbar.png" alt ="빠루" class="crowbar" id="crowbar">
+                        </div>      
+                        <div>
+                            <img src="./img/pixel/carpet.png" alt ="카펫" class="carpet" id="carpet">
                         </div>   
 
 
