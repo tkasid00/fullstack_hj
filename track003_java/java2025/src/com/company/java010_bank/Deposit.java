@@ -2,7 +2,9 @@ package com.company.java010_bank;
 
 import java.util.Scanner;
 
-public class Deposit {
+import com.company.bank005_interface.BankController;
+
+public class Deposit implements BankController {
 	
 	//멤버변수
 	private UserInfo userInfo;
