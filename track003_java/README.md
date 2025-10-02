@@ -604,6 +604,43 @@ for(int i =0; i<result.length;i++) {
 - 특히 2차원 배열은 행과 열의 크기를 혼동하기 쉬우므로 디버깅 시 배열의 구조를 시각적으로 그려보는 것도 도움이 됨. 
 </details>
 
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅15(exec() 결과값 미할당 오류)</summary>
+**문제점**  
+- controller[0].exec(users, 0);를 호출했으나 반환값을 변수 find에 저장하지 않음.
+- find를 참조하는 부분에서 값이 제대로 전달되지 않아 로직이 꼬이고 오류 발생.
+
+**[오류 코드]**  
+  ```java
+  controller[0].exec(users, 0);   // 반환값을 받지 않음
+  if(find == -1) {
+      System.out.println("유저 정보를 확인해 주세요");
+  }
+  controller[num].exec(users, find);  // find 값이 유효하지 않음
+
+  ```
+
+**[원인 분석]**  
+- exec() 메서드가 int 값을 반환하도록 정의되어 있지만 반환값을 무시하고 단순 호출만 하여 find 변수는 초기 상태 그대로 남음.
+- 로그인 여부나 이후 흐름 제어에 필요한 find값이 전달될 수 없음.
+
+**[해결 방안]**  
+- 반환값을 find에 저장하도록 수정.
+  ```java
+  find = controller[0].exec(users, 0);  // 반환값 저장
+  if(find == -1) {
+      System.out.println("유저 정보를 확인해 주세요");
+  }
+  controller[num].exec(users, find);    // 정상적으로 find 전달
+  ```
+
+**[느낀점]**  
+- 메서드가 반환값을 가지는지, 단순 실행인지 항상 확인해야 함.
+- 반환값을 저장하지 않으면 메서드 로직이 연결되지 않고 일회성에 불과한 것을 깨달음.
+- void와 return 타입 메서드 구분을 더 명확히 인식해야 한다고 느낌.
+</details>
+
 ---
 
 ## ✔참고문헌
