@@ -641,6 +641,111 @@ for(int i =0; i<result.length;i++) {
 - void와 return 타입 메서드 구분을 더 명확히 인식해야 한다고 느낌.
 </details>
 
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅15(exec() 결과값 미할당 오류)</summary>
+**문제점**  
+- controller[0].exec(users, 0);를 호출했으나 반환값을 변수 find에 저장하지 않음.
+- find를 참조하는 부분에서 값이 제대로 전달되지 않아 로직이 꼬이고 오류 발생.
+
+**[오류 코드]**  
+  ```java
+  controller[0].exec(users, 0);   // 반환값을 받지 않음
+  if(find == -1) {
+      System.out.println("유저 정보를 확인해 주세요");
+  }
+  controller[num].exec(users, find);  // find 값이 유효하지 않음
+
+  ```
+
+**[원인 분석]**  
+- exec() 메서드가 int 값을 반환하도록 정의되어 있지만 반환값을 무시하고 단순 호출만 하여 find 변수는 초기 상태 그대로 남음.
+- 로그인 여부나 이후 흐름 제어에 필요한 find값이 전달될 수 없음.
+
+**[해결 방안]**  
+- 반환값을 find에 저장하도록 수정.
+  ```java
+  find = controller[0].exec(users, 0);  // 반환값 저장
+  if(find == -1) {
+      System.out.println("유저 정보를 확인해 주세요");
+  }
+  controller[num].exec(users, find);    // 정상적으로 find 전달
+  ```
+
+**[느낀점]**  
+- 메서드가 반환값을 가지는지, 단순 실행인지 항상 확인해야 함.
+- 반환값을 저장하지 않으면 메서드 로직이 연결되지 않고 일회성에 불과한 것을 깨달음.
+- void와 return 타입 메서드 구분을 더 명확히 인식해야 한다고 느낌.
+</details>
+
+
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅16(메서드 파라미터 불일치 오류)</summary>
+
+**[문제점]**  
+- lvup() 메서드를 정의할 때 파라미터 6개 (int i, int happy, int reliance, int healthy, int clean, int lv)를 받도록 작성.
+- 그러나 다른 메서드(addHappy, addHealthy, addReliance, addClean)에서는 인자 없이 lvup();만 호출하여 메서드 호출 시 인자가 부족하다는 컴파일 오류 발생.
+
+**[오류 코드]**  
+```java
+// 정의
+void lvup(int i, int happy, int reliance, int healthy, int clean, int lv) {
+    if (lv < 5) {
+        if (happy >= 50 && reliance >= 50 && healthy >= 50 && clean >= 50) {
+            lv = 4;
+        } else if (happy >= 30 && reliance >= 30 && healthy >= 30 && clean >= 30) {
+            lv = 3;
+        } else if (happy >= 10 && reliance >= 10 && healthy >= 10 && clean >= 10) {
+            lv = 2;
+        } else {
+            lv = 1;
+        }
+    }
+}
+
+// 호출
+void addHappy(int add) {
+    happy += add;
+    lvup();   // 인자 부족으로 오류 발생
+}
+
+
+```
+
+**[원인 분석]**  
+- 메서드 선언부에서는 6개의 매개변수를 요구하지만, 호출부에서는 매개변수를 전달하지 않음.
+- happy, reliance, healthy, clean, lv는 이미 클래스 필드(멤버 변수)로 존재하기 때문에 매개변수로 다시 받을 필요가 없음.
+
+**[해결 방안]**  
+- lvup()을 인자 없는 메서드로 정의하고 내부에서 필드 값을 직접 사용하도록 수정.
+  ```java
+  void lvup() {
+      if (lv < 5) {
+          if (happy >= 50 && reliance >= 50 && healthy >= 50 && clean >= 50) {
+              lv = 4;
+          } else if (happy >= 30 && reliance >= 30 && healthy >= 30 && clean >= 30) {
+              lv = 3;
+          } else if (happy >= 10 && reliance >= 10 && healthy >= 10 && clean >= 10) {
+              lv = 2;
+          } else {
+              lv = 1;
+          }
+      }
+  }
+
+  void addHappy(int add) {
+      happy += add;
+      lvup();   
+  }
+
+  ```
+
+**[느낀점]**  
+- 멤버 변수가 이미 클래스 안에 있다면 굳이 매개변수로 중복 전달할 필요가 없음을 깨달음.
+- 메서드 정의 시 실제로 필요한 인자만 선언해야 호출 시 혼동이 줄어듦.
+- 객체 지향에서 필드와 메서드 관계를 더 명확히 이해할 필요성을 느낌. 
+</details>
+
 ---
 
 ## ✔참고문헌
