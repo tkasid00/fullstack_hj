@@ -746,6 +746,52 @@ void addHappy(int add) {
 - 객체 지향에서 필드와 메서드 관계를 더 명확히 이해할 필요성을 느낌. 
 </details>
 
+
+
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅17(빈 배열 조건문 처리 방식 오류)</summary>
+
+**[문제점]**  
+- 로그인 기능에서 보호자 등록 여부를 판별할 때 if(users.size()==0) 조건을 사용.
+- 조건 분기 처리 중 메시지가 섞여 출력되는 현상이 발생함.
+
+**[오류 코드]**  
+```java
+if(users.size()==0) {
+    System.out.println("보호자 등록이 필요합니다");
+} else {
+    for(int i=0; i<users.size(); i++) {
+        if(tempid.equals(users.get(i).getId()) && 
+           temppass.equals(users.get(i).getPass())) {
+            System.out.println("보호자 정보가 일치합니다");
+            find = i;
+            break;
+        } else {
+            System.out.println("ID와 비밀번호를 확인해 주세요\n신규 보호자 등록은 1번에서 가능합니다");
+            break;
+        }
+    }
+}
+
+
+```
+
+**[원인 분석]**  
+- size()==0은 단순히 숫자를 비교하는 방식이라 배열의 상태를 직관적으로 드러내지 못함.
+- 이로 인해 조건문 구조가 복잡할 때 등록 없음과 불일치 메시지가 혼합되는 혼선이 발생.
+
+**[해결 방안]**  
+- 판별 기준으로 isEmpty()를 대신 사용함.
+- isEmpty()는 List, Map, Set 등의 컬렉션에서 비어 있는 상태를 표현하기 위한 표준 메서드로 코드 의도를 명확하게 보여주며 로직 분리를 확실히 해줌.
+  ```java
+-	if(users.isEmpty()) {System.out.println("보호자 등록이 필요합니다"); 
+
+**[느낀점]**  
+- isEmpty()는 단순히 배열의 크기가 0인지 확인하는 코드보다 훨씬 의도를 명확히 드러냄.
+- 가독성 향상은 단순한 미관 문제가 아니라 로직 충돌(혼선)을 예방하는 실질적 수단임을 깨달음.
+- 조건문 설계 시 상태 판단 로직은 먼저 반복 로직은 나중이라는 순서를 지키는 것이 중요함.
+</details>
+
+
 ---
 
 ## ✔참고문헌
