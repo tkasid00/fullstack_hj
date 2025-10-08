@@ -144,7 +144,8 @@
 
 ### 1-3. 🎮 from Stray to Home (Java Console Project) (ver.interface)
 
-[![Watch the demo](https://img.youtube.com/vi/LvjvYhLRxfk/mqdefault.jpg)](https://youtu.be/LvjvYhLRxfk)
+[![Watch the video](https://img.youtube.com/vi/3VYnhNOxX_8/hqdefault.jpg)](https://youtu.be/3VYnhNOxX_8)
+
 
 👆 썸네일을 클릭하면 영상을 확인할 수 있습니다.
 
