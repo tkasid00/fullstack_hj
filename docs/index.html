@@ -223,52 +223,90 @@
 
                 /* 포폴페이지 작업 시작 시안02부터*/
 
-            .portcard {width: 280px; height: 250px; 
-                       /* border:3px solid #1a2a52; */
-                       padding: 20px; text-align: center;
-                       box-shadow: 4px 6px 12px rgba(0,0,0,0.3);
-                       background-image: linear-gradient(180deg, #d6c7f7, #c2d5f8);
-                       transform: rotate(-2deg);
-                       transform-origin: center center; 
-                       position: relative;
-                       margin-top: 10px;
-                       } 
-     
+            .portcard {
+            width: 280px;
+            height: 250px;
+            perspective: 1000px; 
+            cursor: pointer;
+            margin-top: 10px;
+            position: relative;
+            }
 
-            .portcard::before {  /*마스킹테이프 연출*/
-                        content: "";
-                        position: absolute;
-                        top: -12px;
-                        left: 50%;
-                        transform: translateX(-50%) rotate(-3deg);
-                        width: 60px;
-                        height: 20px;
-                        background: rgba(255,255,200,0.7);
-                        border: 1px dashed #ccc;
-                        }           
+            /* 카드 회전 */
+            .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            }
 
-            .portcard h4 {padding-bottom: 5px;
-                            font-family: 'nanumhippie';
-                            font-size: 25px; font-weight: bold;}     
 
-            .portcard p {justify-content: center;
-                        margin : 5px auto; 
-                        font-size: 20px;
-                        font-weight: bold;
-                        display: flex;
-                        flex-wrap: wrap; 
-                        gap: 10px;
-                        font-family: 'NanumBarunpenB';
-                        }  
+            .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            box-shadow: 4px 6px 12px rgba(0,0,0,0.3);
+            padding: 20px;
+            text-align: center;
+            transform-origin: center center;
+            font-family: 'NanumBarunpenB';
+            }
 
-            .portcard a {justify-content: center;
-                        text-decoration: none;
-                        background: #b791f3; color: #fff;
-                        padding: 4px 10px;
-                        border-radius: 20px; font-size: 20px;
-                        margin: 0px 30px;
-                        font-family: 'NanumBarunpenB';
-                        }
+            .card-front {
+            background-image: linear-gradient(180deg, #d6c7f7, #c2d5f8);
+            transform: rotate(-2deg);
+            }
+            .card-front::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 60px;
+            height: 20px;
+            background: rgba(255,255,200,0.7);
+            border: 1px dashed #ccc;
+            }
+
+            .card-back {
+            background-image: linear-gradient(180deg, #c2d5f8, #d6c7f7);
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            }
+
+            .portcard h4 {
+            padding-bottom: 5px;
+            font-family: 'nanumhippie';
+            font-size: 25px;
+            font-weight: bold;
+            }
+            .portcard p {
+            margin: 5px auto;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            }
+            .portcard a {
+            text-decoration: none;
+            background: #b791f3;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 20px;
+            margin: 0 30px;
+            }
+
+            /*클릭 시 카드 뒤집기 */
+            .portcard.flip .card-inner {
+            transform: rotateY(180deg);
+            }
 
 
                         /*여기는 시안01*/
@@ -524,26 +562,29 @@
                                         <br/>
                                         <br/>
                                         <br/>
-                                        <iframe width="540" height="295" src="https://www.youtube.com/embed/LvjvYhLRxfk?si=qHBw1Nt5pAmpyUgT" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/3VYnhNOxX_8?si=JcJqxFZ0tBAE5yfI" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    
                                     </div>
+                                        <div class="portexplain"><!--설명-->
+                                            <br/>
+                                            <br/>
+                                            <h5>🐾 from Stray to Home</h5>
+                                            <p>유기묘 임시 보호 과정을 주제로 한 Java 콘솔 기반 시뮬레이션 프로젝트입니다. </p>
+                                            <p>보호자의 시점에서 고양이의 상태를 관리하며 돌봄 활동을 체험할 수 있습니다.</p>
+                                            <p>단일 사용자 제어문 구조에서 출발해 배열 기반 다중 계정, 인터페이스 중심의 객체지향 구조로 발전하며 
+                                            <strong>구조화·확장성·상호작용</strong>을 강화해온 학습형 시리즈입니다.</p>
+                                            <br/>
+                                            <h5>🎯 주요 기능 요약</h5>
+                                            <p>- 보호자 등록 및 로그인 시스템</p>
+                                            <p>- 고양이 상태 수치 관리와 돌봄 활동</p>
+                                            <p>- 환경 개선, 레벨 변화, 랜덤 이벤트 시스템</p>
+                                            <br/>
+                                            <h6>👉 각 버전의 세부 기능과 시연 영상은 
+                                                <a href="https://github.com/tkasid00/fullstack_hj/tree/master/track004_portfolio/fromStraytoHome#readme" target="_blank">[README 페이지]</a>
+                                                에서 확인하실 수 있습니다.</h6>
+                                        </div>
 
-                                    <div class="portexplain"><!--설명-->
-                                        <br/>
-                                        <br/>
-                                        <h5>🐾 from Stray to Home</h5>
-                                        <p>유기묘 임시 보호 과정을 주제로 한 콘솔 기반 Java 프로젝트입니다.  </p>   
-                                        <p>보호자 등록과 고양이 돌봄 활동을 통해 상태 변화를 체험할 수 있습니다. </p>
-                                        <br/>
-                                        <h5>🎯 주요 기능 요약 </h5>
-                                        <p>- 보호자 계정 등록 및 로그인 </p>
-                                        <p>- 고양이 상태(행복, 건강, 위생, 신뢰) 관리 </p>
-                                        <p>- 돌봄 활동 및 환경 개선 시스템</p>
-                                        <br/>
-                                        <h6>👉 발전 과정과 단계별 시연 영상은
-                                            <a href="https://github.com/tkasid00/fullstack_hj/tree/master/track004_portfolio/fromStraytoHome#readme" target="_blank">[README 페이지]</a>
-                                               에서 보실 수 있습니다.</h6>
-
-                                    </div>     
+    
 
                                 </div>
 
@@ -557,21 +598,50 @@
 
                                 <div class="row g-4">
                                     <div class="col-6">
-                                    <div class="portcard">
-                                        <h4>🐾from Stray to Home</h4>
-                                        <p>Java를 통해 구현한</p> 
-                                        <p>작은 임시보호 체험 시뮬레이션!</p> 
-                                        <p>다양한 활동을 통해</p>
-                                        <p>고양이의 삶을 바꿔주세요</p> 
-                                        <p class="portlink"><a href="https://github.com/tkasid00/fullstack_hj/tree/master/track004_portfolio/fromStraytoHome#readme" target="_blank">리드미에서 확인하기</a></p>
+                                        <div class="portcard">
+                                        <div class="card-inner">
+                                            <div class="card-front">
+                                                <h4>🐾 from Stray to Home</h4>
+                                                <p>Java를 통해 구현한</p>
+                                                <p>작은 임시보호 체험 시뮬레이션!</p>
+                                                <p>다양한 활동을 통해</p>
+                                                <p>고양이의 삶을 바꿔주세요</p>
+                                                <p class="portlink">
+                                                    <a href="https://github.com/tkasid00/fullstack_hj/tree/master/track004_portfolio/fromStraytoHome#readme" target="_blank">
+                                                    리드미에서 확인하기
+                                                    </a>
+                                                 </p>
+                                            </div>
+
+                                            <div class="card-back">
+                                                <h4>💡 기술 스택</h4>
+                                                <p>Language : Java</p>
+                                                <p>UI : Console (Text UI)</p>
+                                                <p>Structure : Interface / Class</p>
+                                                <p>Concept : OOP, Control & Loop</p>
+                                            </div>
+                                        </div>
+                                        </div>
                                     </div>
 
-                                    </div>
-                                    <div class="col-6"><div class="portcard">포트폴리오02</div></div>
-                                    <div class="col-6"><div class="portcard">포트폴리오03</div></div>
-                                    <div class="col-6"><div class="portcard">포트폴리오04</div></div>
-                                    <div class="col-6"><div class="portcard">포트폴리오05</div></div>
-                                    <div class="col-6"><div class="portcard">포트폴리오06</div></div>
+                                    <div class="col-6"><div class="portcard"><div class="card-inner"><div class="card-front"><p>포트폴리오02</p></div><div class="card-back"><p>(❁´◡`❁)</p></div></div></div></div>
+                                    <div class="col-6"><div class="portcard"><div class="card-inner"><div class="card-front"><p>포트폴리오03</p></div><div class="card-back"><p>╰(*°▽°*)╯</p></div></div></div></div>
+                                    <div class="col-6"><div class="portcard"><div class="card-inner"><div class="card-front"><p>포트폴리오04</p></div><div class="card-back"><p>ᓚᘏᗢ</p></div></div></div></div>
+                                    <div class="col-6"><div class="portcard"><div class="card-inner"><div class="card-front"><p>포트폴리오05</p></div><div class="card-back"><p>(☞ﾟヮﾟ)☞</p></div></div></div></div>
+                                    <div class="col-6"><div class="portcard"><div class="card-inner"><div class="card-front"><p>포트폴리오06</p></div><div class="card-back"><p>☜(ﾟヮﾟ☜)</p></div></div></div></div>
+
+
+                                    <script>
+                                        let cards = document.querySelectorAll('.portcard');
+
+                                        for (let i = 0; i < cards.length; i++) {
+                                        cards[i].addEventListener('click', function() {
+                                            cards[i].classList.toggle('flip');
+                                        });
+                                        }
+                                    </script>
+
+
                                 </div>
 
                                 
