@@ -1,5 +1,12 @@
- * { margin:0; padding:0; box-sizing: border-box;}
+           * { margin:0; padding:0; box-sizing: border-box;}
            body {background-color: rgb(29, 27, 27); overflow: hidden;}
+
+
+           .container {
+                        /* ✅ Bootstrap 영향 제거용 */
+                        width: 100%;
+                        max-width: none;
+                        flex-shrink: 0;}
 
            .container.first {border-radius: 10px; 
                         border-bottom: 2px solid #FFF8DC;
@@ -9,13 +16,10 @@
                         width: 700px; height: 900px;
                         background-color:#2C4F4F;
                         position: relative;
-
                         border-left:50px solid #162727;
                         border-bottom-left-radius: 20px;
-
-                        z-index: 20;
-
                         }
+
 
             .container.second{border-radius: 15px; 
                         margin: 50px auto;
@@ -25,7 +29,8 @@
                         box-shadow:0 0 5px rgba(0,0,0,0.5);
                         position: relative;
                         border-bottom-left-radius: 20px;
-                        z-index: 20;}
+                        flex-shrink: 0;
+                    }       
             
             .container.third{border-radius: 15px; 
                         margin: 100px auto;
@@ -35,7 +40,8 @@
                         box-shadow:0 0 5px rgba(0,0,0,0.5);
                         position: relative;
                         border-bottom-left-radius: 20px;
-                        z-index: 20;}            
+                        flex-shrink: 0;
+                        }            
 
             .row .page { background-color: white;  
                      border-radius:15px; padding:20px; 
@@ -69,9 +75,7 @@
                 right: -100px;
                 display: flex;
                 flex-direction: column;
-                gap: 12px;
-                z-index: 1; /* 낮게 유지 */
-                
+                gap: 12px;            
                 
             }
             
@@ -84,20 +88,24 @@
                 transform: rotate(-3deg);
                 width: 120px;
                 text-align: center;
+                
             }
             
             .postit-note:nth-child(1) {
                 background-color:rgb(230, 230, 76);   
-
+                position: relative;
             }
             .postit-note:nth-child(2) {
                 background-color:rgb(96, 96, 214); 
+                position: relative;
                 }
             .postit-note:nth-child(3) {
                 background-color:rgb(211, 101, 119); 
+                position: relative;
                 }
             .postit-note:nth-child(4) {
                 background-color:rgb(5, 146, 165); 
+                position: relative;
                 }        
 
             .postit-note button{ font-weight: bold; 
@@ -135,7 +143,6 @@
                    }
 
             .coverpage {text-align: center;}     
-
             .name {font-family: 'NanumSquareEB';
                     font-size : 38px;
                     text-align: center;
@@ -143,7 +150,6 @@
                     font-weight: bold;
                      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
                     }      
-                    
             h4.coverExplain {
                 color: #3C91E6;
                 font-weight: bold;
@@ -333,62 +339,42 @@
 
                 @font-face {
                 font-family: 'nanumdiligence';
-                src: url(./font/나눔손글씨\ 성실체.ttf) format('truetype');
+                src: url('font/NanumSungsil.ttf') format('truetype');
                 }
                 @font-face {
                 font-family: 'nanumhippie';
-                src: url(./font/나눔손글씨\ 바른히피.ttf) format('truetype');
+                src: url('font/NanumHippie.ttf') format('truetype');
                 }
                 @font-face {
                 font-family: 'NanumGothic';
-                src: url(./font/NanumGothic.ttf) format('truetype');
+                src: url('font/NanumGothic.ttf') format('truetype');
                 }
                 @font-face {
                 font-family: 'NanumGothicExtraBold';
-                src: url(./font/NanumGothicExtraBold.ttf) format('truetype');
+                src: url('font/NanumGothicExtraBold.ttf') format('truetype');
                 }
                 @font-face {
                 font-family: 'MaruBuri-SemiBold';
-                src: url(./font/MaruBuri-SemiBold.ttf) format('truetype');
+                src: url('font/MaruBuri-SemiBold.ttf') format('truetype');
                 }
                 @font-face {
                 font-family: 'MaruBuri-Regular';
-                src: url(./font/MaruBuri-Regular.ttf) format('truetype');
+                src: url('font/MaruBuri-Regular.ttf') format('truetype');
                 }
                 
                 @font-face {
                 font-family: 'NanumSquare_acB';
-                src: url(./font/NanumSquare_acB.ttf) format('truetype');
+                src: url('font/NanumSquare_acB.ttf') format('truetype');
                 }
                 @font-face {
                 font-family: 'NanumSquareEB';
-                src: url(./font/NanumSquareEB.ttf) format('truetype');
+                src: url('font/NanumSquareEB.ttf') format('truetype');
                 }
                 @font-face {
                 font-family: 'NanumBarunpenB';
-                src: url(./font/NanumBarunpenB.otf) format('truetype');
+                src: url('font/NanumBarunpenB.ttf') format('truetype');
                 }
 
-                .p-intro .postit-note:nth-child(1) {
-                z-index: 100;
-                position: relative;
-                }
-                .p-intro .postit-note:nth-child(2){
-                z-index: 90;
-                position: relative;
-                }
-
-                .p-intro .postit-note:nth-child(3) {
-                z-index: 80;
-                position: relative;
-                }
-
-                .p-intro .postit-note:nth-child(4){
-                z-index: 70;
-                position: relative;
-                }
-
-                
                 /* 슬라이드 1: Cover가 가장 앞 */
                 .container.first .postit-note:nth-child(1) { z-index: 100; }
                 .container.first .postit-note:nth-child(2) { z-index: 90; }

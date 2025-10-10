@@ -20,6 +20,12 @@
            * { margin:0; padding:0; box-sizing: border-box;}
            body {background-color: rgb(29, 27, 27); overflow: hidden;}
 
+           .backpage {  position: relative; /* stacking context 시작점 */
+                      width: fit-content;
+                     margin: 0 auto;
+                      z-index: 0;
+                    }
+
            .container.first {border-radius: 10px; 
                         border-bottom: 2px solid #FFF8DC;
                         border-right: 2px solid #FFF8DC;
@@ -27,16 +33,9 @@
                         padding: 30px;
                         width: 700px; height: 900px;
                         background-color:#2C4F4F;
-                        position: relative;
-
                         border-left:50px solid #162727;
                         border-bottom-left-radius: 20px;
-
-                        z-index: 20;
-
-                        }
-            /* .container.second{ background-color: white;  
-            border-radius:20px; padding:20px; box-shadow:0 0 5px rgba(0,0,0,0.5);} */ 
+                        z-index: 20;}
 
             .container.second{border-radius: 15px; 
                         margin: 50px auto;
@@ -108,17 +107,20 @@
             }
             
             .postit-note:nth-child(1) {
-                background-color:rgb(230, 230, 76);   
+                background-color:rgb(230, 230, 76);   position: relative;
 
             }
             .postit-note:nth-child(2) {
-                background-color:rgb(96, 96, 214); 
+                background-color:rgb(96, 96, 214);   position: relative;
+
                 }
             .postit-note:nth-child(3) {
-                background-color:rgb(211, 101, 119); 
+                background-color:rgb(211, 101, 119);   position: relative;
+
                 }
             .postit-note:nth-child(4) {
-                background-color:rgb(5, 146, 165); 
+                background-color:rgb(5, 146, 165);   position: relative;
+
                 }        
 
             .postit-note button{ font-weight: bold; 
@@ -134,7 +136,8 @@
                     background: white;
                     border-radius: 50%;
                     animation: twinkle 2s infinite ease-in-out;
-                    }
+                    z-index: -1;    
+                }
 
                     @keyframes twinkle {
                     0%, 100% { opacity: 0.2; }
@@ -389,25 +392,6 @@
                 @font-face {
                 font-family: 'NanumBarunpenB';
                 src: url(./font/NanumBarunpenB.otf) format('truetype');
-                }
-
-                .p-intro .postit-note:nth-child(1) {
-                z-index: 100;
-                position: relative;
-                }
-                .p-intro .postit-note:nth-child(2){
-                z-index: 90;
-                position: relative;
-                }
-
-                .p-intro .postit-note:nth-child(3) {
-                z-index: 80;
-                position: relative;
-                }
-
-                .p-intro .postit-note:nth-child(4){
-                z-index: 70;
-                position: relative;
                 }
 
                 
