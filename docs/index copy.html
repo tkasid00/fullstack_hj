@@ -146,6 +146,42 @@
          /* 여기까지가 레이아웃 기초 완료! */
 
 
+                 /* 표꾸 표지꾸미기 */
+
+            .intro {margin-top: 50px;}   
+            .cover {border-radius: 10px; width: 320px; padding: 10px; margin : 0 20px; 
+                    box-shadow: 0 0 20px rgba(214, 212, 212, 0.247);
+                    background-color:rgba(51, 39, 8, 0.055);                    
+                    /* position: absolute;: 30px; */
+                   }
+
+            .coverpage {text-align: center;}     
+
+            .name {font-family: 'NanumSquareEB';
+                    color: #212324;
+                    font-size : 38px;
+                     text-shadow: 0 0 2px #ffffff28;
+                    text-align: center;
+                    }      
+   
+            .coverExplain {font-family: 'NanumSquareEB';
+                            color: #1b1c1d;
+                            font-size : 25px;
+                            padding-left: 20px;
+                            padding-top: 10px;
+                            text-shadow: 0 0 2px #ffffff28;
+
+                    }        
+            .coverExplainUnder a {color: #1b1c1d;
+                            font-size : 20px;
+                            padding-left: 20px;
+                            text-decoration: none;
+                            text-shadow: 0 0 2px #ffffff28;
+                            font-family: 'NanumSquareEB'
+                            }  
+
+
+
                 /* 자소설...너무힘드러따...... */
 
             .card .whoiam {font-family: 'NanumGothic';}     
@@ -307,11 +343,11 @@
 
                 @font-face {
                 font-family: 'nanumdiligence';
-                src: url(./font/나눔손글씨\ 성실체.ttf) format('truetype');
+                src: url(./font/NanumSungsil.ttf) format('truetype');
                 }
                 @font-face {
                 font-family: 'nanumhippie';
-                src: url(./font/나눔손글씨\ 바른히피.ttf) format('truetype');
+                src: url(./font/NanumHippie.ttf) format('truetype');
                 }
                 @font-face {
                 font-family: 'NanumGothic';
@@ -343,49 +379,7 @@
                 src: url(./font/NanumBarunpenB.otf) format('truetype');
                 }
 
-                .p-intro .postit-note:nth-child(1) {
-                z-index: 100;
-                position: relative;
-                }
-                .p-intro .postit-note:nth-child(2){
-                z-index: 90;
-                position: relative;
-                }
 
-                .p-intro .postit-note:nth-child(3) {
-                z-index: 80;
-                position: relative;
-                }
-
-                .p-intro .postit-note:nth-child(4){
-                z-index: 70;
-                position: relative;
-                }
-
-                
-                /* 슬라이드 1: Cover가 가장 앞 */
-                .container.first .postit-note:nth-child(1) { z-index: 100; }
-                .container.first .postit-note:nth-child(2) { z-index: 90; }
-                .container.first .postit-note:nth-child(3) { z-index: 80; }
-                .container.first .postit-note:nth-child(4) { z-index: 70; }
-
-                /* 슬라이드 2: AboutMe가 가장 앞 */
-                .p-about .postit-note:nth-child(2) { z-index: 100; }
-                .p-about .postit-note:nth-child(1) { z-index: 90; }
-                .p-about .postit-note:nth-child(3) { z-index: 80; }
-                .p-about .postit-note:nth-child(4) { z-index: 70; }
-
-                /* 슬라이드 3: Gallery가 가장 앞 */
-                .p-gallery .postit-note:nth-child(3) { z-index: 100; }
-                .p-gallery .postit-note:nth-child(2) { z-index: 90; }
-                .p-gallery .postit-note:nth-child(1) { z-index: 80; }
-                .p-gallery .postit-note:nth-child(4) { z-index: 70; }
-
-                /* 슬라이드 4: Contact가 가장 앞 */
-                .p-contact .postit-note:nth-child(4) { z-index: 100; }
-                .p-contact .postit-note:nth-child(3) { z-index: 90; }
-                .p-contact .postit-note:nth-child(2) { z-index: 80; }
-                .p-contact .postit-note:nth-child(1) { z-index: 70; }
 
     </style>
 
@@ -443,17 +437,17 @@
                         </div>
 
                                                   <!-- 포스트잇 -->
-                                    <div class="postit-wrapper  p-intro">
-                                            <div class="postit-note p1">
+                                    <div class="postit-wrapper">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="0">Cover</button>
                                             </div>
-                                            <div class="postit-note p2">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="1">AboutMe</button>
                                             </div>
-                                            <div class="postit-note p3">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="2">Gallery</button>
                                             </div>
-                                            <div class="postit-note p4">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="3">Contact</button>
                                             </div>
                                     </div>
@@ -531,21 +525,20 @@
                     </div>
 
                                                   <!-- 포스트잇 -->
-                                    <div class="postit-wrapper  p-about">
-                                            <div class="postit-note p1">
+                                    <div class="postit-wrapper">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="0">Cover</button>
                                             </div>
-                                            <div class="postit-note p2">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="1">AboutMe</button>
                                             </div>
-                                            <div class="postit-note p3">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="2">Gallery</button>
                                             </div>
-                                            <div class="postit-note p4">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="3">Contact</button>
                                             </div>
                                     </div>
-
 
                 </section>
 
@@ -658,21 +651,20 @@
                     </div>
 
                                                   <!-- 포스트잇 -->
-                                    <div class="postit-wrapper  p-gallery">
-                                            <div class="postit-note p1">
+                                    <div class="postit-wrapper">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="0">Cover</button>
                                             </div>
-                                            <div class="postit-note p2">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="1">AboutMe</button>
                                             </div>
-                                            <div class="postit-note p3">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="2">Gallery</button>
                                             </div>
-                                            <div class="postit-note p4">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="3">Contact</button>
                                             </div>
                                     </div>
-
 
                                 
                 </section>
@@ -776,21 +768,20 @@
                     </div>
 
                                                   <!-- 포스트잇 -->
-                                    <div class="postit-wrapper  p-contact">
-                                            <div class="postit-note p1">
+                                    <div class="postit-wrapper">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="0">Cover</button>
                                             </div>
-                                            <div class="postit-note p2">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="1">AboutMe</button>
                                             </div>
-                                            <div class="postit-note p3">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="2">Gallery</button>
                                             </div>
-                                            <div class="postit-note p4">
+                                            <div class="postit-note">
                                                 <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="3">Contact</button>
                                             </div>
                                     </div>
-
 
                 </section>
             

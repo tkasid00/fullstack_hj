@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="starfield" aria-hidden="true"></div>
+
+
+                 <section class="container third">
+
+                    <div class="column">
+
+
+                        <div class="page col-sm-2">
+                            <div class="third-page"></div>
+                        </div>
+
+                        <div class="page col-sm-10">
+                            <div class="third-page">
+
+
+
+                            <!-- contact  - form  text-start   text-center   text-end  -->
+                                    <section  class="contact m-5">
+                                        <div class="container sendm">
+                                            <h3 class="text-center">Contact Me</h3>
+                                            <script type="text/javascript"
+                                                    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+                                            </script>
+                                            <script type="text/javascript">
+                                                (function(){
+                                                    emailjs.init({
+                                                        publicKey: "9OtYly-E0cRHC9E3T",  
+                                                    });
+                                                })();
+
+                                                function sendEmail(e){
+                                                    e.preventDefault();   // 기본 form 전송 막기
+
+                                                    var templateParams = {
+                                                        name: document.getElementById("name").value,
+                                                        title: document.getElementById("title").value,
+                                                        message: document.getElementById("message").value
+                                                    };
+
+                                                    emailjs.send('tkasid00', 'template_r04ie29', templateParams).then(
+                                                        (response) => {
+                                                            alert("메일이 성공적으로 전송되었습니다 ✅");
+                                                            console.log('SUCCESS!', response.status, response.text);
+                                                        },
+                                                        (error) => {
+                                                            alert("메일 전송을 실패했습니다 ❌");
+                                                            console.log('FAILED...', error);
+                                                        },
+                                                    );
+                                                }
+                                            </script>
+
+
+                                           <form onsubmit="sendEmail(event)">
+                                            <div class="mb-3 mt-3">
+                                                <label for="name" class="form-label">이름:</label>
+                                                <input type="text" class="form-control" id="name" 
+                                                    placeholder="성함을 알려주세요" name="name">
+                                            </div>
+
+                                            <div class="mb-3 mt-3">
+                                                <label for="title" class="form-label">제목:</label>
+                                                <input type="text" class="form-control" id="title" 
+                                                    placeholder="제목을 적어주세요" name="title">
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="message">내용:</label>
+                                                <textarea class="form-control" rows="5" id="message" 
+                                                        placeholder="문의하실 내용을 적어주세요" name="message"></textarea>            
+                                            </div>
+
+                                            <div class="mb-3 text-end">
+                                                <button type="submit" class="btn btn-success">메일 보내기</button>
+                                            </div>
+                                        </form>
+                                        </div><!--end container-->
+                                    </section>
+
+                                <!-- <div> 
+                                    <img src="./img/portfolio/balckcat.png" class="cat">
+                                </div>
+                                
+                                <div> 
+                                    <img src="./img/portfolio/flower.png" class="flower">
+                                </div> -->
+
+
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <nav class="postit-wrapper p-contact">
+                        <div class="postit-note"><a href="index.html">Cover</a></div>
+                        <div class="postit-note"><a href="about.html">AboutMe</a></div>
+                        <div class="postit-note"><a href="gallery.html">Gallery</a></div>
+                        <div class="postit-note active"><a href="contact.html">Contact</a></div>
+                    </nav>
+
+
+                </section>
+            
+
+  <script src="script.js"></script>
+</body>
+</html>
