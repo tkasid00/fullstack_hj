@@ -14,8 +14,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
-    <!--z-index 가짜페이지10 container20 page40     -->>
-
     <style>
            * { margin:0; padding:0; box-sizing: border-box;}
            body {background-color: rgb(29, 27, 27); overflow: hidden;}
@@ -61,19 +59,17 @@
                 margin: 50px auto;
                 }
 
-            /* 가짜 페이지(backpage): container와 동일 좌표 */
             .backpage.second {
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                border: 10px solid transparent; /* 테스트용, 나중에 제거 가능 */
-                background: rgba(255, 255, 255, 0.05);
+                /* border: 10px solid transparent;  */
+                /* background: rgba(255, 255, 255, 0.05); */
                 z-index: 10; /* container보다 아래 */
                 }
 
-            /* 실제 페이지(container.second): absolute 제거 → flow 유지 */
             .container.second {
                 position: relative;  /* ✅ absolute → relative */
                 width: 100%;
@@ -85,7 +81,7 @@
                 border-bottom-left-radius: 20px;
                 z-index: 20;
                 top: 0; 
-                margin: 0 auto; /* ✅ 중앙 정렬 */
+                margin: 0 auto; 
                 
                 }
 
@@ -103,14 +99,14 @@
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    border: 10px solid transparent;
-                    background: rgba(255, 255, 255, 0.05);
+                    /* border: 10px solid transparent; */
+                    /* background: rgba(255, 255, 255, 0.05); */
                     z-index: 10;
                     }
 
-                /* 실제 페이지(container.third): absolute 제거 → flow 유지 */
+
                 .container.third {
-                    position: relative;  /* ✅ absolute → relative */
+                    position: relative;  
                     width: 100%;
                     height: 100%;
                     border-radius: 15px;
@@ -149,10 +145,6 @@
                 border-bottom:  1px solid #5a5353;
             transform: translateX(-10px);}
 
-            .page.col-sm-6 {
-            position: relative;  /* ✅ 부모 넘을수 없음. 둘다 조절해서 잘 끼워봐야징 */
-            z-index: 20;
-             }
 
             /*  포스트잇 파트  */
             .postit-wrapper {
@@ -160,24 +152,36 @@
                 display: flex;
                 flex-direction: column;
                 gap: 12px;
-                z-index: 15; 
             }
             
             .postit-wrapper.first{
                 top: 30px;
                 right: -100px;
+                z-index: 15; 
             }
             .postit-wrapper.second{
                 top: 30px;
                 right: 140px;
+                z-index: 30; 
+                transform-origin: top right;
             }
             .postit-wrapper.third{
                 top: 30px;
                 right: 130px;
+                z-index: 15; 
 
             }
-
-
+            .postit-wrapper.thirty{
+                top: 30px;
+                right: -110px;
+                z-index: 15; 
+            }
+            .postit-wrapper.forthy{
+                top: 30px;
+                right: -110px;
+                z-index: 15; 
+            }
+            
             .postit-note {
                 padding: 8px 12px;
                 border: 1px solid #ccc;
@@ -189,7 +193,7 @@
             }
             
             .postit-note:nth-child(1) {
-                background-color:rgb(230, 230, 76);   position: relative;
+                background-color:rgb(230, 230, 76);   position: relative; 
 
             }
             .postit-note:nth-child(2) {
@@ -205,10 +209,42 @@
             .postit-note button{ font-weight: bold; 
                                     font-family:NanumBarunpenB;
                                     font-size: 20px;}    
+                 
+            /*gallery 포스트잇 위치+크기 개별 조정*/
+            .postit-wrapper.second .postit-note {
+                    width: 110px;
+                    }
+            .postit-wrapper.second .postit-note button[data-bs-slide-to="1"] {
+             transform: translateX(-10px); /* 왼쪽으로 살짝 이동 */
+            }   
+            .postit-wrapper.second .postit-note button[data-bs-slide-to="0"] {
+             transform: translateX(-5px); /* 왼쪽으로 살짝 이동 */
+            }  
+            .postit-wrapper.second .postit-note button[data-bs-slide-to="3"] {
+             transform: translateX(-5px); /* 왼쪽으로 살짝 이동 */
+            }  
+            
+            .postit-wrapper.second .postit-note:nth-child(3) {
+                 transform: rotate(-3deg) translateX(-10px); width: 120px;
+                    }    
+            .postit-wrapper.second .postit-note:nth-child(1) {
+                 transform: rotate(-3deg); 
+                    }            
+            .postit-wrapper.second .postit-note:nth-child(2) {
+                 transform: rotate(-3deg); 
+                    }        
+            .postit-wrapper.second .postit-note:nth-child(4) {
+                 transform: rotate(-3deg); 
+                    }        
 
+            .postit-wrapper.thirty .postit-note:nth-child(1)   { opacity: 0;}     
+            .postit-wrapper.thirty .postit-note:nth-child(3)   { opacity: 0;}   
+            .postit-wrapper.thirty .postit-note:nth-child(4)   { opacity: 0;}
 
-                
-
+            .postit-wrapper.forthy .postit-note:nth-child(1)   { opacity: 0;} 
+            .postit-wrapper.forthy .postit-note:nth-child(2)   { opacity: 0;} 
+            .postit-wrapper.forthy .postit-note:nth-child(3)   { opacity: 0;} 
+            
 
                 /* 전체 배경 애니메이션 :  별빛 효과 */
                 .star {
@@ -232,39 +268,94 @@
 
                  /* 표꾸 표지꾸미기 */
 
-            .intro {margin-top: 50px;}   
-            .cover {border-radius: 10px; width: 320px; padding: 10px; margin : 0 20px; 
+                
+            .intro { padding-bottom: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center; 
+                    height: 100%;
+                    /* transform: translateY(0px);  */
+                    }
+            /* .cover {border-radius: 10px; width: 320px; padding: 10px; margin : 0 20px; 
                     box-shadow: 0 0 20px rgba(214, 212, 212, 0.247);
-                    background-color:rgba(51, 39, 8, 0.055);                    
-                    /* position: absolute;: 30px; */
-                   }
+                    background-color:rgba(51, 39, 8, 0.055);                   
+                   } */
+            .coverpage img {
+                text-align: center;
+                width: 320px; padding: 10px; margin : 0 20px; 
+                border-radius: 10px;
+                box-shadow:
+                    0 0 15px rgba(0, 180, 200, 0.3),   /* 청록빛 글로우 */
+                    0 0 30px rgba(0, 100, 120, 0.2);   /* 바깥쪽 은은한 확산 */
+                border: 2px solid rgba(180, 255, 250, 0.2); /* 부드러운 테두리 */
+                }       
 
-            .coverpage {text-align: center;}     
+            /* .coverpage {text-align: center;}      */
 
-            .name {font-family: 'NanumSquareEB';
+            /* .name {font-family: 'NanumSquareEB';
                     color: #212324;
                     font-size : 38px;
                      text-shadow: 0 0 2px #ffffff28;
                     text-align: center;
-                    }      
+                    }       */
+
+            .name {font-family: 'NanumSquareEB';
+                  color: #C7F9FF;
+                text-shadow: 0 0 4px rgba(0, 200, 255, 0.4);
+                font-size : 38px;
+                text-align: center;
+                
+                }
+            .name span {
+                color: #00C2FF;
+                }       
+                
    
             .coverExplain {font-family: 'NanumSquareEB';
-                            color: #1b1c1d;
-                            font-size : 25px;
+                            color: #CFECEC;
+                            font-size : 24px;
                             padding-left: 20px;
                             padding-top: 10px;
-                            text-shadow: 0 0 2px #ffffff28;
-
+                            margin-bottom: 10px;
+                             text-shadow: 0 0 2px rgba(0, 180, 255, 0.2);
+                             text-align: left;
                     }        
-            .coverExplainUnder a {color: #1b1c1d;
+/* 
+            .coverExplain {
+                        color: #CFECEC;
+                        font-family: 'NanumSquareEB';
+                        font-size: 24px;
+                        text-shadow: 0 0 2px rgba(0, 180, 255, 0.2);
+                        }        
+*/
+            /* .coverExplainUnder a {color: #1b1c1d;
                             font-size : 20px;
                             padding-left: 20px;
                             text-decoration: none;
                             text-shadow: 0 0 2px #ffffff28;
                             font-family: 'NanumSquareEB'
-                            }  
+                            }   */
+            .coverExplainUnder {color: #A6E3FF; margin: 10px 0;}
+            .coverExplainUnder a {
+                        font-size: 18px;
+                        padding-left: 20px;
+                        text-decoration: none;
+                        text-shadow: 0 0 2px rgba(0, 180, 255, 0.25);
+                        font-family: 'NanumSquareEB'
+                    }
 
-
+            .coverExplainUnder a:hover {
+                    color: #00C2FF; /* hover 시 상단 포인트 컬러와 연결 */
+                    text-shadow: 0 0 6px rgba(0, 200, 255, 0.5);
+                    }
+            .divider {
+                width: 100px;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, #00C2FF, transparent);
+                margin: 40px auto 0;
+                opacity: 0.6;
+                }
 
                 /* 자소설...너무힘드러따...... */
 
@@ -509,7 +600,7 @@
                     <section class="container first"> <!--표지-->
                         <div class="intro">
 
-                                <h3 class="name p-3">박현주 | Full-Steck Developer</h3>
+                                <h3 class="name p-3">박현주 |<span class="role">Full-Stack Developer</span></h3>
                                 <!-- <p class="nameunder"></p> -->
 
                                 <div class="coverpage">
@@ -522,21 +613,27 @@
                                 </div>
                                 
                                 <div>
-                                    <h4 class="coverExplain">사용자 경험을 우선하는 웹 개발자</h4>
+                                    <h4 class="coverExplain">사용자 경험을 우선하는 웹 개발자&ensp;&ensp;</h4>
                                 </div>
                                 
                                 <div>
                                     <ul class="coverExplainUnder">
                                         <li><a href="mailto:tkasid00@gmail.com">Email : tkasid00@gmail.com</a></li>
                                         <li><a href="https://github.com/tkasid00/fullstack_hj.git" target="_blank">Github : https://github.com/tkasid00/fullstack_hj</a></li>
-
+                                        
                                     </ul>
                                 </div>
-
+                                <div class="divider"></div>
                             
                         </div>
 
+                                    <div class="postit-wrapper first">
+                                            <div class="postit-note">
+                                                <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="0">Cover</button>
+                                            </div>
+                                    </div>
 
+                                    
                     </section><!--표지-->
                 </div>      
 
@@ -624,8 +721,20 @@
 
 
                     </div>
-
-
+                                    <div class="postit-wrapper thirty">
+                                            <div class="postit-note">
+                                                <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="0">Cover</button>
+                                            </div>
+                                            <div class="postit-note">
+                                                <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="1">AboutMe</button>
+                                            </div>
+                                            <div class="postit-note">
+                                                <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="2">Gallery</button>
+                                            </div>
+                                            <div class="postit-note">
+                                                <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="3">Contact</button>
+                                            </div>
+                                    </div>
                 </section>
                 </div>
 
@@ -872,6 +981,21 @@
 
 
                     </div>
+
+                                    <div class="postit-wrapper forthy">
+                                            <div class="postit-note">
+                                                <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="0">Cover</button>
+                                            </div>
+                                            <div class="postit-note">
+                                                <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="1">AboutMe</button>
+                                            </div>
+                                            <div class="postit-note">
+                                                <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="2">Gallery</button>
+                                            </div>
+                                            <div class="postit-note">
+                                                <button class="btn btn-basic" data-bs-target="#demo" data-bs-slide-to="3">Contact</button>
+                                            </div>
+                                    </div>
 
                 </section>
                 </div>
