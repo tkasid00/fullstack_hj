@@ -1,0 +1,414 @@
+ * { margin:0; padding:0; box-sizing: border-box;}
+           body {background-color: rgb(29, 27, 27); overflow: hidden;}
+
+           .container.first {border-radius: 10px; 
+                        border-bottom: 2px solid #FFF8DC;
+                        border-right: 2px solid #FFF8DC;
+                        margin: 50px auto;
+                        padding: 30px;
+                        width: 700px; height: 900px;
+                        background-color:#2C4F4F;
+                        position: relative;
+
+                        border-left:50px solid #162727;
+                        border-bottom-left-radius: 20px;
+
+                        z-index: 20;
+
+                        }
+
+            .container.second{border-radius: 15px; 
+                        margin: 50px auto;
+                        padding: 30px;
+                        width: 1800px; height: 900px;
+                        background-color: #2C4F4F;  
+                        box-shadow:0 0 5px rgba(0,0,0,0.5);
+                        position: relative;
+                        border-bottom-left-radius: 20px;
+                        z-index: 20;}
+            
+            .container.third{border-radius: 15px; 
+                        margin: 100px auto;
+                        padding: 30px;
+                        width: 1800px; height: 870px;
+                        background-color: #2C4F4F;  
+                        box-shadow:0 0 5px rgba(0,0,0,0.5);
+                        position: relative;
+                        border-bottom-left-radius: 20px;
+                        z-index: 20;}            
+
+            .row .page { background-color: white;  
+                     border-radius:15px; padding:20px; 
+                     box-shadow:0 0 5px rgba(0,0,0,0.5);
+                     padding: 30px;
+                     height: 900px;
+                     margin-top: -40px;} 
+                     
+            .column .page { background-color: white;  
+                     border-radius:15px; 
+                     box-shadow:0 0 5px rgba(0,0,0,0.5);
+                     padding: 20px;
+                     width: 1300px;
+                     margin-top: -70px;
+                     margin-right: 50px;}
+                     
+            .page.col-sm-10{height: 850px;
+                            margin-top: 0px;
+                        transform: translateX(-5px)}       
+            .page.col-sm-2{height: 15px;
+                border-left: 3px solid #777373;
+                border-bottom:  1px solid #5a5353;
+            transform: translateX(-10px);}
+
+
+
+            /*  포스트잇 파트  */
+            .postit-wrapper {
+                position: absolute;
+                top: 30px;
+                right: -100px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                z-index: 1; /* 낮게 유지 */
+                
+                
+            }
+            
+
+            .postit-note {
+                padding: 8px 12px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+                transform: rotate(-3deg);
+                width: 120px;
+                text-align: center;
+            }
+            
+            .postit-note:nth-child(1) {
+                background-color:rgb(230, 230, 76);   
+
+            }
+            .postit-note:nth-child(2) {
+                background-color:rgb(96, 96, 214); 
+                }
+            .postit-note:nth-child(3) {
+                background-color:rgb(211, 101, 119); 
+                }
+            .postit-note:nth-child(4) {
+                background-color:rgb(5, 146, 165); 
+                }        
+
+            .postit-note button{ font-weight: bold; 
+                                    font-family:NanumBarunpenB;
+                                    font-size: 20px;}    
+
+
+                /* 전체 배경 애니메이션 :  별빛 효과 */
+                .star {
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    background: white;
+                    border-radius: 50%;
+                    animation: twinkle 2s infinite ease-in-out;
+                    }
+
+                    @keyframes twinkle {
+                    0%, 100% { opacity: 0.2; }
+                    50% { opacity: 1; }
+                    }
+
+
+
+         /* 여기까지가 레이아웃 기초 완료! */
+
+
+                 /* 표꾸 표지꾸미기 */
+
+            .intro {margin-top: 50px;}   
+            .cover {border-radius: 10px; width: 320px; padding: 10px; margin : 0 20px; 
+                    box-shadow: 0 0 20px rgba(214, 212, 212, 0.247);
+                    background-color:rgba(51, 39, 8, 0.055);                    
+                    /* position: absolute;: 30px; */
+                   }
+
+            .coverpage {text-align: center;}     
+
+            .name {font-family: 'NanumSquareEB';
+                    font-size : 38px;
+                    text-align: center;
+                    color: #00C2FF;
+                    font-weight: bold;
+                     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+                    }      
+                    
+            h4.coverExplain {
+                color: #3C91E6;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+                    }
+
+            ul.coverExplainUnder li a {
+            color: #0d6efd;
+            text-shadow: 0 0 5px black;
+        }        
+            .coverExplain {font-family: 'NanumSquareEB';
+                            color: #1b1c1d;
+                            font-size : 25px;
+                            padding-left: 20px;
+                            padding-top: 10px;
+                            text-shadow: 0 0 2px #ffffff28;
+
+                    }        
+            .coverExplainUnder a {color: #1b1c1d;
+                            font-size : 20px;
+                            padding-left: 20px;
+                            text-decoration: none;
+                            text-shadow: 0 0 2px #ffffff28;
+                            font-family: 'NanumSquareEB'
+                            }  
+
+
+
+                /* 자소설...너무힘드러따...... */
+
+            .card .whoiam {font-family: 'NanumGothic';}     
+            .abutme.one {text-align: center; margin-bottom: 40px;
+                        }
+            .one h1{font-size: 30px; color:  #1a2a52; font-weight: bold;
+                        padding-bottom: 10px; padding-top: 35px;}
+            .one p {font-size: 20px; color: #555;}    
+            .one a {text-decoration: none; color: #1a2a52; font-weight: bold;
+                    margin : 0 20px; font-size: 20px;}
+
+            .two h2 {text-align: left;
+                    border-left: 5px solid #1a2a52 ;
+                    margin: 20px 70px;
+                    padding-left: 10px;
+                    font-size: 25px;}
+            .two p {font-size: 18px;
+                    margin: 5px 50px;}
+            .skills {display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;}
+            .skill {
+                    background: #1a2a52; color: #fff;
+                    padding: 8px 14px;
+                    border-radius: 20px; font-size: 16px;}
+            .skill:nth-child(1) {margin-left: 50px;}  
+
+            .keywords {display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;}
+
+            .keyword {
+                    background: #1a2a52; color: #fff;
+                    padding: 8px 14px;
+                    border-radius: 20px; font-size: 16px;}
+            .keyword:nth-child(1) {margin-left: 50px;} 
+
+
+
+                /* 포폴페이지 작업 시작 시안02부터*/
+
+            .portcard {
+            width: 280px;
+            height: 250px;
+            perspective: 1000px; 
+            cursor: pointer;
+            margin-top: 10px;
+            position: relative;
+            }
+
+            /* 카드 회전 */
+            .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            }
+
+
+            .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            box-shadow: 4px 6px 12px rgba(0,0,0,0.3);
+            padding: 20px;
+            text-align: center;
+            transform-origin: center center;
+            font-family: 'NanumBarunpenB';
+            }
+
+            .card-front {
+            background-image: linear-gradient(180deg, #d6c7f7, #c2d5f8);
+            transform: rotate(-2deg);
+            }
+            .card-front::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 60px;
+            height: 20px;
+            background: rgba(255,255,200,0.7);
+            border: 1px dashed #ccc;
+            }
+
+            .card-back {
+            background-image: linear-gradient(180deg, #c2d5f8, #d6c7f7);
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            }
+
+            .portcard h4 {
+            padding-bottom: 5px;
+            font-family: 'nanumhippie';
+            font-size: 25px;
+            font-weight: bold;
+            }
+            .portcard p {
+            margin: 5px auto;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            }
+            .portcard a {
+            text-decoration: none;
+            background: #b791f3;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 20px;
+            margin: 0 30px;
+            }
+
+            /*클릭 시 카드 뒤집기 */
+            .portcard.flip .card-inner {
+            transform: rotateY(180deg);
+            }
+
+
+                        /*여기는 시안01*/
+            .portexplain h5 {font-weight: bold; font-size: 20px; margin-bottom: 10px;}           
+            
+            .portexplain p {margin : 5px;}
+
+            .portexplain h6 {font-weight: bold; font-size: 16px; }
+
+            .portexplain a {text-decoration: none; color: #1a2a52; font-size: 18px;}
+            
+
+
+                        /*contact me 부분*/
+                .sendm h3 {font-size: 30px; font-family: 'NanumSquare_acB'; }        
+
+                .col-sm-10 {position: relative;}
+
+                .cat {width: 60px;
+                        position: absolute;
+                        bottom: 20px; 
+                        right: 20px;  
+                    } 
+                   
+                    
+                
+                .flower {width: 40px;
+                        position: absolute;
+                        bottom: 20px; /* 내려쓰기 */
+                        right: 20px;  /* 오른쪽 여백 */
+                    }    
+
+
+
+                @font-face {
+                font-family: 'nanumdiligence';
+                src: url(./font/나눔손글씨\ 성실체.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'nanumhippie';
+                src: url(./font/나눔손글씨\ 바른히피.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'NanumGothic';
+                src: url(./font/NanumGothic.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'NanumGothicExtraBold';
+                src: url(./font/NanumGothicExtraBold.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'MaruBuri-SemiBold';
+                src: url(./font/MaruBuri-SemiBold.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'MaruBuri-Regular';
+                src: url(./font/MaruBuri-Regular.ttf) format('truetype');
+                }
+                
+                @font-face {
+                font-family: 'NanumSquare_acB';
+                src: url(./font/NanumSquare_acB.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'NanumSquareEB';
+                src: url(./font/NanumSquareEB.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'NanumBarunpenB';
+                src: url(./font/NanumBarunpenB.otf) format('truetype');
+                }
+
+                .p-intro .postit-note:nth-child(1) {
+                z-index: 100;
+                position: relative;
+                }
+                .p-intro .postit-note:nth-child(2){
+                z-index: 90;
+                position: relative;
+                }
+
+                .p-intro .postit-note:nth-child(3) {
+                z-index: 80;
+                position: relative;
+                }
+
+                .p-intro .postit-note:nth-child(4){
+                z-index: 70;
+                position: relative;
+                }
+
+                
+                /* 슬라이드 1: Cover가 가장 앞 */
+                .container.first .postit-note:nth-child(1) { z-index: 100; }
+                .container.first .postit-note:nth-child(2) { z-index: 90; }
+                .container.first .postit-note:nth-child(3) { z-index: 80; }
+                .container.first .postit-note:nth-child(4) { z-index: 70; }
+
+                /* 슬라이드 2: AboutMe가 가장 앞 */
+                .p-about .postit-note:nth-child(2) { z-index: 100; }
+                .p-about .postit-note:nth-child(1) { z-index: 90; }
+                .p-about .postit-note:nth-child(3) { z-index: 80; }
+                .p-about .postit-note:nth-child(4) { z-index: 70; }
+
+                /* 슬라이드 3: Gallery가 가장 앞 */
+                .p-gallery .postit-note:nth-child(3) { z-index: 100; }
+                .p-gallery .postit-note:nth-child(2) { z-index: 90; }
+                .p-gallery .postit-note:nth-child(1) { z-index: 80; }
+                .p-gallery .postit-note:nth-child(4) { z-index: 70; }
+
+                /* 슬라이드 4: Contact가 가장 앞 */
+                .p-contact .postit-note:nth-child(4) { z-index: 100; }
+                .p-contact .postit-note:nth-child(3) { z-index: 90; }
+                .p-contact .postit-note:nth-child(2) { z-index: 80; }
+                .p-contact .postit-note:nth-child(1) { z-index: 70; }
