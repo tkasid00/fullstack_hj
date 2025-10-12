@@ -375,26 +375,34 @@
                                                     });
                                                 })();
 
-                                                function sendEmail(e){
-                                                    e.preventDefault();   // 기본 form 전송 막기
+                                               function sendEmail(e){
+                                                        e.preventDefault(); 
+                                                        var name = document.getElementById("name").value.trim();
+                                                        var title = document.getElementById("title").value.trim();
+                                                        var message = document.getElementById("message").value.trim();
 
-                                                    var templateParams = {
-                                                        name: document.getElementById("name").value,
-                                                        title: document.getElementById("title").value,
-                                                        message: document.getElementById("message").value
-                                                    };
+                                
+                                                        if (!name || !title || !message) {
+                                                            alert("⚠️ 이름, 제목, 내용을 모두 입력해주세요.");
+                                                            return; 
+                                                        }
 
-                                                    emailjs.send('tkasid00', 'template_r04ie29', templateParams).then(
-                                                        (response) => {
-                                                            alert("메일이 성공적으로 전송되었습니다 ✅");
-                                                            console.log('SUCCESS!', response.status, response.text);
-                                                        },
-                                                        (error) => {
-                                                            alert("메일 전송을 실패했습니다 ❌");
-                                                            console.log('FAILED...', error);
-                                                        },
-                                                    );
-                                                }
+                                                        emailjs.send('tkasid00', 'template_r04ie29', {
+                                                            name: name,
+                                                            title: title,
+                                                            message: message
+                                                        }).then(
+                                                            (response) => {
+                                                                alert("메일이 성공적으로 전송되었습니다 ✅");
+                                                                console.log('SUCCESS!', response.status, response.text);
+                                                            },
+                                                            (error) => {
+                                                                alert("메일 전송을 실패했습니다 ❌");
+                                                                console.log('FAILED...', error);
+                                                            },
+                                                        );
+                                                    }
+                                            
                                             </script>
 
 
@@ -424,13 +432,6 @@
                                         </div><!--end container-->
                                     </section>
 
-                                <!-- <div> 
-                                    <img src="./img/portfolio/balckcat.png" class="cat">
-                                </div>
-                                
-                                <div> 
-                                    <img src="./img/portfolio/flower.png" class="flower">
-                                </div> -->
 
 
 
