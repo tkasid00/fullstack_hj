@@ -195,6 +195,7 @@
                     }
             .postit-wrapper.second .postit-note button[data-bs-slide-to="1"] {
              transform: translateX(-10px); 
+            }
             .postit-wrapper.second .postit-note button[data-bs-slide-to="0"] {
              transform: translateX(-5px); 
             }  
@@ -499,4 +500,3 @@
                 font-family: 'NanumBarunpenB';
                 src: url(./font/NanumBarunpenB.otf) format('truetype');
                 }
-
