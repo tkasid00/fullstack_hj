@@ -841,7 +841,62 @@ public void process_pass(Score std) {
 
 </details>
 
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅19(List 스코프 오류로 인한 데이터 미저장 문제)</summary>
 
+**[문제점]**  
+- List<IceCreamDTO> ice = new ArrayList<>();를 switch문 안쪽에 선언한 상태에서 아이스크림을 추가했으나 while문이 반복될 때마다 리스트가 새로 생성되어 이전에 추가한 데이터가 모두 사라짐.
+
+**[오류 코드]**  
+```java
+while(true) {
+    List<IceCreamDTO> ice = new ArrayList<>();  // ❌ while문 안에 선언됨
+
+    switch(num) {
+        case 1:
+            System.out.print("아이스크림 이름: ");
+            String newname = scanner.next();
+            System.out.print("가격: ");
+            int newprice = scanner.nextInt();
+            ice.add(new IceCreamDTO(newname, newprice)); // 매번 새로운 리스트에 추가됨
+            System.out.println("추가 완료!");
+            break;
+    }
+}
+
+
+
+```
+
+**[원인 분석]**  
+- 리스트를 while문 내부에서 선언하면 반복할 때마다 새로운 객체가 생성됨.
+- 기존 리스트(ice)는 반복이 끝나자마자 GC(가비지 컬렉션) 대상으로 사라짐.
+- 리스트의 생명주기가 반복문 단위로 한정되어 있어 데이터가 유지되지 않음.
+
+**[해결 방안]**  
+- 리스트 선언을 while문 밖으로 이동시켜 프로그램 실행 중 하나의 리스트 인스턴스를 유지하도록 수정.
+```java
+List<IceCreamDTO> ice = new ArrayList<>();  // ✅ while문 밖으로 이동
+
+while(true) {
+    switch(num) {
+        case 1:
+            System.out.print("아이스크림 이름: ");
+            String newname = scanner.next();
+            System.out.print("가격: ");
+            int newprice = scanner.nextInt();
+            ice.add(new IceCreamDTO(newname, newprice));  // ✅ 기존 리스트에 계속 추가됨
+            System.out.println("추가 완료!");
+            break;
+    }
+}
+
+```
+
+**[느낀점]**  
+- 변수를 어디에 선언하느냐에 따라 데이터의 생명주기가 완전히 달라진다는 걸 체감함.
+- 특히 List, Map 같은 컬렉션은 한 번만 생성하고 반복문 밖에서 유지해야 의미가 있음.
+- 객체의 범위(scope)와 생명주기(lifecycle)를 제대로 이해하는 것이 자바 로직의 기본임을 다시 인식함.
+</details>
 ---
 
 ## ✔참고문헌
