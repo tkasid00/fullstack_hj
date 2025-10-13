@@ -23,7 +23,28 @@
             color: #d17a00;
             font-weight: 700;
         }
+    summary {
+      font-weight: 700;
+      color: #005b8f;
+      background-color: #f5f8fa;
+      border: 1px solid #cfd8dc;
+      border-radius: 8px;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
 
+    summary:hover {
+      background-color: #e7f2f7;
+    }
+
+    summary::-webkit-details-marker {
+      display: none; /* 기본 ▶ 아이콘 제거 */
+    }
+
+    details[open] summary {
+      background-color: #d7eaf1;
+    }
   </style>
 </head>
 <body>
