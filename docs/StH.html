@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>README Viewer</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+     body { background-color: #1b1c1d; color: #f0f0f0; font-family: 'NanumGothic'; padding: 40px; 
+     border-radius: 20px;
+  outline: 5px solid #fff;
+  outline-offset: -5px; /* 음수면 안쪽으로 이동 */}
+    h1, h2, h3 { color: #40E0D0; }
+    a { color: #8fd3f4; }
+  </style>
+</head>
+<body>
+  <div id="content">불러오는 중...</div>
+
+  <script>
+    fetch("StH.md")
+      .then(res => res.text())
+      .then(text => {
+        document.getElementById("content").innerHTML = marked.parse(text);
+      });
+  </script>
+</body>
+</html>
