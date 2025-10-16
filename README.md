@@ -423,6 +423,34 @@ error: could not lock config file workspace/.git/config
 </details>
 
 
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅09(Git restore 경로 인식 오류)</summary>
+
+**[문제점]**  
+- 최근 커밋에서 이전 상태로 파일을 되돌리기 위해 git restore --source=HEAD~1 fetch_test.md 명령을 실행했으나 동작하지 않음.
+
+**[오류 코드]**  
+```bash
+PS D:\Hyunju\workspace\fullstack_hj> git restore --source=HEAD~1 day034.md
+error: pathspec 'day034.md' did not match any file(s) known to git
+```
+
+**[원인 분석]**  
+- Git의 restore 명령은 정확한 파일 경로와 대소문자, 공백, 슬래시 구문을 모두 구분함.
+- day034.md가 다른 폴더 내부에 존재해 경로 오류 발생.
+
+**[해결 방안]**  
+- git restore --source=HEAD~1 "days_Class Notes/day034.md" -> 폴더 경로 명확하게 지정하고 ""로 묶어줌
+- 파일의 경로를 모를 경우 : 
+    1) git status :변경된 파일 목록 확인
+    2) git ls-files :Git이 추적 중인 파일 전체 확인
+
+**[느낀점]**  
+- Git은 경로를 문자 그대로 인식하기 때문에, 공백·대소문자·슬래시 위치를 정확히 입력해야 함을 실감함.
+- 앞으로는 git status로 파일 경로를 먼저 확인하는 습관을 들여야겠다고 느낌.
+
+</details>
+
 ---
 
 ## 📜참고문헌
