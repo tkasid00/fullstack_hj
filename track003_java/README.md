@@ -40,25 +40,26 @@
 
 | 번호 | 발생 일자 | 문제 요약 | 해결 상태 |
 |------|-----------|------------|------------|
-| 01 | 2025-08-28 | ; 누락 오류 | [✅ 해결](troublejava.html#t01) |
-| 02 | 2025-09-04 | println 문법 오류 | [✅ 해결](troublejava.html#t02) |
-| 03 | 2025-09-05 | char 타입 연산 오류 | [✅ 해결](troublejava.html#t03) |
-| 04 | 2025-09-05 | 데이터 타입 선택 오류 | [✅ 해결](troublejava.html#t04) |
-| 05 | 2025-09-08 | 조건문 생략 문법 오류 | [✅ 해결](troublejava.html#t05) |
-| 06 | 2025-09-09 | 전체 입력 반복 오류 | [✅ 해결](troublejava.html#t06) |
-| 07 | 2025-09-09 | == 연산자 논리 오류 | [✅ 해결](troublejava.html#t07) |
-| 08 | 2025-09-09 | nextInt() 버퍼 오류 | [✅ 해결](troublejava.html#t08) |
-| 09 | 2025-09-10 | 반복문 출력 누적 오류 | [✅ 해결](troublejava.html#t09) |
-| 10 | 2025-09-11 | 자바 배열 출력 오류 | [✅ 해결](troublejava.html#t10) |
-| 11 | 2025-09-11 | 배열 인덱스 초과 오류 | [✅ 해결](troublejava.html#t11) |
-| 12 | 2025-09-11 | 배열 초기화 오류 | [✅ 해결](troublejava.html#t12) |
-| 13 | 2025-09-13 | 레벨 갱신 누락 오류 | [✅ 해결](troublejava.html#t13) |
-| 14 | 2025-09-15 | 인덱스 크기 초과 오류 | [✅ 해결](troublejava.html#t14) |
-| 15 | 2025-10-02 | exec() 결과값 미할당 오류 | [✅ 해결](troublejava.html#t15) |
-| 16 | 2025-10-06 | 메서드 파라미터 불일치 오류 | [✅ 해결](troublejava.html#t16) |
-| 17 | 2025-10-07 | 빈 배열 조건문 처리 방식 오류 | [✅ 해결](troublejava.html#t17) |
-| 18 | 2025-10-10 | 삼항연산자 우선순위 오류 | [✅ 해결](troublejava.html#t18) |
-| 19 | 2025-10-12 | List 스코프 오류로 인한 데이터 미저장 문제 | [✅ 해결](troublejava.html#t19) |
+| 01 | 2025-08-28 | ; 누락 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t01) |
+| 02 | 2025-09-04 | println 문법 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t02) |
+| 03 | 2025-09-05 | char 타입 연산 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t03) |
+| 04 | 2025-09-05 | 데이터 타입 선택 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t04) |
+| 05 | 2025-09-08 | 조건문 생략 문법 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t05) |
+| 06 | 2025-09-09 | 전체 입력 반복 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t06) |
+| 07 | 2025-09-09 | == 연산자 논리 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t07) |
+| 08 | 2025-09-09 | nextInt() 버퍼 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t08) |
+| 09 | 2025-09-10 | 반복문 출력 누적 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t09) |
+| 10 | 2025-09-11 | 자바 배열 출력 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t10) |
+| 11 | 2025-09-11 | 배열 인덱스 초과 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t11) |
+| 12 | 2025-09-11 | 배열 초기화 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t12) |
+| 13 | 2025-09-13 | 레벨 갱신 누락 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t13) |
+| 14 | 2025-09-15 | 인덱스 크기 초과 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t14) |
+| 15 | 2025-10-02 | exec() 결과값 미할당 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t15) |
+| 16 | 2025-10-06 | 메서드 파라미터 불일치 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t16) |
+| 17 | 2025-10-07 | 빈 배열 조건문 처리 방식 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t17) |
+| 18 | 2025-10-10 | 삼항연산자 우선순위 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t18) |
+| 19 | 2025-10-12 | List 스코프 오류로 인한 데이터 미저장 문제 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/docs/troubleshooting/troubleJava.html#t19) |
+
 
 
 ---
