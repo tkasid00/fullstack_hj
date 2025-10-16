@@ -38,27 +38,28 @@
 
  > [✅ 해결]을 클릭하면 해당 트러블슈팅 상세 페이지로 이동합니다
 
-|| 번호 | 발생 일자 | 문제 요약 | 해결 상태 |
-|------|-----------|-----------|-----------|
-| 01 | 2025-08-28 | ; 누락 오류 | [✅ 해결](./troubleshooting_detail.html#error01) |
-| 02 | 2025-09-04 | println 문법 오류 | [✅ 해결](./troubleshooting_detail.html#error02) |
-| 03 | 2025-09-05 | char 타입 연산 오류 | [✅ 해결](./troubleshooting_detail.html#error03) |
-| 04 | 2025-09-05 | 데이터 타입 선택 오류 | [✅ 해결](./troubleshooting_detail.html#error04) |
-| 05 | 2025-09-08 | 조건문 생략 문법 오류 | [✅ 해결](./troubleshooting_detail.html#error05) |
-| 06 | 2025-09-09 | 전체 입력 반복 오류 | [✅ 해결](./troubleshooting_detail.html#error06) |
-| 07 | 2025-09-09 | == 연산자 논리 오류 | [✅ 해결](./troubleshooting_detail.html#error07) |
-| 08 | 2025-09-09 | nextInt() 버퍼 오류 | [✅ 해결](./troubleshooting_detail.html#error08) |
-| 09 | 2025-09-10 | 반복문 출력 누적 오류 | [✅ 해결](./troubleshooting_detail.html#error09) |
-| 10 | 2025-09-11 | 자바 배열 출력 오류 | [✅ 해결](./troubleshooting_detail.html#error10) |
-| 11 | 2025-09-11 | 배열 인덱스 초과 오류 | [✅ 해결](./troubleshooting_detail.html#error11) |
-| 12 | 2025-09-11 | 배열 초기화 오류 | [✅ 해결](./troubleshooting_detail.html#error12) |
-| 13 | 2025-09-13 | 레벨 갱신 누락 오류 | [✅ 해결](./troubleshooting_detail.html#error13) |
-| 14 | 2025-09-18 | 인덱스 크기 초과 오류 | [✅ 해결](./troubleshooting_detail.html#error14) |
-| 15 | 2025-10-02 | exec() 결과값 미할당 오류 | [✅ 해결](./troubleshooting_detail.html#error15) |
-| 16 | 2025-10-06 | 메서드 파라미터 불일치 오류 | [✅ 해결](./troubleshooting_detail.html#error16) |
-| 17 | 2025-10-07 | 빈 배열 조건문 처리 방식 오류 | [✅ 해결](./troubleshooting_detail.html#error17) |
-| 18 | 2025-10-10 | 삼항연산자 우선순위 오류 | [✅ 해결](./troubleshooting_detail.html#error18) |
-| 19 | 2025-10-12 | List 스코프 오류 | [✅ 해결](./troubleshooting_detail.html#error19) |
+| 번호 | 발생 일자 | 문제 요약 | 해결 상태 |
+|------|-----------|------------|------------|
+| 01 | 2025-08-28 | ; 누락 오류 | [✅ 해결](trouble.java.html#t01) |
+| 02 | 2025-09-04 | println 문법 오류 | [✅ 해결](trouble.java.html#t02) |
+| 03 | 2025-09-05 | char 타입 연산 오류 | [✅ 해결](trouble.java.html#t03) |
+| 04 | 2025-09-05 | 데이터 타입 선택 오류 | [✅ 해결](trouble.java.html#t04) |
+| 05 | 2025-09-08 | 조건문 생략 문법 오류 | [✅ 해결](trouble.java.html#t05) |
+| 06 | 2025-09-09 | 전체 입력 반복 오류 | [✅ 해결](trouble.java.html#t06) |
+| 07 | 2025-09-09 | == 연산자 논리 오류 | [✅ 해결](trouble.java.html#t07) |
+| 08 | 2025-09-09 | nextInt() 버퍼 오류 | [✅ 해결](trouble.java.html#t08) |
+| 09 | 2025-09-10 | 반복문 출력 누적 오류 | [✅ 해결](trouble.java.html#t09) |
+| 10 | 2025-09-11 | 자바 배열 출력 오류 | [✅ 해결](trouble.java.html#t10) |
+| 11 | 2025-09-11 | 배열 인덱스 초과 오류 | [✅ 해결](trouble.java.html#t11) |
+| 12 | 2025-09-11 | 배열 초기화 오류 | [✅ 해결](trouble.java.html#t12) |
+| 13 | 2025-09-13 | 레벨 갱신 누락 오류 | [✅ 해결](trouble.java.html#t13) |
+| 14 | 2025-09-15 | 인덱스 크기 초과 오류 | [✅ 해결](trouble.java.html#t14) |
+| 15 | 2025-10-02 | exec() 결과값 미할당 오류 | [✅ 해결](trouble.java.html#t15) |
+| 16 | 2025-10-06 | 메서드 파라미터 불일치 오류 | [✅ 해결](trouble.java.html#t16) |
+| 17 | 2025-10-07 | 빈 배열 조건문 처리 방식 오류 | [✅ 해결](trouble.java.html#t17) |
+| 18 | 2025-10-10 | 삼항연산자 우선순위 오류 | [✅ 해결](trouble.java.html#t18) |
+| 19 | 2025-10-12 | List 스코프 오류로 인한 데이터 미저장 문제 | [✅ 해결](trouble.java.html#t19) |
+
 
 ---
 
