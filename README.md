@@ -451,6 +451,41 @@ error: pathspec 'day034.md' did not match any file(s) known to git
 
 </details>
 
+<details>
+<summary style="font-size:20px; font-weight:bold;">📌트러블슈팅10(HTML 렌더링 중 < 문자 인식 오류)</summary>
+
+**[문제점]**  
+- HTML 문서에서 자바 코드를 보여주기 위해 <pre><code>...</code></pre> 태그를 사용했는데
+for(int i=0; i<result.length; i++) 구문 내의 < 문자가 HTML 태그의 시작으로 인식되어
+코드 블록이 비정상적으로 닫히거나 </code></pre>가 깨지는 현상이 발생함.
+
+**[오류 코드]**  
+```bash
+<pre><code>
+for(int i =0; i<result.length; i++) {     <!-- ❌ < 가 태그 시작으로 잘못 인식됨 -->
+    for (int j=0; j < result[i].length; j++) {
+        result[i][j] = datas[i][j];
+        System.out.print(result[i][j]);
+    }
+}
+</code></pre>
+
+```
+
+**[원인 분석]**  
+- HTML은 <와 >를 태그 구분 기호로 인식하기 때문에 코드 내부에 <가 들어 있으면 이를 태그의 일부로 착각함.
+- 그 결과 </code> 태그가 정상적으로 인식되지 않아 코드 블록이 비정상적으로 끊기거나 HTML 구조가 깨짐.
+
+**[해결 방안]**  
+- < 문자와 코드 태그 간의 충돌을 막기 위해 < 앞뒤에 공백을 추가해 브라우저가 이를 코드로 인식하도록 처리.
+- 혹은 이스케이프 처리로 가능 : < → &lt;, > → &gt;, && → &amp;&amp;, " → &quot;
+
+**[느낀점]**  
+- HTML은 단순히 텍스트를 보여주는 언어가 아니라 “태그 구조”를 파싱하는 언어이기 때문에 <, >를 코드 그대로 쓰면 브라우저가 혼동을 일으킴.
+- 지금은 단순 공백 추가로 해결을 했지만 앞으로는 코드 예시를 문서화할 때 이스케이프 처리(&lt;, &gt;)나 마크다운 백틱(```) 코드 블록을 적극 활용해야 할 필요성을 느낌.
+</details>
+
+
 ---
 
 ## 📜참고문헌
