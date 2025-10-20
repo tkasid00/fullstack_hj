@@ -375,4 +375,30 @@ SELECT SAL,
   
   
 --39.문자데이터와 숫자데이터를 연산하여 출력하시오.
+--숫자+'숫자로만 이루어진 문자열' ->가능
 SELECT  1300-'1500', '1300'+1500 FROM DUAL;
+
+--40~41. 문자데이터끼지 연산하여 출력하시오/오류가 난다면 그 이유를 적으시오.
+-- 문자 ',' 삽입 시 숫자로 인식X
+SELECT  '1500' - '1300' FROM DUAL; --O
+SELECT  '1,500' - '1,300' FROM DUAL;--X
+SELECT  TO_NUMBER('1,500', '999,999') - TO_NUMBER('1,300','999,999') FROM DUAL;
+
+--42.TO_DATE를 이용하여 문자 데이터를 날짜 데이터로 변환하시오.
+SELECT TO_DATE('1015-10-17', 'YYYY-MM-DD')
+FROM DUAL;
+
+--43~44
+-- Q6-43
+SELECT *
+  FROM EMP
+ WHERE HIREDATE > TO_DATE('1981/06/01', 'YYYY/MM/DD');
+
+-- Q6-44
+SELECT TO_DATE('49/12/10', 'YY/MM/DD') AS YY_YEAR_49,
+       TO_DATE('49/12/10', 'RR/MM/DD') AS RR_YEAR_49,
+       TO_DATE('50/12/10', 'YY/MM/DD') AS YY_YEAR_50,
+       TO_DATE('50/12/10', 'RR/MM/DD') AS RR_YEAR_50,
+       TO_DATE('51/12/10', 'YY/MM/DD') AS YY_YEAR_51,
+       TO_DATE('51/12/10', 'RR/MM/DD') AS RR_YEAR_51
+  FROM DUAL;
