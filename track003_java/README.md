@@ -59,7 +59,7 @@
 | 17 | 2025-10-07 | 빈 배열 조건문 처리 방식 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/troubleshooting/troubleJava.html#error17) |
 | 18 | 2025-10-10 | 삼항연산자 우선순위 오류 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/troubleshooting/troubleJava.html#error18) |
 | 19 | 2025-10-12 | List 스코프 오류로 인한 데이터 미저장 문제 | [✅ 해결](https://tkasid00.github.io/fullstack_hj/troubleshooting/troubleJava.html#error19) |
-
+| 20   |2025-10-21| 문자열 비교 연산자 오용 오류  | [✅ 해결](https://tkasid00.github.io/fullstack_hj/troubleshooting/troubleJava.html#error20) |
 
 
 
