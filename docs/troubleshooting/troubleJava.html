@@ -904,8 +904,7 @@ while(true) {
 <summary style="font-size:20px; font-weight:bold;">📌 트러블슈팅20 (문자열 비교 연산자 오용 오류)</summary>
 
 <p><strong>[문제점]</strong><br>
-사용자가 “APPLE”을 입력했음에도 <code>if(apple.toUpperCase() == "APPLE")</code> 조건이 거짓으로 평가되어 <br>
-<code>System.out.println("정답이 아닙니다");</code>가 출력됨.</p>
+사용자가 “APPLE”을 입력했음에도 if(apple.toUpperCase() == "APPLE") 조건이 거짓으로 평가되어 정답이 아닙니다가 출력됨.</p>
 
 <p><strong>[오류 코드]</strong></p>
 <pre><code class="language-java">
@@ -917,11 +916,13 @@ if (apple.toUpperCase() == "APPLE") {
 </code></pre>
 
 <p><strong>[원인 분석]</strong><br>
-자바에서 <code>==</code> 연산자는 문자열의 값이 아니라 객체의 주소(참조값)를 비교함.<br>
-<code>"APPLE"</code>은 문자열 리터럴 풀(String Literal Pool)에 저장되고 <code>apple.toUpperCase()</code>는 <br>
-새로운 String 객체를 반환하기 때문에 두 객체의 참조 주소가 달라 <code>==</code> 결과는 false가 됨.</p>
+자바에서 == 연산자는 문자열의 값이 아니라 객체의 주소(참조값)를 비교함.<br>
+"APPLE"은 문자열 리터럴 풀(String Literal Pool)에 저장되고 apple.toUpperCase()는 새로운 String 객체를 반환하기 때문에 두 객체의 참조 주소가 달라 == 결과는 false가 됨."APPLE"은 문자열 리터럴 풀(String Literal Pool)에 저장되고 apple.toUpperCase()는 새로운 String 객체를 반환하기 때문에 두 객체의 참조 주소가 달라 == 결과는 false가 됨.</p>
 
-<p><strong>[해결 방안]</strong></p>
+
+
+<p><strong>[해결 방안]</strong><br>
+==가 아닌 equals()로 비교함.</p>
 <pre><code class="language-java">
 if (apple.toUpperCase().equals("APPLE")) {
     System.out.println("정답입니다");
@@ -931,11 +932,16 @@ if (apple.toUpperCase().equals("APPLE")) {
 </code></pre>
 
 <p><strong>[느낀점]</strong><br>
-자바의 <code>==</code>는 주소 비교, <code>equals()</code>는 값 비교라는 원리를 다시 확인함.<br>
-같은 문자열처럼 보여도 객체가 다르면 결과가 달라질 수 있음을 체감함.<br>
-앞으로 문자열 비교에서는 무조건 <code>equals()</code> 계열 메서드를 사용할 것.
+자바의 ==는 주소 비교 equals()는 값 비교라는 원리를 다시 확인함.<br>
+같은 문자열처럼 보여도 객체가 다르면 결과가 달라질 수 있음을 체감.<br>
+앞으로 문자열 비교에서는 무조건 equals() 계열 메서드를 사용할 것.
 </p>
 </details>
+
+
+
+
+
 
 
 
