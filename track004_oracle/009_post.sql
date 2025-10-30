@@ -43,7 +43,6 @@ CREATE SEQUENCE POST_SEQ;
 
 SELECT * FROM POST;
 
-
 --------------------------------dao 테스트---------------------------------------
 --1.[글쓰기] 글쓰기할 때 필요한 sql 
 INSERT INTO POST (  ID,              APP_USER_ID, TITLE, CONTENT, PASS, CREATE_AT, HIT) 
