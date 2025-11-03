@@ -1,0 +1,80 @@
+-- 단백질
+INSERT INTO NUTRIENTRANGE VALUES(1, 1, 6, 15, 25, '고양이건사료_저단백');
+INSERT INTO NUTRIENTRANGE VALUES(2, 1, 6, 26, 40, '고양이건사료_중단백');
+INSERT INTO NUTRIENTRANGE VALUES(3, 1, 6, 41, 55, '고양이건사료_고단백');
+
+-- 인
+INSERT INTO NUTRIENTRANGE VALUES(4, 1, 1, 0, 0.5, '고양이건사료_저인');
+INSERT INTO NUTRIENTRANGE VALUES(5, 1, 1, 0.5, 1.2, '고양이건사료_일반인');
+INSERT INTO NUTRIENTRANGE VALUES(6, 1, 1, 1.3, 2.0, '고양이건사료_고인');
+
+-- 나트륨
+INSERT INTO NUTRIENTRANGE VALUES(7, 1, 2, 0, 0.2, '고양이건사료_저나트륨');
+INSERT INTO NUTRIENTRANGE VALUES(8, 1, 2, 0.2, 0.5, '고양이건사료_일반나트륨');
+INSERT INTO NUTRIENTRANGE VALUES(9, 1, 2, 0.6, 1.0, '고양이건사료_고나트륨');
+
+-- 요오드 (mg/kg)
+INSERT INTO NUTRIENTRANGE VALUES(10, 1, 3, 0.2, 0.4, '고양이건사료_저요오드');
+INSERT INTO NUTRIENTRANGE VALUES(11, 1, 3, 0.4, 2.0, '고양이건사료_일반요오드');
+
+-- 탄수화물
+INSERT INTO NUTRIENTRANGE VALUES(12, 1, 4, 0, 15, '고양이건사료_저탄수화물');
+INSERT INTO NUTRIENTRANGE VALUES(13, 1, 4, 15, 30, '고양이건사료_일반탄수화물');
+INSERT INTO NUTRIENTRANGE VALUES(14, 1, 4, 35, 60, '고양이건사료_고탄수화물');
+
+-- 지방
+INSERT INTO NUTRIENTRANGE VALUES(15, 1, 5, 0, 10, '고양이건사료_저지방');
+INSERT INTO NUTRIENTRANGE VALUES(16, 1, 5, 11, 20, '고양이건사료_중지방');
+INSERT INTO NUTRIENTRANGE VALUES(17, 1, 5, 21, 35, '고양이건사료_고지방');
+
+-- 마그네슘
+INSERT INTO NUTRIENTRANGE VALUES(18, 1, 7, 0, 0.08, '고양이건사료_저마그네슘');
+INSERT INTO NUTRIENTRANGE VALUES(19, 1, 7, 0.08, 0.12, '고양이건사료_일반마그네슘');
+INSERT INTO NUTRIENTRANGE VALUES(20, 1, 7, 0.13, 0.3, '고양이건사료_고마그네슘');
+
+-- 구리 (mg/kg)
+INSERT INTO NUTRIENTRANGE VALUES(21, 1, 8, 0, 5, '고양이건사료_저구리');
+INSERT INTO NUTRIENTRANGE VALUES(22, 1, 8, 5, 15, '고양이건사료_일반구리');
+INSERT INTO NUTRIENTRANGE VALUES(23, 1, 8, 20, 40, '고양이건사료_고구리');
+
+
+
+-- 단백질
+INSERT INTO NUTRIENTRANGE VALUES(24, 2, 6, 15, 20, '강아지건사료_저단백');
+INSERT INTO NUTRIENTRANGE VALUES(25, 2, 6, 21, 30, '강아지건사료_중단백');
+INSERT INTO NUTRIENTRANGE VALUES(26, 2, 6, 31, 50, '강아지건사료_고단백');
+
+-- 인
+INSERT INTO NUTRIENTRANGE VALUES(27, 2, 1, 0, 0.4, '강아지건사료_저인');
+INSERT INTO NUTRIENTRANGE VALUES(28, 2, 1, 0.4, 1.0, '강아지건사료_일반인');
+
+-- 나트륨
+INSERT INTO NUTRIENTRANGE VALUES(29, 2, 2, 0, 0.15, '강아지건사료_저나트륨');
+INSERT INTO NUTRIENTRANGE VALUES(30, 2, 2, 0.15, 0.4, '강아지건사료_일반나트륨');
+
+-- 칼륨
+INSERT INTO NUTRIENTRANGE VALUES(31, 2, 9, 0, 0.4, '강아지건사료_저칼륨');
+INSERT INTO NUTRIENTRANGE VALUES(32, 2, 9, 0.4, 0.9, '강아지건사료_일반칼륨');
+
+-- 탄수화물
+INSERT INTO NUTRIENTRANGE VALUES(33, 2, 4, 0, 30, '강아지건사료_저탄수화물');
+INSERT INTO NUTRIENTRANGE VALUES(34, 2, 4, 30, 55, '강아지건사료_일반탄수화물');
+
+-- 지방
+INSERT INTO NUTRIENTRANGE VALUES(35, 2, 5, 0, 8, '강아지건사료_저지방');
+INSERT INTO NUTRIENTRANGE VALUES(36, 2, 5, 9, 16, '강아지건사료_중지방');
+INSERT INTO NUTRIENTRANGE VALUES(37, 2, 5, 17, 30, '강아지건사료_고지방');
+
+-- 구리
+INSERT INTO NUTRIENTRANGE VALUES(38, 2, 8, 0, 4, '강아지건사료_저구리');
+INSERT INTO NUTRIENTRANGE VALUES(39, 2, 8, 4, 20, '강아지건사료_일반구리');
+
+-- 마그네슘
+INSERT INTO NUTRIENTRANGE VALUES(40, 2, 7, 0, 0.08, '강아지건사료_저마그네슘');
+
+-- 칼슘
+INSERT INTO NUTRIENTRANGE VALUES(41, 2, 10, 0, 0.7, '강아지건사료_저칼슘');
+INSERT INTO NUTRIENTRANGE VALUES(42, 2, 10, 0.8, 1.8, '강아지건사료_일반칼슘');
+
+-- 옥살산 (정량 기준 없음, 제한용)
+INSERT INTO NUTRIENTRANGE VALUES(43, 2, 11, 0, 0, '강아지건사료_옥살산주의');
