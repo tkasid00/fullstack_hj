@@ -215,3 +215,8 @@ join testbrand b on(r.foodid = b.foodid);
 DELETE FROM TESTBRAND;
 
 INSERT INTO TESTBRAND VALUES(1, '냥이밥상', 3, '진수성찬_인도어', '흰살생선');
+
+select r.reviewid, b.brandname, b.foodname, r.foodimg, r.rating, r.title, r.reviewcomment, u.nickname, r.createdat
+from review r
+join testuser u on(r.userid = u.userid)
+join testbrand b on(r.brandid = b.brandid);
