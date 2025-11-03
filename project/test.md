@@ -5,15 +5,15 @@
     ### --12. table (review) + sequence (review_seq)
     | 컬럼명      | 데이터 타입       | 제약 조건                                                | 설명 |
     |-------------|-------------------|----------------------------------------------------------|------|
-    | `review_id`  | `NUMBER`          | `PRIMARY KEY`                                            | 리뷰 ID |
+    | `reviewid`  | `NUMBER`          | `PRIMARY KEY`                                            | 리뷰 ID |
     | `userid`     | `NUMBER`          | `FOREIGN KEY REFERENCES user(userid)`                   | 작성자 |
-    | `password`   | `VARCHAR2(50)`     | 'not null'                                              | 글 비밀번호|
-    | `brand_id`    | `NUMBER`          | `FOREIGN KEY REFERENCES food_brand(brand_id)`            | 브랜드 ID |
-    | `food_id`    | `NUMBER`          | `FOREIGN KEY REFERENCES food(food_id)`                  | 사료 ID |
-    | `food_img`    | `VARCHAR2(300)`   | `우선 null값 채우기`                                      | 사료 이미지 |
+    | `password`   | `VARCHAR2(50)`     | 'NOT NULL'                                              | 글 비밀번호|
+    | `brandid`    | `NUMBER`          | `FOREIGN KEY REFERENCES food_brand(brand_id)`            | 브랜드 ID |
+    | `foodid`    | `NUMBER`          | `FOREIGN KEY REFERENCES food(food_id)`                  | 사료 ID |
+    | `foodimg`    | `VARCHAR2(300)`   | `우선 null값 채우기`                                      | 사료 이미지 |
     | `rating`     | `NUMBER(1)`       | `CHECK (rating BETWEEN 1 AND 5)`                         | 평점 |
-    | `review_comment`    | `VARCHAR2(500)`   | —                                                        | 리뷰 내용 |
-    | `created_at` | `VARCHAR2(200)`   | —                                                        | 작성일 |
+    | `reviewcomment`    | `VARCHAR2(500)`   | —                                                        | 리뷰 내용 |
+    | `createdat` | `VARCHAR2(200)`   | —                                                        | 작성일 |
 
             이름            널?       유형            
             ------------- -------- ------------- 
@@ -33,22 +33,22 @@
             [com.company.patfooddb] - ReDto.java(클래스 파일)
         | 컬럼명      | 데이터 타입       | 제약 조건                                                | 설명 |
         |-------------|-------------------|----------------------------------------------------------|------|
-        | `review_id`  | `NUMBER`          | `PRIMARY KEY`                                            | 리뷰 ID |
+        | `reviewid`  | `NUMBER`          | `PRIMARY KEY`                                            | 리뷰 ID |
         | `userid`     | `NUMBER`          | `FOREIGN KEY REFERENCES user(userid)`                   | 작성자 |
-        | `password`   | `VARCHAR2(50)`     | `not null`                                                | 글 비밀번호|
-        | `brand_id`    | `NUMBER`          | `FOREIGN KEY REFERENCES food_brand(brand_id)`            | 브랜드 ID |
-        | `food_id`    | `NUMBER`          | `FOREIGN KEY REFERENCES food(food_id)`                  | 사료 ID |
-        | `food_img`    | `VARCHAR2(300)`   | `우선 null값 채우기`                                      | 사료 이미지 |
+        | `password`   | `VARCHAR2(50)`     | `NOT NULL`                                                | 글 비밀번호|
+        | `brandid`    | `NUMBER`          | `FOREIGN KEY REFERENCES food_brand(brand_id)`            | 브랜드 ID |
+        | `foodid`    | `NUMBER`          | `FOREIGN KEY REFERENCES food(food_id)`                  | 사료 ID |
+        | `foodimg`    | `VARCHAR2(300)`   | `우선 null값 채우기`                                      | 사료 이미지 |
         | `rating`     | `NUMBER(1)`       | `CHECK (rating BETWEEN 1 AND 5)`                         | 평점 |
         | `title`     | `VARCHAR2(100)`       |                                                      | 제목 |
-        | `review_comment`    | `VARCHAR2(500)`   | —                                                 | 리뷰 내용 |
-        | `created_at` | `VARCHAR2(200)`   | —                                                        | 작성일 |
+        | `reviewcomment`    | `VARCHAR2(500)`   | —                                                 | 리뷰 내용 |
+        | `createdat` | `DATE`   | —                                                        | 작성일 |
 
 
 
 
 		4. dao
-            [com.company.patfooddb] - ReDao.java(클래스 파일)
+            [com.pawject.controller] - ReDao.java(클래스 파일)
 	▶view
 		1. list.jsp
 		2. write.jsp
@@ -59,7 +59,7 @@
 		1. frontcontroller
          1-1. @WebServlet 개발용    *.do, *.member, *.hj
          1-2. web.xml     배포용
-       [com.company.patfooddb]  - ReController
+       [com.pawject.controller]  - ReController
             ㄴindex.jsp
                 ㄴ[전체글보기]/ReBoard/list.jsp (or login.jsp 등등 가능)
                             >/list.do           ■ ReList 불러오고 /  ReBoard/list.jsp로 넘김
@@ -75,7 +75,7 @@
 
 
         2. service
-        [com.company.patfooddb]
+        [com.company.service]
             ReService<<interface>>
                 △..ReList             넘겨받을 데이터 x / selectAll()
                 △..ReInsert           데이터 o / insert(ReDto dto)
