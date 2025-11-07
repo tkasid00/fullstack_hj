@@ -18,7 +18,7 @@ CREATE SEQUENCE REVIEW_SEQ;
 
 DESC REVIEW;
 SELECT * FROM REVIEW;
-INSERT INTO REVIEW VALUES(1, 1, '1111', 1, 3, NULL, 5, '잘먹어요', '기호성이 너무 좋아서 우리 애가 돼지가 됐어요', SYSDATE ); 
+INSERT INTO REVIEW VALUES(8, 1, '1111', 1, 3, NULL, 5, '잘먹어요', '기호성이 너무 좋아서 우리 애가 돼지가 됐어요', SYSDATE ); 
 
 
 --라벨영양소 테이블

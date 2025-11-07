@@ -241,3 +241,15 @@ INSERT INTO food VALUES (30, '인도어 참치 앤 고구마', 7, '실크 같은
 INSERT INTO food VALUES (31, '헬시웨이트 닭고기 앤 브로콜리', 7, '귀여운 체형을 위한 닭고기와 브로콜리, 균형 잡힌 귀여움!', '닭고기', '브로콜리', 1);
 INSERT INTO food VALUES (32, '키튼 연어 앤 현미', 7, '짧은 다리에도 에너지 충전, 연어와 현미로 점프력 상승!', '연어', '현미', 2);
 INSERT INTO food VALUES (33, '인도어 칠면조 앤 고구마', 7, '민감한 피부를 위한 칠면조와 고구마, 부드럽게 케어!', '칠면조', '고구마', 2);
+
+
+
+desc users;
+select * from users;
+desc testuser;
+select * from testuser;
+insert into testuser(userid, email, nickname, password, createdat) values(2, '123@mail.com', 'test001', '1111', sysdate); 
+insert into users(userid, email, nickname, password, createdat) values(2, 'test@test.com', '집사', '1111', sysdate); 
+insert into users(userid, email, nickname, password, createdat) values(1, 'test@mail.com', '캔따개', '1111', sysdate); 
+commit;
+select * from review;
