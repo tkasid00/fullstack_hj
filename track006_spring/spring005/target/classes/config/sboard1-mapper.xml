@@ -7,20 +7,20 @@
 	<!-- 명시적 매핑 -->
 	<resultMap type="SboardDto" id="sboardMap">
 		<result property="id" column="ID"/>
-		<result property="app_user_id" column="APP_USER_ID"/>
+		<result property="appUserId" column="APP_USER_ID"/>
 		<result property="btitle" column="BTITLE"/>
 		<result property="bcontent" column="BCONTENT"/>
 		<result property="bpass" column="BPASS"/>
 		<result property="bfile" column="BFILE"/>
 		<result property="bhit" column="BHIT"/>
 		<result property="bip" column="BIP"/>
-		<result property="created_at" column="CREATE_AT"/>
+		<result property="createdAt" column="CREATE_AT"/>
 	
 	</resultMap>
 
 						<!-- mybatis-config에서 설정 -->
 	<insert id="insert" parameterType="SboardDto">
-	insert into sboard1(id, app_user_id, btitle, bcontent, bpass,  bip, create_at) values(sboard1_seq.nextval, #{app_user_id}, #{btitle}, #{bcontent}, #{bpass}, #{bip},  sysdate)
+	insert into sboard1(id, app_user_id, btitle, bcontent, bpass,  bip, create_at) values(sboard1_seq.nextval, #{appUserId}, #{btitle}, #{bcontent}, #{bpass}, #{bip},  sysdate)
 	</insert>
 			<!-- 명시적 매핑 이후 resultType="SboardDto"에서 교체 -->
 	<select resultMap="sboardMap"	id="selectAll">
