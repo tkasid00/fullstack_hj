@@ -217,3 +217,33 @@ select * from sboard1;
 desc testfood;
 
 select foodid, foodname from testfood;
+
+create table test1(
+a number,
+b varchar2(10));
+
+create table test2(
+a number,
+b varchar2(10));
+
+delete from test1;
+
+insert into test1 values(1, 'a');
+insert into test1 values(2, 'b');
+insert into test1 values(3, 'g');
+insert into test1 values(4, 'd');
+
+insert into test2 values(3, 'c');
+insert into test2 values(4, 'd');
+insert into test2 values(5, 'e');
+insert into test2 values(6, 'f');
+
+
+select * from test1 join  test2 on(test1.a=test2.a);
+    
+    SELECT a, b FROM test1
+INTERSECT
+SELECT a, b FROM test2;
+
+select * from testfood where foodid=1;
+
