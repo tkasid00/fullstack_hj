@@ -24,7 +24,7 @@
 	</insert>
 			<!-- 명시적 매핑 이후 resultType="SboardDto"에서 교체 -->
 	<select resultMap="sboardMap"	id="selectAll">
-	select * from sboard1
+	select * from sboard1 order by id desc
 	</select>
 	
 	<select	resultMap="sboardMap"	 id="select" parameterType="int">
