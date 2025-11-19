@@ -11,6 +11,7 @@
 <result property="password"  column="PASSWORD"/>
 <result property="mbtiTypeId"  column="MBTI_TYPE_ID"/>
 <result property="createdAt"  column="CREATED_AT"/>
+<result property="ufile"  column="UFILE"/>
 </resultMap>
 
 <insert id="insert" parameterType="UserDto">
@@ -42,5 +43,20 @@ update appuser set password=#{password}, mbti_type_id=#{mbtiTypeId}
 <delete id="delete" parameterType="UserDto">
 delete from appuser where app_user_id=#{appUserId} and password=#{password}
 </delete>
+
+
+
+<!--이미지 추가 버전-->
+
+<insert id="insertWithImg" parameterType="UserDto">
+insert into appuser(app_user_id, email, password, mbti_type_id, created_at, ufile) 
+                    values( appuser_seq.nextval, #{email}, #{password}, #{mbtiTypeId}, sysdate, #{ufile})
+</insert>
+
+
+<update id="updateWithImg" parameterType="UserDto">
+update appuser set password=#{password}, mbti_type_id=#{mbtiTypeId}, ufile=#{ufile}
+	where app_user_id=#{appUserId} and password=#{password}
+</update>
 
 </mapper>

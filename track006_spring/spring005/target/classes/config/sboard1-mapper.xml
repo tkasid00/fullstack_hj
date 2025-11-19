@@ -14,25 +14,38 @@
 		<result property="bfile" column="BFILE"/>
 		<result property="bhit" column="BHIT"/>
 		<result property="bip" column="BIP"/>
-		<result property="createdAt" column="CREATE_AT"/>
+		<result property="createdAt" column="CREATED_AT"/>
 	
 	</resultMap>
 
 						<!-- mybatis-config에서 설정 -->
 	<insert id="insert" parameterType="SboardDto">
-	insert into sboard1(id, app_user_id, btitle, bcontent, bpass,  bip, create_at) values(sboard1_seq.nextval, #{appUserId}, #{btitle}, #{bcontent}, #{bpass}, #{bip},  sysdate)
+	insert into sboard1(id, app_user_id, btitle, bcontent, bpass,  bip, created_at) values(sboard1_seq.nextval, #{appUserId}, #{btitle}, #{bcontent}, #{bpass}, #{bip},  sysdate)
 	</insert>
+	
+	<insert id="insertForUpload" parameterType="SboardDto">
+	insert into sboard1(id, app_user_id, btitle, bcontent, bpass, bfile,  bip, created_at) 
+	values(sboard1_seq.nextval, #{appUserId}, #{btitle}, #{bcontent}, #{bpass},  #{bfile}, #{bip},  sysdate)
+	</insert>
+	
 			<!-- 명시적 매핑 이후 resultType="SboardDto"에서 교체 -->
 	<select resultMap="sboardMap"	id="selectAll">
 	select * from sboard1 order by id desc
 	</select>
+	
 	
 	<select	resultMap="sboardMap"	 id="select" parameterType="int">
 	select * from sboard1 where id=#{id}
 	</select>
 	
 	<update id="update" parameterType="SboardDto">
-	update sboard1 set btitle= #{btitle}, bcontent= #{bcontent}, bpass= #{bpass} where id=#{id}
+	update sboard1 set btitle= #{btitle}, bcontent= #{bcontent}, bpass= #{bpass} 
+	where id=#{id} and bpass= #{bpass}
+	</update>
+	
+	<update id="updateForUpload" parameterType="SboardDto">
+	update sboard1 set btitle= #{btitle}, bcontent= #{bcontent}, bpass= #{bpass}, bfile=#{bfile} 
+	where id=#{id} and bpass= #{bpass}
 	</update>
 	
 	<update	id="updateBhit" parameterType="int">
@@ -43,5 +56,10 @@
 	delete from sboard1 where id=#{id} and bpass= #{bpass} 
 	</delete>
 	
+	<!-- ajax search -->
+	<select resultMap="sboardMap" id="selectSearch" parameterType="java.util.HashMap">
+		select * from sboard1 where btitle like #{search}
+	</select>
+
 
 </mapper>
