@@ -90,7 +90,7 @@
 		</select>
 		
 		
-		<select resultMap="FoodMap"  id="foodselectForList">
+		<select resultType="FoodDtoForList"  id="foodselectForList">
 		select f.foodid as foodid, f.foodname as foodname, 
         b.brandid as brandid, b.brandname as brandname,
         f.pettypeid as pettypeid,
