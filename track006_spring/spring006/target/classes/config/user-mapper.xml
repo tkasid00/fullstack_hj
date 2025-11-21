@@ -70,7 +70,7 @@
 	</delete>
 	
 	<update id="updateAdmin" parameterType="UserDto">
-		update appuser set mbti_type_id=#{mbtiTypeId}, ufile=#{ufile}
+		update appuser set mbti_type_id=#{mbtiTypeId}
 			where app_user_id=#{appUserId} 
 	</update>
 	</mapper>
