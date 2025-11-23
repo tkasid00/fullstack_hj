@@ -95,7 +95,7 @@ set nickname='user2',
     updatedat=sysdate
 where reviewid=1 and password='1111';
     
-    
+     select * from foodreview;
 insert into foodreview(
 reviewid, 
 userip, 
@@ -110,13 +110,13 @@ createdat)
 values(
 foodreview_seq.nextval,
 '*',
-'test2',
+'brandtest04',
 '1111',
-'2',
-'3',
+'4',
+'4',
 '5',
-'test02',
-'zzz',
+'brand04',
+'출력확인',
 sysdate
 );
 
@@ -141,8 +141,68 @@ commit;
 	from foodreview r join food f on(r.foodid=f.foodid) 
 	    join foodbrand b on(f.brandid=b.brandid)
 	    join pettype p on(p.pettypeid=f.pettypeid);
-        
-        
+    
 UPDATE foodreview
 SET reviewimg = NULL where reviewid=1;
 commit;
+
+
+select f.foodid, f.foodname, f.brandid, b.brandname
+from food f
+join foodbrand b on f.brandid = b.brandid;
+
+
+select * from foodreview;
+
+
+	select 
+	    r.reviewid as reviewid,
+	    r.userip as userip,
+	    r.nickname as nickname, 
+	    r.password as password,
+	    b.brandname as brandname,
+	    f.foodname as foodname, 
+	    f.foodimg as foodimg,
+	    r.reviewimg as reviewimg,
+	    r.rating as rating,
+	    r.title as title,
+	    r.reviewcontent as reviewcontent,
+	    r.createdat as createdat,
+	    r.updatedat as updatedat,
+	    f.brandid as brandid
+	from foodreview r join food f on(r.foodid=f.foodid) 
+	    join foodbrand b on(f.brandid=b.brandid);
+        
+
+
+select distinct foodid from foodreview;
+
+select foodid, brandid from food
+where foodid in (select distinct foodid from foodreview);
+
+select r.foodid, f.foodid, f.brandid
+from foodreview r
+join food f on r.foodid=f.foodid;
+
+select brandid from foodreview;
+
+
+
+select 
+    r.reviewid as reviewid,
+    r.userip as userip,
+    r.nickname as nickname,
+    r.password as password,
+    b.brandname as brandname,
+    f.foodname as foodname,
+    f.foodimg as foodimg,
+    r.reviewimg as reviewimg,
+    r.rating as rating,
+    r.title as title,
+    r.reviewcontent as reviewcontent,
+    r.createdat as createdat,
+    r.updatedat as updatedat,
+    r.brandid as brandid
+from foodreview r
+join foodbrand b on r.brandid = b.brandid
+join food f on r.foodid = f.foodid;
