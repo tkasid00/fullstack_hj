@@ -25,7 +25,7 @@
 	
 	<insert id="insertForUpload" parameterType="SboardDto">
 	insert into sboard1(id, app_user_id, btitle, bcontent, bpass, bfile,  bip, created_at) 
-	values(sboard1_seq.nextval, #{appUserId}, #{btitle}, #{bcontent}, #{bpass},   #{bfile, jdbcType=VARCHAR}, #{bip},  sysdate)
+	values(sboard1_seq.nextval, #{appUserId}, #{btitle}, #{bcontent}, #{bpass},  #{bfile}, #{bip},  sysdate)
 	</insert>
 	
 			<!-- 명시적 매핑 이후 resultType="SboardDto"에서 교체 -->

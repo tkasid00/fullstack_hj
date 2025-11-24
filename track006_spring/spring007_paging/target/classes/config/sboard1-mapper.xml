@@ -25,7 +25,7 @@
 	
 	<insert id="insertForUpload" parameterType="SboardDto">
 	insert into sboard1(id, app_user_id, btitle, bcontent, bpass, bfile,  bip, created_at) 
-	values(sboard1_seq.nextval, #{appUserId}, #{btitle}, #{bcontent}, #{bpass},   #{bfile, jdbcType=VARCHAR}, #{bip},  sysdate)
+	values(sboard1_seq.nextval, #{appUserId}, #{btitle}, #{bcontent}, #{bpass},  #{bfile}, #{bip},  sysdate)
 	</insert>
 	
 			<!-- 명시적 매핑 이후 resultType="SboardDto"에서 교체 -->
@@ -61,5 +61,18 @@
 		select * from sboard1 where btitle like #{search}
 	</select>
 
+
+	<!-- paging -->
+	<select resultMap="sboardMap" id="select10" parameterType="java.util.Map">
+            select * 
+            from (select row_number() over(order by created_at desc) as rnum, 
+                        id , APP_USER_ID , btitle, bcontent, bpass, bfile,  bip , bhit, created_at from sboard1) A
+            where A.rnum between #{start} and #{end}
+	</select>
+	
+	<select resultType="int" id="selectTotalCnt">
+		select count(*) from sboard1	
+	</select>
+	
 
 </mapper>
