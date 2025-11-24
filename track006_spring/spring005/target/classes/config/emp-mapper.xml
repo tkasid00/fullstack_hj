@@ -7,4 +7,9 @@
 	<select resultType="EmpDto" id="test1" parameterType="java.util.HashMap">
 		select * from emp where ${searchType} = #{keyword}
 	</select>
+	
+	<select resultType="EmpDto" id="test2" parameterType="EmpDto">
+		select * from emp where ename=#{ename} <if test='job!=null'>and job=#{job}</if>
+	</select>
+	
 </mapper>
