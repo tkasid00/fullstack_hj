@@ -162,7 +162,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="spring006" path="/spring006" reloadable="true" source="org.eclipse.jst.jee.server:spring006"/><Context docBase="spring005" path="/spring005" reloadable="true" source="org.eclipse.jst.jee.server:spring005"/><Context docBase="pawject_food" path="/pawject_food" reloadable="true" source="org.eclipse.jst.jee.server:pawject_food"/><Context docBase="pawject2" path="/pawject2" reloadable="true" source="org.eclipse.jst.jee.server:pawject2"/><Context docBase="spring007_paging" path="/spring007_paging" reloadable="true" source="org.eclipse.jst.jee.server:spring007_paging"/><Context docBase="spring6_mybatis" path="/spring006_mybatis" reloadable="true" source="org.eclipse.jst.jee.server:spring6_mybatis"/></Host>
+      <Context docBase="spring006" path="/spring006" reloadable="true" source="org.eclipse.jst.jee.server:spring006"/><Context docBase="spring005" path="/spring005" reloadable="true" source="org.eclipse.jst.jee.server:spring005"/><Context docBase="pawject_food" path="/pawject_food" reloadable="true" source="org.eclipse.jst.jee.server:pawject_food"/><Context docBase="spring007_paging" path="/spring007_paging" reloadable="true" source="org.eclipse.jst.jee.server:spring007_paging"/><Context docBase="spring008_security" path="/spring008_security" reloadable="true" source="org.eclipse.jst.jee.server:spring008_security"/></Host>
     </Engine>
   </Service>
 </Server>

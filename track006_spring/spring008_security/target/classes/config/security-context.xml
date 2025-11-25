@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- 암호화 -->
+	<bean id="passwordEncoder" 
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/> 
+
+	<!-- 로그인 성공 -->
+	<bean id="successHandler" class="com.thejoa703.security.loginSuccessHandler"></bean>
+	
+	<!-- 로그인 실패 -->
+	<bean id="deninedHandler" class="com.thejoa703.security.DeninedHandler"></bean>
+		
+	<!-- 유저 정보 -->
+	<bean id="customUserDetailsService" class="com.thejoa703.security.CustomUserDetailsService"></bean>
+
+ 	<security:http>
+ 		<!-- 디스패처보다 먼저 실행 				모든 경로				무제한허가 -->
+ 		<security:intercept-url pattern="/security/all"    access="permitAll"/>
+ 		<security:intercept-url pattern="/security/member" access="hasRole('ROLE_MEMBER')"/>
+ 		<!-- 로그인폼 필요 > 커스텀 -->
+ 		<security:form-login
+ 			login-page="/security/login"
+ 			authentication-success-handler-ref="successHandler"
+ 			authentication-failure-forward-url="/security/fail"
+ 			
+ 			
+ 		/>
+ 	</security:http>
+
+	<security:authentication-manager>	
+		<!-- provider : 실제 db상에 있는지 비교 -->
+		<security:authentication-provider user-service-ref="customUserDetailsService">
+			<security:password-encoder ref="passwordEncoder"/>
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+	<!--  -->
+
+</beans>
