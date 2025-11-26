@@ -95,6 +95,10 @@
 	    where a.email=#{email}
 	</select>	
 
+<!-- 	<insert id="insertAuth" parameterType="AuthDto">
+		insert into authorities(email, auth) values (#{email}, #{auth})
+	</insert> -->
+	
 	<insert id="insertAuth" parameterType="AuthDto">
 		insert into authorities(email, auth) values (#{email}, #{auth})
 	</insert>

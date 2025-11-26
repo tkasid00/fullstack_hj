@@ -8,6 +8,8 @@
 	<packaging>war</packaging>
 
 	<dependencies>
+	
+	
 	<dependency>
 	  <groupId>com.sun.activation</groupId>
 	  <artifactId>jakarta.activation</artifactId>
