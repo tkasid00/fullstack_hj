@@ -7,6 +7,7 @@
 		<typeAlias type="com.home.dto.FoodDto"	alias="FoodDto"/>
 		<typeAlias type="com.home.dto.NutriDto"	alias="NutriDto"/>
 		<typeAlias type="com.home.dto.BrandDto"	alias="BrandDto"/>
+		<typeAlias type="com.home.dto.ReviewDto"	alias="reviewDto"/>
 		<typeAlias type="com.home.dto.FoodDtoForList"	alias="FoodDtoForList"/>
 	</typeAliases>
 </configuration>

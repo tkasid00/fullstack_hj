@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.home.dao.ReviewDao">
+	<resultMap type="ReviewDto" id="ReviewMap">
+	
+		<result property="reviewid"	column="REVIEWID"/>
+		<result property="userid"	column="USERID"/>
+		<result property="nickname"	column="NICKNAME"/>
+		<result property="brandid"	column="BRANDID"/>
+		<result property="foodid"	column="FOODID"/>
+		<result property="foodimg"	column="FOODIMG"/>
+		<result property="rating"	column="RATING"/>
+		<result property="title"	column="TITLE"/>
+		<result property="reviewcomment"	column="REVIEWCOMMENT"/>
+		<result property="createdat"	column="CREATEDAT"/>
+		<result property="updatedat"	column="UPDATEDAT"/>
+
+	</resultMap>
+	
+	<!-- 리스트에서 토글로 상세 내용까지 출력 -->
+	<select resultMap="ReviewMap"  id="reviewList" >
+	 select r.reviewid, fb.brandname, f.foodname, f.foodimg, r.rating, r.title, r.reviewcomment, r.nickname, r.createdat, r.updatedat
+			from review r join food f on(r.foodid=f.foodid)
+               join foodbrand fb on(r.brandid=fb.brandid)
+	</select>
+	
+	<!-- 특정 리뷰 선택, 수정 시 사용 -->
+	<select resultMap="ReviewMap" id="reviewselect" parameterType="int">
+		select * from review where reviewid=#{reviewid}
+	</select>
+	
+	<insert id="reviewinsert" parameterType="ReviewDto">
+	insert into review (reviewid, userid, nickname, brandid, foodid, foodimg, rating, title, reviewcomment, createdat)
+            values(review_seq.nextval, #{userid},#{nickname},#{brandid},#{foodid},#{foodimg},#{rating},#{title},#{reviewcomment}, sysdate)
+	</insert>
+	
+	<update id="reviewupdate"  parameterType="ReviewDto">
+	update review set brandid=#{brandid}, foodid=#{foodid}, foodimg=#{foodimg}, 
+						rating=#{rating}, title=#{title}, 
+						reviewcomment=#{reviewcomment}, updatedat=sysdate
+			where reviewid=#{reviewid} and userid=#{userid}
+	</update>
+	
+	<delete id="reviewdelete" parameterType="ReviewDto">
+		delete from review where reviewid=#{reviewid} and userid=#{userid}
+	</delete>
+
+
+
+
+</mapper>
