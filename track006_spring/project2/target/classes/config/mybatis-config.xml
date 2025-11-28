@@ -7,7 +7,6 @@
 	<typeAliases>
 	<typeAlias type="com.thejoa703.dto.TestDto" alias="TestDto"/>
 	<typeAlias type="com.thejoa703.dto.AppUserAuthDto" alias="AppUserAuthDto"/>
-	<typeAlias type="com.thejoa703.dto.AppUserDto" alias="AppUserDto"/>
 	<typeAlias type="com.thejoa703.dto.AuthDto" alias="AuthDto"/>
 	<typeAlias type="com.thejoa703.dto.AppUser" alias="AppUser"/>
 	</typeAliases>
