@@ -120,7 +120,7 @@
 		
 		
 		<!-- 페이징 -->
-		<select resultMap="FoodMap"  id="foodselect10" parameterType="java.util.Map">
+		<select id="foodselect10" parameterType="map" resultType="FoodDtoForList">
 		   select *
             from(select row_number() over(order by f.createdat desc) as rnum, 
                     f.foodid as foodid, f.foodname as foodname, 
