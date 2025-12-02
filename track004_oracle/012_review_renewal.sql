@@ -7,7 +7,6 @@ desc review;
 --USERID        NOT NULL NUMBER             유저 아이디(users)
 --BRANDID                NUMBER             브랜드 아이디(foodbrand)
 --FOODID                 NUMBER             사료 아이디(food)
---REVIEWIMG              VARCHAR2(300)      리뷰 이미지(유저 업로드)
 --RATING                 NUMBER(1)          별점
 --TITLE                  VARCHAR2(100)      제목
 --REVIEWCOMMENT          VARCHAR2(500)      리뷰 내용
@@ -22,7 +21,6 @@ CREATE TABLE REVIEW (
     USERID NUMBER NOT NULL,
     BRANDID NUMBER,
     FOODID NUMBER,
-    REVIEWIMG VARCHAR2(300) DEFAULT NULL,
     RATING NUMBER(1) CHECK (RATING BETWEEN 1 AND 5),
     TITLE VARCHAR2(100), 
     REVIEWCOMMENT VARCHAR2(500),
@@ -48,8 +46,8 @@ DROP SEQUENCE REVIEW_SEQ;
 		select * from review where reviewid=#{reviewid};
 
 -- 리뷰 작성(insert) : 	
-	insert into review (reviewid, userid, brandid, foodid, reviewimg, rating, title, reviewcomment, createdat)
-            values(review_seq.nextval, #{userid},#{brandid},#{foodid},#{reviewimg},#{rating},#{title},#{reviewcomment} sysdate)
+	insert into review (reviewid, userid, brandid, foodid, reviewimg, rating, title, reviewcomment)
+            values(review_seq.nextval, #{userid},#{brandid},#{foodid},#{reviewimg},#{rating},#{title},#{reviewcomment})
 	
 -- 리뷰 수정(update)	:
 	update review set brandid=#{brandid}, foodid=#{foodid}, reviewimg=#{reviewimg}, 
