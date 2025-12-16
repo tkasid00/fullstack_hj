@@ -1,1 +1,54 @@
 /.metadata/
+
+### Java / Spring Boot ###
+/target/
+*.class
+*.jar
+*.war
+*.ear
+
+### Maven ###
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/maven-wrapper.jar
+
+### Gradle ###
+/build/
+.gradle/
+
+### IDE (절대 커밋 금지) ###
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.project
+.classpath
+.settings/
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### Logs ###
+*.log
+logs/
+
+### Spring Boot ###
+/out/
+*.pid
+
+### Environment / Security (중요) ###
+application-*.yml
+application-*.properties
+.env
+
+### Upload / Temp ###
+/upload/
+/uploads/
+/tmp/
+/temp/
+
+### Test / Coverage ###
+/coverage/
+*.exec
