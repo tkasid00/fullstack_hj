@@ -76,3 +76,7 @@ application-*.properties
 ### Test / Coverage ###
 /coverage/
 *.exec
+
+
+### 보안
+application-oauth.properties
