@@ -126,3 +126,81 @@ START WITH 1 INCREMENT BY 1
 NOCACHE;
 
 ``` 
+
+(2) DB 설정
+back/
+├── config/
+│   └── db.js                      # 오라클 DB 설정
+├── .env                           # 환경변수
+
+2-1. .env
+```js
+
+```
+
+2-2[config] - db.js
+```js
+```
+
+(3) [models] - [users.js]   # dao, mapper
+
+(4) 모델 함수 테스트 
+
+
+
+### 2. ROUTER(controller)
+back/
+├── routes/                        # 사용자 관련 api 라우터
+│   └── user.js              
+
+주소 경로(/user/register?  x)
+post : /user/register(requestBody)
+post : /user/login(requestBody)
+post : /user/logout
+get : /user/
+patch : /user/{id}/nickname         **전체 갱신은 put
+    ※비교 /user/nickname?id=1
+delete : /user/{id}
+
+1. app.js 
+const userRouter=require('./routes/user');
+app.use('/user', userRouter)
+
+2. [routes] - user.js
+
+
+
+**뷰 없이 post도 테스트 가능
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+
+
+
+### 3. Passport 로그인 흐름 확인  
+back/
+├── middlewares/
+│   └── isAuthenticated.js         # 로그인 여부->인증 미들웨어
+├── passport/
+│   ├── index.js                   # Password 초기화
+│   └── local.js                   # Local 전략 설정
+
+1. [passport] - local.js    *local 전략 설정
+2. [passport] - index.js    *passport 초기화
+3. [router] - usre.js       
+4. app.js
+
+
+
+
+1. 클라이언드 요청      /user/login
+2. 라우터              /routes/user.js
+3. passport/local.js  -  db 조회(findUserByEmail) - 성공 시 done(null, user) 사용자 객체 반환
+                        [★LocalStategy- 이메일/비번 검증해서 성송 시 user 반환] 
+4. passport/index.js - 로그인 성공 시 호출 - user.APP_USER_ID 세션 저장 
+                        [★serializeUser-세션에 pk 저장]
+                        [★deserializeUser-세션의 pk로 db 조회] 
+5. app.js - 세션 저장(express-session), 쿠키(connect.sid) 발급
+6. passport/index.js - 이후 매 요청 시 deserializeUser 세션에 저장된 APP_USER_ID 호출, 사용자 정보 복원
+7. middlewares/isAuthenticated - 로그인 여부 확인(next / 401)
+                                     [★isAuthenticated-로그인 여부 체크]
+8. /routes/user.js - 로그아웃(세션, 쿠키 제거)
