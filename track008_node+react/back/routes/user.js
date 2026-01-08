@@ -1,5 +1,6 @@
 //
-/* routes-user.js
+/**  
+ * routes-user.js
 --------------------------
 사용자 관련 API 라우터
 
@@ -11,7 +12,7 @@ get : /user/
 patch : /user/{id}/nickname         **전체 갱신은 put
     ※비교 /user/nickname?id=1
 delete : /user/{id}
-
+ 
 */
 
 
