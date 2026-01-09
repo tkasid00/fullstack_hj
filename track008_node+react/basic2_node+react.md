@@ -155,6 +155,47 @@ front/
 4) 치킨집(store) 업데이트                       
 5) `view` 화면 반영 -> 상태 감지 후 화면에 그림 그리기
 
+
+```
+사용자 액션(버튼 클릭, 로그인 요청 등)
+            ↓
+    [View 컴포넌트(부품)]
+    ______________________
+    - dispatch({type:LOG_IN_REQUEST, data:{id, password}})
+    - 화면에서 액션 발생
+            ↓
+         [store]
+    ______________________
+    - 중앙 창고(Redux Store)
+    - 모든 상태(state) 저장, 취합
+    - 액션을 reducer/saga로 전달
+            ↓
+          [saga]
+    ______________________
+    - 비동기 작업 담당(API)
+    - ex/ axios.post('/user/login')
+    - 성공 : LOG_IN_SUCCESS
+    - 실패 : LOG_IN_FAILURE
+            ↓
+        [reducer]
+    ______________________
+    - 상태(state) 변경 규칙서
+    - LOG_IN_SUCCESS -> me 업데이트
+    - LOG_IN_FAILURE -> error 저장
+            ↓
+         [store]
+    ______________________
+    - 변경된 상태를 중앙 창고에 반영
+            ↓
+        [View 리랜더링]
+    ______________________
+    - useSelector로 상태 읽기
+
+```
+
+
+
+
 1. [reducers] - user.js     ※ post.js, hashtag.js...
 2. [reducers] - index.js
 3. [reducers] - user.test.js
@@ -240,3 +281,34 @@ console.log(gen2.next()); //{value: undefined, done: true} 반복문 아닐 시 
  *               nickname: { type: string }
 
 6. delete : /user/{id}
+
+
+
+### 7. 개발(reducer - saga - view) (3) store
+```
+front/
+├── store/                  # ✅ Redux 스토어 설정 폴더
+│   ├── configureStore.js   # Redux 스토어 설정
+│   └── configureStore.test.js # 스토어 테스트 코드
+
+```
+
+1. store/configureStore.js
+2. store/configureStore.test.js
+
+
+### 8. view
+```
+front/
+├── pages/                  # ✅ Next.js 라우팅 기반 페이지 폴더
+│   ├── _app.js             # 전체 앱의 공통 설정 (Redux Provider, 글로벌 스타일 등)
+│   ├── index.js            # 메인 페이지
+│   ├── login.js            # 로그인 페이지
+│   ├── signup.js           # 회원가입 페이지
+│   └── users.js            # 사용자 목록 또는 정보 페이지 
+```
+
+1. `useSelector` - Redux store에서 사용자 상태 가져오기
+2. `useEffect` - 로그인 여부 확인 및 사용자 목록 불러오기 
+3. `dispatch` - 액션 발생(로그인, 사용자 삭제 등)
+ 

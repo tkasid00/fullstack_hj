@@ -35,7 +35,6 @@ async function createUser(email,  password,  nickname,  mobile,  mbtiTypeId,  uf
     } 
 }
 
-
 // 사용자조회-Email
 // SELECT APP_USER_ID, EMAIL,PASSWORD, NICKNAME, MOBILE, MBTI_TYPE_ID, CREATED_AT 
 // FROM APPUSER  WHERE EMAIL= :email
