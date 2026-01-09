@@ -77,13 +77,18 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 //모든 도메인에 api 호출 허용
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000',    //프론트엔드 주소 명시
+  credentials:true                    //쿠키, 세션 허용
+}));
+
 
 //개발 모드에서 요청 로그 출력
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 
 // 기본 보안 헤더 적용
-app.use(helmet());
+//app.use(helmet());
 
 
 //2️⃣세션 설정(쿠키 기반 세션 관리)
