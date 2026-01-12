@@ -1,11 +1,4 @@
 
--------------참고 테이블-----------------
-desc pettype;              
----------------------------------------
---이름          널?       유형           
-------------- -------- ------------ 
---PETTYPEID   NOT NULL NUMBER       
---PETTYPENAME NOT NULL VARCHAR2(50) 
 
 
 -------------푸드-----------------------
@@ -669,8 +662,75 @@ INSERT INTO foodnutrient VALUES (33, 6, 24.2);
 INSERT INTO foodnutrient VALUES (33, 5, 9.9);
 INSERT INTO foodnutrient VALUES (33, 1, 0.51);
 
+-------------------------------------------------------------------------------------------
+------------------------------------------------------
+--리뷰 테이블 CREATE(외래키 없는 버전-유저 완성 후 연결)
+------------------------------------------------------
+CREATE TABLE REVIEW (
+    REVIEWID NUMBER PRIMARY KEY,
+    USERID NUMBER NOT NULL,
+    BRANDID NUMBER,
+    FOODID NUMBER,
+    REVIEWIMG VARCHAR2(300) DEFAULT NULL,
+    RATING NUMBER(1) CHECK (RATING BETWEEN 1 AND 5),
+    TITLE VARCHAR2(100), 
+    REVIEWCOMMENT VARCHAR2(500),
+    CREATEDAT DATE DEFAULT SYSDATE,
+    UPDATEDAT DATE DEFAULT NULL
+);    
+
+------------------------------------------------------
+--리뷰 테이블 CREATE(외래키 넣은 버전)
+------------------------------------------------------
+CREATE TABLE REVIEW (
+    REVIEWID    NUMBER PRIMARY KEY,
+    USERID      NUMBER NOT NULL,
+    BRANDID     NUMBER,
+    FOODID      NUMBER,
+    REVIEWIMG   VARCHAR2(300) DEFAULT NULL,
+    RATING      NUMBER(1) CHECK (RATING BETWEEN 1 AND 5),
+    TITLE       VARCHAR2(100), 
+    REVIEWCOMMENT VARCHAR2(500),
+    CREATEDAT   DATE DEFAULT SYSDATE,
+    UPDATEDAT   DATE DEFAULT NULL,
+    
+    -- 외래키 제약조건
+    CONSTRAINT fk_review_user FOREIGN KEY (USERID)
+        REFERENCES USERS(USERID),
+        
+    CONSTRAINT fk_review_brand FOREIGN KEY (BRANDID)
+        REFERENCES FOODBRAND(BRANDID),
+        
+    CONSTRAINT fk_review_food FOREIGN KEY (FOODID)
+        REFERENCES FOOD(FOODID)
+);
+
+CREATE SEQUENCE REVIEW_SEQ
+START WITH 1 INCREMENT BY 1
+NOCACHE;
+
+DROP SEQUENCE REVIEW_SEQ;
 
 
+---------------------------------------------------------
+--리뷰 이미지 테이블 CREATE +외래키
+--------------------------------------------------------
+CREATE TABLE REVIEWIMG (
+    REVIEWIMGID NUMBER PRIMARY KEY,
+    REVIEWID NUMBER, 
+    REVIEWIMGNAME VARCHAR2(300) NOT NULL,
+    CREATEDAT DATE DEFAULT SYSDATE,
+    FOREIGN KEY (REVIEWID) REFERENCES REVIEW(REVIEWID)
+);
+
+CREATE SEQUENCE REVIEWIMG_SEQ
+START WITH 1 INCREMENT BY 1
+NOCACHE;
+
+
+--users에서 userid 1 존재 확인 후 테스트 구문 삽입할 것
+insert into review (reviewid, userid, brandid, foodid, rating, title, reviewcomment, createdat)
+values(review_seq.nextval, 1,1,1,5,'test','inserttest', sysdate);
 
 commit;
 
