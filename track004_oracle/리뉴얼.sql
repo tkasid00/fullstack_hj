@@ -49,7 +49,6 @@ CREATE TABLE PETFOOD (
     FOODID          NUMBER          PRIMARY KEY,
     FOODNAME        VARCHAR2(100)   NOT NULL,
     BRANDID         NUMBER          NOT NULL,
-    DESCRIPTION     VARCHAR2(500),
     MAININGREDIENT  VARCHAR2(200)   NOT NULL,
     PETTYPEID       NUMBER           DEFAULT 1,
     PETTYPENAME     VARCHAR2(255)    DEFAULT '고양이',
@@ -69,10 +68,10 @@ START WITH 1 INCREMENT BY 1
 NOCACHE;
 
 --로얄캐닌 : 마더 앤 베이비캣
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 마더 앤 베이비캣', 1, '임신 말기부터 수유기의 어미 반려묘와 생후 4개월까지 반려묘의 건강에 도움을 주는 임신 및 성장기 영양 맞춤 사료',
+VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 마더 앤 베이비캣', 1, 
         '닭', '일반', '키튼', 'N',
         443.7, '01001.png', 'https://www.royalcanin.com/kr/cats/products/retail-products/mother-%26-babycat-2544');
 
@@ -87,10 +86,10 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(1, 7, 6.5);
 
 
 --로얄캐닌 : 키튼
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 키튼', 1, '생후 4개월 이후부터 12개월까지',
+VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 키튼', 1, 
         '닭', '일반', '키튼', 'N',
         367.0, '01002.png', 'https://www.royalcanin.com/kr/cats/products/retail-products/kitten-2522');
 
@@ -106,10 +105,10 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(2, 7, 6.5);
 
 
 --로얄캐닌 : 스테럴라이즈드
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 스테럴라이즈드', 1, '중성화를 한 생후 12개월 이후 반려묘의 체중관리에 도움을 주는 영양맞춤사료',
+VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 스테럴라이즈드', 1, 
         '닭', '일반', '어덜트', 'N',
         352.4, '01003.png', 'https://www.royalcanin.com/kr/cats/products/retail-products/sterilised-37-2537');
 
@@ -124,10 +123,10 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(3, 7, 6.5);
 
 
 --로얄캐닌 : 라이트웨이트케어
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 라이트웨이트케어', 1, '과체중 경향이 있는 생후 12개월 이후 반려묘의 건강한 체중 관리에 도움을 주는 건강기능사료',
+VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 라이트웨이트케어', 1, 
         '닭',  '일반', '어덜트', 'N',
         352.4, '01004.png', 'https://www.royalcanin.com/kr/cats/products/retail-products/light-weight-care-2524');
 
@@ -144,10 +143,10 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(4, 7, 6.5);
 
 
 --로얄캐닌 : 인도어
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 인도어', 1, '생후 12개월 이후 활동량이 적은 실내 반려묘의 건강과 변량, 냄새감소에 도움을 주는 영양맞춤사료',
+VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 인도어', 1, 
         '닭', '일반', '어덜트', 'N',
         377.6, '01005.png', 'https://www.royalcanin.com/kr/cats/products/retail-products/indoor-27-2529');
 
@@ -163,10 +162,10 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(5, 7, 6.5);
     
 
 --로얄캐닌 : 캣 에이징 11+
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 에이징 11+', 1, '11세 이상의 반려묘를 위한 최적의 영양맞춤사료',
+VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 에이징 11+', 1, 
         '닭', '일반', '시니어', 'N',
         400.3, '01006.png', 'https://www.royalcanin.com/kr/cats/products/retail-products/ageing-11%2B-2561');
 
@@ -182,11 +181,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(6, 7, 6.5);
 
 
 --로얄캐닌 : 캣 하이포알러제닉
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 하이포알러제닉', 1, '반려묘의 알러지 피부염 증상 관리에 도움을 주는 수의사 처방 전용 제품',
-        '닭',  '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 하이포알러제닉', 1,
+        '닭',  '처방식', '전연령', 'N',
         409.0, '01007.png', 'https://www.royalcanin.com/kr/cats/products/vet-products/hypoallergenic-3902');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -200,11 +199,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(7, 7, 5.5);
 
 
 --로얄캐닌 : 캣 가스트로인테스티널
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 가스트로인테스티널', 1, '반려묘의 위장관 질환 관리에 도움을 주는 수의사 처방 전용 제품',
-        '닭', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 가스트로인테스티널', 1, 
+        '닭', '처방식', '전연령', 'N',
         409.0, '01008.png', 'https://www.royalcanin.com/kr/cats/products/vet-products/gastrointestinal-3905');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -218,11 +217,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(8, 6, 1.02);
 
 
 --로얄캐닌 : 캣 유리너리 S/O
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 유리너리 S/O', 1, '성묘의 스트루바이트 결석관리를 위해 급여',
-        '닭', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 유리너리 S/O', 1, 
+        '닭', '처방식', '전연령', 'N',
         387.0, '01009.png', 'https://www.royalcanin.com/kr/cats/products/vet-products/urinary-so-3901');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -237,11 +236,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(9, 6, 0.9);
 
 
 --로얄캐닌 : 캣 헤파틱
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 헤파틱', 1, '반려묘의 간질환 관리에 도움을 주는 수의사 처방 전용 제품',
-        '닭',  '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 헤파틱', 1, 
+        '닭',  '처방식', '전연령', 'N',
         413.6, '01010.png', 'https://www.royalcanin.com/kr/cats/products/vet-products/hepatic-4012');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -255,11 +254,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(10, 6, 0.6);
 
 
 --로얄캐닌 : 캣 레날 스페셜
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 레날 스페셜', 1, '반려묘의 신장 질환 관리에 도움을 주는 수의사 처방 전용 제품',
-        '돼지', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 레날 스페셜', 1, 
+        '돼지', '처방식', '전연령', 'N',
         391.9, '01011.png', 'https://www.royalcanin.com/kr/cats/products/vet-products/renal-special-3949');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -273,11 +272,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(11, 7, 5.5);
 
 
 --로얄캐닌 : 캣 다이아베틱
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 다이아베틱', 1, '반려묘의 당뇨병 관리에 도움을 주는 수의사 처방 전용 제품',
-        '닭', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '로얄캐닌 캣 다이아베틱', 1, 
+        '닭', '처방식', '전연령', 'N',
         385.2, '01012.png', 'https://www.royalcanin.com/kr/cats/products/vet-products/diabetic-3906');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -294,10 +293,10 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(12, 6, 0.9);
 -------------------------------------------------------------------------
 
 --힐스 : 키튼 치킨 레시피
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 키튼 치킨 레시피', 2, '평생 건강을 위한 5가지 핵심 영양소 지원',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 키튼 치킨 레시피', 2,
         '닭', '일반', '키튼', 'N',
         407.6, '02001.png', 'https://www.hillspet.co.kr/cat-food/sd-feline-kitten-dry');
 
@@ -311,10 +310,10 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(13, 6, 1.2);
 --INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(13, 7, 5.5);        
 
 --힐스 : 어덜트 인도어 치킨 레시피
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 어덜트 인도어 치킨 레시피', 2, '실내묘에게 요구되는 칼로리 제공 및 아름다운 모질에 도움',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 어덜트 인도어 치킨 레시피', 2,
         '닭', '일반', '어덜트', 'N',
         349.2, '02002.png', 'https://www.hillspet.co.kr/cat-food/sd-feline-adult-indoor-dry');
 
@@ -330,10 +329,10 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(14, 6, 0.77);
 
 
 --힐스 : 어덜트 퍼펙트 다이제스천
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 어덜트 퍼펙트 다이제스천', 2, '사이언스 다이어트의 혁신적인 영양이 소화기와 마이크로바이옴의 건강을 돕습니다.',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 어덜트 퍼펙트 다이제스천', 2, 
         '연어', '일반', '어덜트', 'N',
         384.4, '02003.png', 'https://www.hillspet.co.kr/cat-food/sd-feline-adult-perfect-digestion-salmon-oats-brown-rice-dry');
 
@@ -348,10 +347,10 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(15, 6, 0.78);
 
 
 --힐스 : 어덜트 11+ 치킨 레시피
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 어덜트 11+ 치킨 레시피', 2, '11세 이상 고양이의 두뇌 건강과 아름다운 모질에 도움',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 어덜트 11+ 치킨 레시피', 2, 
         '닭', '일반', '시니어', 'N',
         404.4, '02004.png', 'https://www.hillspet.co.kr/cat-food/sd-feline-adult-11-plus-dry');
 
@@ -366,11 +365,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(16, 6, 0.68);
 
 
 --힐스 : c/d 멀티케어 스트레스 치킨
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 c/d 멀티케어 스트레스 치킨', 2, '반려묘의 스트레스 감소에 도움이 되는 원료의 첨가로 비뇨기 관리에 도움을 줍니다.',
-        '닭', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 c/d 멀티케어 스트레스 치킨', 2, 
+        '닭', '처방식', '전연령', 'N',
         384.4, '02005.png', 'https://www.hillspet.co.kr/cat-food/pd-cd-multicare-feline-stress-dry');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -384,11 +383,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(17, 6, 0.67);
 
 
 --힐스 : GI 바이옴 스트레스 
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 GI 바이옴 스트레스', 2, '소화 불량을 겪는 고양이의 스트레스를 줄이는 데 도움이 되는 독자적 제조법으로 만들어진 맛있는 영양 사료입니다.',
-        '닭', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 GI 바이옴 스트레스', 2, 
+        '닭', '처방식', '전연령', 'N',
         380.7, '02006.png', 'https://www.hillspet.co.kr/cat-food/pd-gastrointestinal-biome-feline-dry');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -402,11 +401,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(18, 6, 0.72);
 
 
 --힐스 : i/d 반려묘용 건사료
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 i/d 반려묘용 건사료', 2, '힐스 프리스크립션 다이어트 i/d 반려묘용 건사료는 소화기 건강을 위한 사료입니다.',
-        '닭', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 i/d 반려묘용 건사료', 2, 
+        '닭', '처방식', '전연령', 'N',
         393.4, '02007.png', 'https://www.hillspet.co.kr/cat-food/pd-id-feline-dry');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -420,11 +419,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(19, 6, 0.79);
 
 
 --힐스 : k/d 반려묘용 건사료(오션피쉬)
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 k/d 반려묘용 건사료(오션피쉬)', 2, '맛있고 임상적으로 증명된 영양이 신장의 주요 기능을 보호하고 식욕 증진을 돕습니다.',
-        '생선', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 k/d 반려묘용 건사료(오션피쉬)', 2,
+        '생선', '처방식', '전연령', 'N',
         408.4, '02008.png', 'https://www.hillspet.co.kr/cat-food/pd-kd-feline-with-ocean-fish-dry');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -439,11 +438,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(20, 6, 0.51);
 
 
 --힐스 : ONC 케어 반려묘용 건사료
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 ONC 케어 반려묘용 건사료', 2, '암에 걸린 반려묘을 위해 임상 영양학적으로 설계된 처방사료입니다.',
-        '닭', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 ONC 케어 반려묘용 건사료', 2, 
+        '닭', '처방식', '전연령', 'N',
         581.0, '02009.png', 'https://www.hillspet.co.kr/cat-food/pd-feline-onc-on-care-chicken-dry');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -457,11 +456,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(21, 6, 0.75);
 
 
 --힐스 : t/d 반려묘용 건사료
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 t/d 반려묘용 건사료', 2, '치태와 치석의 형성률을 감소시키고 잇몸선까지 닦는 것이 임상적으로 증명된 사료입니다.',
-        '닭', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 t/d 반려묘용 건사료', 2, 
+        '닭', '처방식', '전연령', 'N',
         352.0, '02010.png', 'https://www.hillspet.co.kr/cat-food/pd-td-feline-dry');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -475,11 +474,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(22, 6, 0.79);
 
 
 --힐스 : w/d 멀티 베네핏 반려묘용 건사료
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 w/d 멀티 베네핏 반려묘용 건사료', 2, '비뇨기 건강, 소화기 건강, 혈당 관리 그리고 체중 관리와 같이 다양한 방면에 도움을 줄 목적으로 특별히 개발된 제품입니다. ',
-        '닭', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 w/d 멀티 베네핏 반려묘용 건사료', 2,
+        '닭', '처방식', '전연령', 'N',
         322.5, '02011.png', 'https://www.hillspet.co.kr/cat-food/pd-wd-feline-dry');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -493,11 +492,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(23, 6, 0.84);
 
 
 --힐스 :y/d 반려묘용 건사료
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 y/d 반려묘용 건사료', 2, '갑상선 기능 항진증을 앓고 있는 반려묘를 지원합니다.',
-        '닭', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 y/d 반려묘용 건사료', 2,
+        '닭', '처방식', '전연령', 'N',
         400.5, '02012.png', 'https://www.hillspet.co.kr/cat-food/pd-yd-feline-dry');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -511,11 +510,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(24, 6, 0.97);
 
 
 --힐스 : z/d 반려묘용 건사료
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 z/d 반려묘용 건사료', 2, '가수분해 단백질로 제조되어, 반려묘의 식이 역반응으로 인한 가려움, 소화 문제 등을 줄이는 데 도움을 줍니다.',
-        '닭', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 z/d 반려묘용 건사료', 2, 
+        '닭', '처방식', '전연령', 'N',
         384.7, '02013.png', 'https://www.hillspet.co.kr/cat-food/pd-zd-feline-dry');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -529,11 +528,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(25, 6, 0.59);
 
 
 --힐스 :메타볼릭 반려묘용 건사료
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 메타볼릭 반려묘용 건사료', 2, '반려묘의 고유한 신진대사를 활성화하여 빠르고 자연스럽게 체중을 감량하도록 도와줍니다.',
-        '닭', '처방식', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '힐스 메타볼릭 반려묘용 건사료', 2, 
+        '닭', '처방식', '전연령', 'N',
         339.8, '02014.png', 'https://www.hillspet.co.kr/cat-food/pd-metabolic-feline-dry');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -548,11 +547,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(26, 6, 0.77);
 -------------------------------------------------------------------------------------------------------
 
 --인스팅트:오리지날 생식본능 캣 키블
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 오리지날 생식본능 캣 키블', 3, '인스팅트 오리지날 생식본능 캣 키블은 AAFCO의 영양 기준을 충족하여 만들어진 전연령용 제품입니다.',
-        '닭', '일반', '어덜트', 'Y',
+VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 오리지날 생식본능 캣 키블', 3, 
+        '닭', '일반', '전연령', 'Y',
         430.0, '03001.png', 'http://www.instinctpetfood.co.kr/new_products/orig_cat_ch.jsp');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -566,11 +565,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(27, 7, 9.0);
 
 
 --인스팅트:오리지날 연어 캣 키블
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 오리지날 연어 캣 키블', 3, '인스팅트 오리지날 연어 캣 키블은 AAFCO의 영양 기준을 충족하여 만들어진 전연령용 제품입니다.',
-        '연어', '일반', '어덜트', 'Y',
+VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 오리지날 연어 캣 키블', 3,
+        '연어', '일반', '전연령', 'Y',
         447.0, '03002.png', 'http://www.instinctpetfood.co.kr/new_products/orig_cat_salmon.jsp');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -584,11 +583,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(28, 7, 9.0);
 
 
 --인스팅트:오리지날 토끼고기 캣 키블
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 오리지날 토끼고기 캣 키블', 3, '인스팅트 오리지날 토끼고기 캣 키블은 AAFCO의 영양 기준을 충족하여 만들어진 전연령용 제품입니다.',
-        '토끼', '일반', '어덜트', 'Y',
+VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 오리지날 토끼고기 캣 키블', 3, 
+        '토끼', '일반', '전연령', 'Y',
         434.6, '03003.png', 'http://www.instinctpetfood.co.kr/new_products/orig_cat_rabbit.jsp');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -602,10 +601,10 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(29, 7, 9.0);
 
 
 --인스팅트:인스팅트 LID 칠면조고기 캣 키블
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 LID 칠면조고기 캣 키블', 3, '인스팅트 LID 칠면조고기 캣 키블은 AAFCO의 영양 기준을 충족하여 만들어진 성묘용 제품입니다.',
+VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 LID 칠면조고기 캣 키블', 3,
         '칠면조', '일반', '어덜트', 'Y',
         407.0, '03004.png', 'http://www.instinctpetfood.co.kr/new_products/lid_cat_turkey.jsp');
 
@@ -619,10 +618,10 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(30, 3, 4.0);
 INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(30, 7, 9.0);  
 
 --인스팅트:인스팅트 LID 토끼고기 캣 키블
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 LID 토끼고기 캣 키블', 3, '인스팅트 LID 토끼고기 캣 키블은 AAFCO의 영양 기준을 충족하여 만들어진 성묘용 제품입니다.',
+VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 LID 토끼고기 캣 키블', 3, 
         '토끼', '일반', '어덜트', 'Y',
         389.0, '03005.png', 'http://www.instinctpetfood.co.kr/new_products/lid_cat_rabbit.jsp');
 
@@ -637,10 +636,10 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(31, 7, 9.0);
 
 
 --인스팅트:인스팅트 LID 연어 캣 키블
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 LID 연어 캣 키블', 3, '인스팅트 LID 연어 캣 키블은 AAFCO의 영양 기준을 충족하여 만들어진 성묘용 제품입니다.',
+VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 LID 연어 캣 키블', 3, 
         '연어', '일반', '어덜트', 'Y',
         389.0, '03006.png', 'http://www.instinctpetfood.co.kr/new_products/lid_cat_salmon.jsp');
 
@@ -655,11 +654,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(32, 7, 9.0);
 
 
 --인스팅트:인스팅트 얼티밋 프로틴 치킨 캣 키블
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 얼티밋 프로틴 치킨 캣 키블', 3, '인스팅트 얼티밋 프로틴 캣 키블은 AAFCO의 영양 기준을 충족하여 만들어진 전연령용 제품입니다.',
-        '닭', '일반', '어덜트', 'Y',
+VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 얼티밋 프로틴 치킨 캣 키블', 3,
+        '닭', '일반', '전연령', 'Y',
         447.0, '03007.png', 'http://www.instinctpetfood.co.kr/new_products/ult_cat_ch.jsp');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -673,11 +672,11 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(33, 7, 10.0);
 
 
 --인스팅트:인스팅트 얼티밋 프로틴 오리고기 캣 키블
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 얼티밋 프로틴 오리고기 캣 키블', 3, '인스팅트 얼티밋 프로틴 오리고기 캣 키블은 AAFCO의 영양 기준을 충족하여 만들어진 전연령용 제품입니다.',
-        '오리', '일반', '어덜트', 'Y',
+VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 얼티밋 프로틴 오리고기 캣 키블', 3, 
+        '오리', '일반', '전연령', 'Y',
         451.0, '03008.png', 'http://www.instinctpetfood.co.kr/new_products/ult_cat_duck.jsp');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
@@ -690,24 +689,331 @@ INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(34, 3, 3.0);
 INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(34, 7, 10.0);  
 
 --인스팅트:인스팅트 BE 내추럴 캣 키블
-INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, DESCRIPTION, 
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
                     MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
                     CALORIE, FOODIMG, OFFICIALURL)
-VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 BE 내추럴 캣 키블', 3, '인스팅트 BE 내추럴 캣 키블은 AAFCO의 영양 기준을 충족하여 만들어진 전연령용 제품입니다.',
-        '닭', '일반', '어덜트', 'N',
+VALUES(PETFOOD_SEQ.NEXTVAL, '인스팅트 BE 내추럴 캣 키블', 3, 
+        '닭', '일반', '전연령', 'N',
         389.9, '03009.png', 'http://www.instinctpetfood.co.kr/new_products/be_cat_ch.jsp');
 
 --조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
-INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(34, 1, 36.0);
-INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(34, 2, 18.0);
-INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(34, 3, 4.0);
---INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(34, 4, 6.2);
---INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(34, 5, 0.76);
---INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(34, 6, 0.77);
-INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(34, 7, 9.0);  
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(35, 1, 36.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(35, 2, 18.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(35, 3, 4.0);
+--INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(35, 4, 6.2);
+--INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(35, 5, 0.76);
+--INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(35, 6, 0.77);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(35, 7, 9.0);  
+
+------------------------------------------------------------------------------------------------------------------
+
+--오리젠: 오리젠 키튼
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '오리젠 키튼', 4, 
+        '닭', '일반', '키튼', 'Y',
+        416.0, '04001.png', 'https://apac.orijenpetfoods.com/ko-KR/ap-ori-ns-kitten.html');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(36, 1, 40.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(36, 2, 20.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(36, 3, 3.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(36, 4, 9.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(36, 5, 1.3);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(36, 6, 1.);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(36, 7, 10.0);  
+
+--오리젠: 오리젠 가디언8
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '오리젠 가디언8', 4, 
+        '닭', '일반', '어덜트', 'Y',
+        398.0, '04002.png', 'https://apac.orijenpetfoods.com/ko-KR/ap-ori-ns-guardian-8.html');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(37, 1, 40.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(37, 2, 18.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(37, 3, 4.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(37, 4, 9.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(37, 5, 1.4);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(37, 6, 1.1);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(37, 7, 10.0);  
 
 
-        
+--오리젠: 오리젠 피트 앤 트림
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '오리젠 피트 앤 트림', 4, 
+        '닭', '일반', '어덜트', 'Y',
+        371.0, '04003.png', 'https://apac.orijenpetfoods.com/ko-KR/ap-ori-ns-fittrim-cat.html');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(38, 1, 42.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(38, 2, 15.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(38, 3, 6.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(38, 4, 10.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(38, 5, 1.4);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(38, 6, 1.1);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(38, 7, 10.0);  
+
+--오리젠: 오리젠 오리지날 캣
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '오리젠 오리지날 캣', 4,
+        '닭', '일반', '전연령', 'Y',
+        416.0, '04004.png', 'https://apac.orijenpetfoods.com/ko-KR/ap-ori-ns-catkitten.html');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(39, 1, 40.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(39, 2, 20.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(39, 3, 3.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(39, 4, 8.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(39, 5, 1.4);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(39, 6, 1.1);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(39, 7, 10.0);  
+
+
+--오리젠: 오리젠 식스 피쉬
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '오리젠 식스 피쉬', 4,
+        '정어리', '일반', '전연령', 'Y',
+        407.0, '04005.png', 'https://apac.orijenpetfoods.com/ko-KR/ap-ori-ns-sixfish-cat.html');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(40, 1, 40.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(40, 2, 19.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(40, 3, 3.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(40, 4, 9.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(40, 5, 1.6);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(40, 6, 1.2);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(40, 7, 10.0);  
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+--뉴트리플랜:뉴트리플랜 고양이 플러스-전연령
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '뉴트리플랜 고양이 플러스-전연령', 5, 
+        '닭', '일반', '전연령', 'N',
+        null, '05001.png', 'http://www.dongwonpet.com/y5/shop/item.php?it_id=1567384118');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(41, 1, 31.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(41, 2, 13.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(41, 3, 3.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(41, 4, 10.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(41, 5, 0.75);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(41, 6, 0.6);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(41, 7, 12.0);  
+
+
+--뉴트리플랜:뉴트리플랜 고양이 플러스-어덜트
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '뉴트리플랜 고양이 플러스-어덜트', 5, 
+        '소', '일반', '어덜트', 'N',
+        null, '05002.png', 'http://www.dongwonpet.com/y5/shop/item.php?it_id=1567054510');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(42, 1, 33.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(42, 2, 14.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(42, 3, 3.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(42, 4, 12.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(42, 5, 1.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(42, 6, 0.7);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(42, 7, 12.0);  
+
+--뉴트리플랜:뉴트리플랜 고양이 플러스-키튼
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '뉴트리플랜 고양이 플러스-키튼', 5, 
+        '소', '일반', '키튼', 'N',
+        null, '05003.png', 'http://www.dongwonpet.com/y5/shop/item.php?it_id=1565136498');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(43, 1, 35.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(43, 2, 16.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(43, 3, 3.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(43, 4, 10.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(43, 5, 0.8);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(43, 6, 0.7);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(43, 7, 12.0);  
+
+
+--뉴트리플랜:뉴트리플랜 그레인프리 덕 캣
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '뉴트리플랜 그레인프리 덕 캣', 5, 
+        '오리', '일반', '전연령', 'Y',
+        null, '05004.png', 'http://www.dongwonpet.com/y5/shop/item.php?it_id=1527493478');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(44, 1, 34.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(44, 2, 15.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(44, 3, 8.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(44, 4, 13.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(44, 5, 1.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(44, 6, 0.5);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(44, 7, 11.0);  
+
+
+--뉴트리플랜:뉴트리플랜 그레인프리 튜나 캣
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '뉴트리플랜 그레인프리 튜나 캣', 5, 
+        '참치', '일반', '전연령', 'Y',
+        null, '05005.png', 'http://www.dongwonpet.com/y5/shop/item.php?it_id=1527493473');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(45, 1, 33.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(45, 2, 14.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(45, 3, 8.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(45, 4, 12.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(45, 5, 1.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(45, 6, 0.5);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(45, 7, 11.0);  
+
+--뉴트리플랜:뉴트리플랜 그레인프리 램캣
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '뉴트리플랜 그레인프리 램캣', 5, 
+        '양', '일반', '전연령', 'Y',
+        null, '05006.png', 'http://www.dongwonpet.com/y5/shop/item.php?it_id=1527493470');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(46, 1, 33.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(46, 2, 14.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(46, 3, 8.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(46, 4, 12.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(46, 5, 1.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(46, 6, 0.5);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(46, 7, 11.0);  
+
+
+-----------------------------------------------------------------------------------------------------
+
+--웰니스:컴플리트헬스 그레인프리 키튼
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '웰니스 컴플리트헬스 그레인프리 키튼', 6, 
+        '닭', '일반', '키튼', 'Y',
+        390.7, '06001.png', 'https://wellnesspet.kr/product/%ec%bb%b4%ed%94%8c%eb%a6%ac%ed%8a%b8-%ed%97%ac%ec%8a%a4-%ea%b7%b8%eb%a0%88%ec%9d%b8-%ed%94%84%eb%a6%ac-%ed%82%a4%ed%8a%bc/');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(47, 1, 40.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(47, 2, 18.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(47, 3, 4.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(47, 4, 9.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(47, 5, 1.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(47, 6, 0.8);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(47, 7, 10.0);
+
+--웰니스:컴플리트헬스 그레인프리 어덜트 치킨 캣
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '웰니스 컴플리트헬스 그레인프리 어덜트 치킨 캣', 6,
+        '닭', '일반', '어덜트', 'Y',
+        390.7, '06002.png', 'https://wellnesspet.kr/product/%ec%bb%b4%ed%94%8c%eb%a6%ac%ed%8a%b8-%ed%97%ac%ec%8a%a4-%ea%b7%b8%eb%a0%88%ec%9d%b8-%ed%94%84%eb%a6%ac-%ec%96%b4%eb%8d%9c%ed%8a%b8-%ec%b9%98%ed%82%a8-2/');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(48, 1, 40.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(48, 2, 18.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(48, 3, 4.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(48, 4, 9.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(48, 5, 1.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(48, 6, 0.8);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(48, 7, 10.0);  
+
+
+--웰니스:코어 키튼 포뮬라
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID, 
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '웰니스 코어 키튼 포뮬라', 6,
+        '칠면조', '일반', '키튼', 'Y',
+        397.7, '06003.png', 'https://wellnesspet.kr/product/%ec%bd%94%ec%96%b4-%ed%82%a4%ed%8a%bc-%ed%8f%ac%eb%ae%ac%eb%9d%bc/');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(49, 1, 45.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(49, 2, 18.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(49, 3, 3.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(49, 4, 9.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(49, 5, 0.6);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(49, 6, 0.8);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(49, 7, 10.0);
+
+--웰니스:코어 오리지날 포뮬라
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '웰니스 코어 오리지날 포뮬라', 6, 
+        '칠면조', '일반', '어덜트', 'Y',
+        397.7, '06004.png', 'https://wellnesspet.kr/product/%ec%bd%94%ec%96%b4-%ed%82%a4%ed%8a%bc-%ed%8f%ac%eb%ae%ac%eb%9d%bc/');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(50, 1, 45.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(50, 2, 18.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(50, 3, 3.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(50, 4, 10.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(50, 5, 0.6);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(50, 6, 0.5);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(50, 7, 10.0);  
+
+
+--웰니스:코어 인도어 포뮬라
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '웰니스 코어 인도어 포뮬라', 6, 
+        '닭', '일반', '전연령', 'Y',
+        356.1, '06005.png', 'https://wellnesspet.kr/product/%ec%bd%94%ec%96%b4-%ec%98%a4%eb%a6%ac%ec%a7%80%eb%82%a0-%ed%8f%ac%eb%ae%ac%eb%9d%bc/');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(51, 1, 38.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(51, 2, 12.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(51, 3, 5.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(51, 4, 10.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(51, 5, 0.6);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(51, 6, 0.5);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(51, 7, 10.0);  
+
+
+--웰니스:코어 인도어 오션 캣
+INSERT INTO PETFOOD(FOODID, FOODNAME, BRANDID,  
+                    MAININGREDIENT , CATEGORY, PETAGEGROUP, ISGRAINFREE, 
+                    CALORIE, FOODIMG, OFFICIALURL)
+VALUES(PETFOOD_SEQ.NEXTVAL, '웰니스 코어 인도어 오션 캣', 6, 
+        '연어', '일반', '전연령', 'Y',
+        327.7, '06006.png', 'https://wellnesspet.kr/product/%ec%bd%94%ec%96%b4-%ec%9d%b8%eb%8f%84%ec%96%b4-%ec%98%a4%ec%85%98-%ec%ba%a3/');
+
+--조단백, 조지방, 조섬유, 조회분, 칼슘, 인, 수분
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(52, 1, 38.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(52, 2, 10.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(52, 3, 6.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(52, 4, 10.0);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(52, 5, 0.8);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(52, 6, 0.6);
+INSERT INTO PETFOODNUTRI(FOODID, NUTRIENTID, AMOUNT) VALUES(52, 7, 10.0);  
+
+
+
+
 --3. 영양소 외래키X
 CREATE TABLE NUTRI(
     NUTRIENTID NUMBER PRIMARY KEY,
