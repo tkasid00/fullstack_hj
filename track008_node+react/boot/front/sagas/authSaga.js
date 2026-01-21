@@ -2,7 +2,7 @@
 // - CSR + SSR 모두 고려한 인증 사가
 // - Refresh Token은 HttpOnly 쿠키로 자동 포함 (axios.withCredentials)
 // - Access Token은 CSR에서만 localStorage/js-cookie로 저장/갱신
-
+import { message } from "antd";  // 컴포넌트
 import { call, put, takeLatest } from "redux-saga/effects";  //## takeLatest
 import Cookies from "js-cookie"; 
 import api from "../api/axios";
@@ -47,11 +47,14 @@ export function* login(action) {
         Cookies.set("accessToken", accessToken);
       }
       yield put(loginSuccess({ user, accessToken }));
+      message.success(`${user.nickname}님 환영합니다!`);
     } else {
       yield put(loginFailure("아이디 또는 비밀번호가 올바르지 않습니다."));
+      message.error("로그인 정보를 확인할 수 없습니다.");
     }
   } catch (err) {
     yield put(loginFailure(err.response?.data?.error || err.message));
+    message.error("로그인 실패: 이메일/비밀번호를 확인하세요.");
   }
 }
 
