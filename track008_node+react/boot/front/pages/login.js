@@ -1,9 +1,9 @@
 // pages/login.js
 import React from "react";
-import { useDispatch, useSelector } from "react-redux"; // 리듀서 상태관리
+import { useDispatch, useSelector } from "react-redux"; // 리듀서 상태 관리
 import { Row, Col, Form, Input, Button, Spin, message } from "antd";  // 컴포넌트
 import { useRouter } from "next/router"; // 경로
-import { loginSuccess, logout } from "../reducers/authReducer"; //액션 - 로그인성공, 로그아웃
+import { loginRequest, logout, loginSuccess } from "../reducers/authReducer"; //액션 - 로그인 성공, 로그아웃
 import api from "../api/axios";  // 비동기 localhost:8484
 
 export default function LoginPage(){
@@ -11,7 +11,7 @@ export default function LoginPage(){
     const dispatch = useDispatch();
     const router   = useRouter();
     const {user,loading,error} = useSelector( (state) => state.auth );
-
+    
     //로그인 버튼
     const onFinish = async(values)=>{ 
         try{    // api.post → saga 
@@ -34,7 +34,13 @@ export default function LoginPage(){
                 message.error("로그인 실패: 이메일/비밀번호를 확인하세요.");
         } 
     };
-    //소셜 로그인 핸들러추가
+
+    // // ↓ 사가로 message 넘기고 축약 가능
+    // const onFinish=async(values)=>{
+    //     dispatch(loginRequest({...values, provider:"local"}))
+    // }
+
+    //소셜 로그인 핸들러 추가
     const handleSocialLogin=(provider)=>{ 
         window.location.href = `http://localhost:8484/oauth2/authorization/${provider}`;
     }; 

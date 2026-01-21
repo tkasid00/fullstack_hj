@@ -40,3 +40,25 @@ front/
 ├── package.json            # 프로젝트 메타 정보 및 의존성
 └── setupTests.js           # 테스트 환경 설정 파일
 ```
+
+4. 개발 - reducer / saga / store
+
+ ### 핵심 3가지 다시 점검
+
+1. Refresh Token은 HttpOnly 쿠키에 저장 → JS 접근 불가, Axios가 자동 포함(withCredentials: true).  
+   - axios 인스턴스에서 withCredentials: true 설정 OK.
+   - 프론트 코드에서 Refresh Token을 직접 건드리지 않음 OK.
+
+2. Access Token은 CSR에서는 localStorage/쿠키에 저장, SSR에서는 서버에서 req.cookies를 읽어 처리.  
+   - CSR: OAuth2Callback, 로그인 로직에서 localStorage 저장 OK.  
+   - SSR: getServerSideProps에서 req.headers.cookie를 전달, /auth/me로 인증 확인 OK.
+
+3. Axios 인터셉터로 401 발생 시 /auth/refresh.  
+   - lib/axios.js 응답 인터셉터에서 401 처리 → /auth/refresh 호출 → 새 Access Token 저장 후 원 요청 재시도 OK.
+
+```
+front/reducers/
+ ┣ _tests_(폴더)
+ ┣ authReducer.js
+ ┗ index.js   → combineReducers
+ ```

@@ -16,10 +16,10 @@ export const makeStore = () => {
       }).concat(sagaMiddleware),  //saga 미들웨어 연결
     devTools: process.env.NODE_ENV !== 'production',
   });
-
+  // saga 미들웨어 실행 및 rootSaga 연결
   store.sagaTask = sagaMiddleware.run(rootSaga);
 
   return store;
 };
-
+// next.js에서 redux를 사용할 수 있도록 wrapper 생성
 export const wrapper = createWrapper(makeStore, { debug: process.env.NODE_ENV !== 'production' });
