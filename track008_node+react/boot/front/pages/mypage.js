@@ -15,6 +15,10 @@ import {
   logout,
 } from "../reducers/authReducer";  //액션
 
+import{
+    loadFollowersRequest, loadFollowingsRequest, unfollowRequest
+} from "../reducers/followReducer";
+
 import api from "../api/axios";
 import { wrapper } from "../store/configureStore";
 import TabPane from "antd/lib/tabs/TabPane";
@@ -56,6 +60,21 @@ export default function Mypage(){
     const [fileList, setFileList] = useState([]);
     const imageUrl = user?.ufile? `${process.env.NEXT_PUBLIC_API_BASE_URL}/${user.ufile}`:undefined;
 
+    ///////////////////////////////////
+    const {
+            followersList = [],    //화면 랜더링용 배열
+            followingsList = [],   //화면 랜더링용 배열
+            followLoading=false,
+    } = useSelector((state)=>state.follow);
+
+    useEffect( ()=>{
+        if(user?.id){
+            dispatch(loadFollowersRequest());
+            dispatch(loadFollowingsRequest());
+        }
+    },[user?.id, dispatch]);
+
+
     if(loading){ return <Spin/>; }
     if(!user || !user.nickname){  return <p>로그인이 필요합니다.</p>; }
 
@@ -64,7 +83,7 @@ export default function Mypage(){
     return (<Card title="마이페이지"  style={{maxWith:800 , margin: "20px auto"}}>
         <Tabs defaultActiveKey="profile">
             {/* 내 정보 탭 */}
-             <TabPane> 
+             <TabPane  tab="내 정보" key="profile"> 
                 <div style={{ display: "flex" , alignTems: "center" , marginBottom: 20}}>
                     <Avatar src={imageUrl}  size={64}>
                         {user.nickname?.[0]} {/* 닉네임 첫글자 */}
@@ -120,7 +139,39 @@ export default function Mypage(){
 
              </TabPane>  
             {/* 팔로워 탭 */} 
+            <TabPane tab={`팔로워 ${followersList.length}`} key="followers">
+                    <List loading={followLoading}
+                           dataSource={Array.isArray(followersList)? followersList:[]}
+                           renderItem={(item)=>(
+                            <List.Item actions={[]}>  {/* 여기에 차단 추가 가능 */} 
+                                <List.Item.Meta
+                                    avatar={ <Avatar>{item.nickname?.[0]}</Avatar>}
+                                    title={item.nickname}
+                                    description={item.email} />
+                            </List.Item>
+                            )}>
+                    </List>
+            </TabPane>
 
+            {/* 팔로잉 탭 */} 
+            <TabPane tab={`팔로잉 ${followingsList.length}`} key="followings">
+                    <List loading={followLoading}
+                           dataSource={Array.isArray(followingsList)? followingsList:[]}
+                           renderItem={(item)=>(
+                            <List.Item actions={[
+                                <Button key="unfollow"
+                                onClick={()=>dispatch(unfollowRequest({followeeId : item.followeeId}))}>
+                                    언팔로우
+                                </Button>
+                            ]}>  
+                                <List.Item.Meta
+                                    avatar={ <Avatar>{item.nickname?.[0]}</Avatar>}
+                                    title={item.nickname}
+                                    description={item.email} />
+                            </List.Item>
+                        )}>
+                    </List>
+            </TabPane>
         </Tabs>
     </Card>);
 }
