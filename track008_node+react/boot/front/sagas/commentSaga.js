@@ -10,11 +10,12 @@ import {
   deleteCommentRequest, deleteCommentSuccess, deleteCommentFailure,
 } from '../reducers/commentReducer';
 
-//공통 에러 출력
+// 공통에러출력
 function getErrorMessage(err) {
   return err.response?.data?.message || err.message; 
 }
 
+// 댓글 조회
 export function* fetchComments(action) {
   try {
     const { postId } = action.payload;
@@ -24,7 +25,7 @@ export function* fetchComments(action) {
     yield put(fetchCommentsFailure(getErrorMessage(err)));
   }
 }
-
+// 댓글작성
 export function* createComment(action) {
   try {
     const { postId, dto } = action.payload; 
@@ -34,7 +35,7 @@ export function* createComment(action) {
     yield put(createCommentFailure(getErrorMessage(err)));
   }
 }
-
+// 댓글수정
 export function* updateComment(action) {
   try {
     const { postId, commentId, dto } = action.payload;
@@ -44,12 +45,13 @@ export function* updateComment(action) {
     yield put(updateCommentFailure(getErrorMessage(err)));
   }
 }
-
+// 댓글삭제
 export function* deleteComment(action) {
   try {
     const { postId, commentId } = action.payload;
     yield call(axios.delete, `/api/comments/${commentId}`);
-    yield put(deleteCommentSuccess({ postId, commentId })); 
+    yield put(
+      deleteCommentSuccess({ postId, commentId })); 
   } catch (err) {
     yield put(deleteCommentFailure(getErrorMessage(err)));
   }

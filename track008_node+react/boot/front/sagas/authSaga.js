@@ -2,7 +2,7 @@
 // - CSR + SSR 모두 고려한 인증 사가
 // - Refresh Token은 HttpOnly 쿠키로 자동 포함 (axios.withCredentials)
 // - Access Token은 CSR에서만 localStorage/js-cookie로 저장/갱신
-import { message } from "antd";  // 컴포넌트
+
 import { call, put, takeLatest } from "redux-saga/effects";  //## takeLatest
 import Cookies from "js-cookie"; 
 import api from "../api/axios";
@@ -14,6 +14,8 @@ import {
   updateNicknameRequest,  updateNicknameSuccess,   updateNicknameFailure,
   updateProfileImageRequest,  updateProfileImageSuccess,  updateProfileImageFailure,
 } from "../reducers/authReducer";
+
+import { message } from "antd";
 
 // --- 회원가입 API ---
 function signupApi(formData) {
@@ -35,6 +37,9 @@ export function* signup(action) {
 function loginApi(payload) {
   return api.post("/auth/login", payload);
 }
+
+import Router from "next/router";
+
 export function* login(action) {
   try {
     const { data } = yield call(loginApi, action.payload);
@@ -48,9 +53,10 @@ export function* login(action) {
       }
       yield put(loginSuccess({ user, accessToken }));
       message.success(`${user.nickname}님 환영합니다!`);
+      Router.push("/mypage");  //##
     } else {
       yield put(loginFailure("아이디 또는 비밀번호가 올바르지 않습니다."));
-      message.error("로그인 정보를 확인할 수 없습니다.");
+       message.error("로그인 정보를 확인할 수 없습니다.");
     }
   } catch (err) {
     yield put(loginFailure(err.response?.data?.error || err.message));
@@ -82,32 +88,6 @@ export function* refresh() {
     yield put(logout());  
   }
 }
-
-
-// // --- 토큰 재발급 API ---
-// // Spring Boot: { accessToken } 반환
-// // Refresh Token 재발급 Saga
-// function refreshApi() {
-//   return api.post("/auth/refresh");
-// }
-// export function* refresh() {
-//   try {
-//     // 서버에 refresh 요청 → 새 Access Token 발급
-//     const { data } = yield call(refreshApi);
-//     const newAccessToken = data?.accessToken || null;
-
-//     // CSR 환경에서 localStorage와 쿠키에 저장
-//     if (typeof window !== "undefined" && newAccessToken) {
-//       localStorage.setItem("accessToken", newAccessToken);
-//       Cookies.set("accessToken", newAccessToken);
-//     }
- 
-//     yield put(refreshTokenSuccess({ accessToken: newAccessToken }));
-//   } catch (err) { 
-//     yield put(refreshTokenFailure(err.response?.data?.error || err.message));
-//     yield put(logout());  
-//   }
-// }
 
 
 // --- 로그아웃 API ---

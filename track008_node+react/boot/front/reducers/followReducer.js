@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  followersMap: {},     //팔로워 여부 {followerId : true}
-  followingsMap: {},    //팔로잉 여부 {followeeId : true}
-  followersList: [],    //화면 랜더링용 배열
-  followingsList: [],   //화면 랜더링용 배열
+  followersMap: {},    // 팔로워 여부 {  followerId : true } 
+  followingsMap: {},   // 팔로워 여부 {  followeeId : true }    
+  followersList: [],   // 화면 렌더링용 배열 
+  followingsList: [],  // 화면 렌더링용 배열 
   loading: false,
   error: null,
 };
@@ -12,15 +12,12 @@ const initialState = {
 const followSlice = createSlice({
   name: "follow",
   initialState,
-  reducers: {
-    // --- 팔로우 요청 ---
-    followRequest: (state) => {
-      state.loading = true;
-      state.error = null;
-    },
+  reducers: { 
+    // 팔로우 요청
+    followRequest: (state) => {    state.loading = true;   state.error = null; },
     followSuccess: (state, action) => {
       state.loading = false;
-      const { followeeId, /* blocked */} = action.payload;  //blocked - 신고차단용
+      const { followeeId /*, blocked*/  } = action.payload;
       const id = String(followeeId);
   
       state.followingsMap = {
@@ -31,7 +28,7 @@ const followSlice = createSlice({
       if (!state.followingsList.find(f => String(f.followeeId) === id)) {
         state.followingsList = [
           ...state.followingsList,
-          { followeeId: id, /*blocked: blocked ?? false */},
+          { followeeId: id  /*, blocked: blocked ?? false */ },
         ];
       }
     },
@@ -79,7 +76,7 @@ const followSlice = createSlice({
       state.followersList = action.payload.map(f => ({
         ...f,
         followerId: String(f.followerId),
-       // blocked: f.blocked ?? false,
+        //blocked: f.blocked ?? false,
       }));
     },
     loadFollowersFailure: (state, action) => {
@@ -102,7 +99,7 @@ const followSlice = createSlice({
       state.followingsList = action.payload.map(f => ({
         ...f,
         followeeId: String(f.followeeId ?? f.userId),
-     //   blocked: f.blocked ?? false,
+        //blocked: f.blocked ?? false,
       }));
     },
     loadFollowingsFailure: (state, action) => {

@@ -3,35 +3,34 @@
 import axios from "axios";
 
 const api = axios.create({
-  // 기본 api 서버 주소, 환경변수 없으면 로컬 서버 사용
   baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8484", 
-  // refresh Token이 HttpOnly 쿠키에 저장돼 있으면 자동으로 포함 필요
+  // 기본 api 서버주소, 환경변수가 없으면 로컬서버 사용
   withCredentials: true, 
+  // refresh Token 이 HttpOnly 쿠키에  저장이 되어 있으면 자동 포함 필요
   headers: {
-    "Content-Type": "application/json",  // 요청 기본 json 
-    Accept: "application/json",          // 응답을 json으로 받도록 지정
+    "Content-Type": "application/json",   // → 요청기본 json
+    Accept: "application/json",           // → 응답을 JSON으로 받도록 지정 
   },
 });
- 
-//요청 인터셉터 - 요청 보내기 전에 Access Token을 헤더에 추가
+// 요청 인터셉터: 요청 보내기 전에 Access Token을 헤더에 추가  
 api.interceptors.request.use(
   (config) => {
-    if (typeof window !== "undefined") {   // CSR 환경에서만 localStorage 접근
-      const accessToken = localStorage.getItem("accessToken"); // 저장된 Access Token 가져오기
-      if (accessToken) {    
-        config.headers.Authorization = `Bearer ${accessToken}`;  //Authorization 헤더에 추가**
+    if (typeof window !== "undefined") {  //→ CSR 환경에서만 localStorage 접근
+      const accessToken = localStorage.getItem("accessToken"); //→ 저장된 Access Token 가져오기 
+      if (accessToken) {
+        config.headers.Authorization = `Bearer ${accessToken}`;  //→ Authorization 헤더에 추가
       }
     }
     return config;  
   },
-  (error) => Promise.reject(error)  
+  (error) => Promise.reject(error)  // 요청에러처리
 ); 
 api.interceptors.response.use(
   (res) => res, // → 정상 응답은 그대로 반환
   async (error) => {
     const original = error.config; // → 원래 요청 정보
     const status = error.response?.status; // → 응답 상태 코드
-        //401 발생 시 Refresh Token 재발급
+    // 401 발생시 Refresh Token 재발급
     if (status === 401 && !original._retry) {
       original._retry = true; // → 무한 루프 방지 플래그
       try {
@@ -39,15 +38,15 @@ api.interceptors.response.use(
         const newAccessToken = data?.accessToken;  
 
         if (typeof window !== "undefined" && newAccessToken) {
-          localStorage.setItem("accessToken", newAccessToken);  //local 저장
+          localStorage.setItem("accessToken", newAccessToken);  // local 저장
         }
 
-        original.headers.Authorization = `Bearer ${newAccessToken}`;  //원 요청 헤더 갱신
+        original.headers.Authorization = `Bearer ${newAccessToken}`;  // 원 요청 헤더 갱신
         return api(original); 
       } catch (refreshErr) {
         if (typeof window !== "undefined") {
-          localStorage.removeItem("accessToken");   // Access Token 제거
-          window.location.href = "/login";          // 로그인 페이지로 이동
+          localStorage.removeItem("accessToken");  // Access Token 제거
+          window.location.href = "/login";         // 로그인 페이지로 이동
         }
         return Promise.reject(refreshErr);  
       }

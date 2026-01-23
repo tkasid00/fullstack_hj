@@ -1,10 +1,10 @@
-// react 불러오기
+//React불러오기
 import React from 'react';
-//Redux wrapper 불러오기 (Next.js오 Redux 연결)
+//Redux wrapper 불러오기 ( Next.js 와 Redux 연결 )
 import { wrapper } from '../store/configureStore';
-//공용 레이아웃
+//공용레이아웃 
 import AppLayout from '../components/AppLayout';
-//Ant 디자인 
+//Ant 디자인
 import 'antd/dist/antd.css';
 //글로벌 css
 import '../styles/global.css';
