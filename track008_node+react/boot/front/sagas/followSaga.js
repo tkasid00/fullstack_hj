@@ -11,12 +11,11 @@ import {
   toggleFollowRequest,
 } from "../reducers/followReducer";
 
-//팔로워 목록
+// 팔로우 추가
 function followApi({ followeeId }) {
   return axios.post("/api/follows", { followeeId });
 }
 
-//팔로우 추가
 export function* follow(action) {
   try {
     const { data } = yield call(followApi, action.payload);
@@ -31,7 +30,7 @@ export function* follow(action) {
   }
 }
 
-//언팔
+// 언 팔로우  
 function unfollowApi({ followeeId }) {
   return axios.delete("/api/follows", {
     data: { followeeId }
@@ -48,9 +47,9 @@ export function* unfollow(action) {
   }
 }
 
-//팔로잉 목록
+// 팔로워 목록
 function followersApi() {
-  return axios.get("/api/follows/me/followings");
+  return axios.get("/api/follows/me/followers");
 }
 
 export function* loadFollowers() {
@@ -63,7 +62,7 @@ export function* loadFollowers() {
   }
 }
 
-
+// 팔로잉 목록
 function followingsApi() {
   return axios.get("/api/follows/me/followings");
 }

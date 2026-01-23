@@ -10,32 +10,31 @@ const commentSlice = createSlice({
   name: 'comment',
   initialState,
   reducers: { 
- 
-    //댓글 조회
+    // 댓글 조회
     fetchCommentsRequest: (state) => { state.loading = true; },
     fetchCommentsSuccess: (state, action) => {
       state.loading = false;
-      const { postId, comments } = action.payload;  //어떤 글에 대한 댓글들
-      state.comments[postId] = comments;
+      const { postId, comments } = action.payload;  // 어떤 글에대한, 댓글들
+      state.comments[postId] = comments;   
     },
     fetchCommentsFailure: (state, action) => {
       state.loading = false;
       state.error = action.payload;
     },
-
-    //댓글 작성
+ 
+    // 댓글 작성
     createCommentRequest: (state) => { state.loading = true; },
     createCommentSuccess: (state, action) => {
       state.loading = false;
       const { postId, comment } = action.payload;  
-      state.comments[postId] = [...(state.comments[postId] || []), comment];   //기존 댓글에 추가
+      state.comments[postId] = [...(state.comments[postId] || []), comment];  //기존댓글 추가
     },
     createCommentFailure: (state, action) => {
       state.loading = false;
       state.error = action.payload;
     },
  
-    //댓 수정
+    // 댓글 수정
     updateCommentRequest: (state) => { state.loading = true; },
     updateCommentSuccess: (state, action) => {
       state.loading = false;
@@ -49,7 +48,7 @@ const commentSlice = createSlice({
       state.error = action.payload;
     },
  
-    //댓삭
+    // 댓글 삭제
     deleteCommentRequest: (state) => { state.loading = true; },
     deleteCommentSuccess: (state, action) => {
       state.loading = false;

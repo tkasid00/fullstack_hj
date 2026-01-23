@@ -12,9 +12,9 @@ import {
   deletePostRequest, deletePostSuccess, deletePostFailure,
 } from '../reducers/postReducer';
 
-//전체 게시글 가져오기
+// 전체게시글
 export function* fetchPosts() {
-  try {   //localhost:8484/api/posts
+  try {                               //localhost:8484/api/posts
     const { data } = yield call(() => axios.get('/api/posts'));
     yield put(fetchPostsSuccess(data));
   } catch (err) {
@@ -22,7 +22,7 @@ export function* fetchPosts() {
   }
 }
 
-//단건 게시글 
+// 단건게시글
 export function* fetchPost(action) {
   try {
     const { data } = yield call(() => axios.get(`/api/posts/${action.payload.postId}`));
@@ -31,7 +31,8 @@ export function* fetchPost(action) {
     yield put(fetchPostFailure(err.response?.data?.message || err.message));
   }
 }
-//페이징
+
+// 전체게시글 페이징조회
 export function* fetchPostsPaged(action) {
   try {
     const { page, size } = action.payload;
@@ -42,7 +43,7 @@ export function* fetchPostsPaged(action) {
   }
 }
 
-//좋아요한 게시글
+// 좋아요한 게시글
 export function* fetchLikedPosts(action) {
   try {
     const { page, size } = action.payload;
@@ -52,7 +53,7 @@ export function* fetchLikedPosts(action) {
     yield put(fetchLikedPostsFailure(err.response?.data?.message || err.message));
   }
 }
-//내가 쓴 글+리트윗한 글
+// 내가 쓴글 + 리트윗한 글
 export function* fetchMyAndRetweets(action) { // ✅ 변경
   try {
     const { page, size } = action.payload;
@@ -64,7 +65,7 @@ export function* fetchMyAndRetweets(action) { // ✅ 변경
     yield put(fetchMyAndRetweetsFailure(err.response?.data?.message || err.message));
   }
 }
-//글쓰기
+// 글쓰기
 export function* createPost(action) {
   try {
     const { dto, files } = action.payload;
@@ -82,7 +83,7 @@ export function* createPost(action) {
     yield put(createPostFailure(err.response?.data?.message || err.message));
   }
 }
-//수정
+// 수정
 export function* updatePost(action) {
   try {
     const { postId, dto, files } = action.payload;
@@ -104,7 +105,7 @@ export function* updatePost(action) {
     yield put(updatePostFailure(err.response?.data?.message || err.message));
   }
 }
-//삭제
+// 삭제
 export function* deletePost(action) {
   try {
     yield call(() => axios.delete(`/api/posts/${action.payload.postId}`));

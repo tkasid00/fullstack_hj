@@ -12,6 +12,7 @@ const likeSlice = createSlice({
   name: "like",
   initialState,
   reducers: {
+    // 좋아요누르기
     addLikeRequest: (state) => { state.loading = true; state.error = null; },
     addLikeSuccess: (state, action) => {
       state.loading = false;
@@ -23,8 +24,7 @@ const likeSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
-
-    //좋아요 삭제
+    // 좋아요삭제
     removeLikeRequest: (state) => { state.loading = true; state.error = null; },
     removeLikeSuccess: (state, action) => {
       state.loading = false;
@@ -36,8 +36,7 @@ const likeSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
-
-    //좋아요 수 
+    // 좋아요 수
     countLikesRequest: (state) => { state.loading = true; state.error = null; },
     countLikesSuccess: (state, action) => {
       state.loading = false;
@@ -48,12 +47,11 @@ const likeSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
-
-    //내 좋아요 찾기
+    // 내가 좋아요
     fetchMyLikesRequest: (state) => { state.loading = true; state.error = null; },
     fetchMyLikesSuccess: (state, action) => {
       state.loading = false;
-      const likedPosts = action.payload;  //서버에서 [1,2,3...] 반환
+      const likedPosts = action.payload;  
       const likesObj = {};
       likedPosts.forEach(id => { likesObj[id] = true; });
       state.likes = { ...state.likes, ...likesObj };

@@ -7,17 +7,31 @@ import {
   fetchMyRetweetsRequest, fetchMyRetweetsSuccess, fetchMyRetweetsFailure,
 } from '../reducers/retweetReducer';
 
-//리트윗 추가
-export function* addRetweet(action) {
-  try {
-    const { postId } = action.payload;
-    const { data } = yield call(() => axios.post(`/api/retweets`, { originalPostId: postId }));
-    yield put(addRetweetSuccess({ postId: data.originalPostId, retweetCount: data.retweetCount })); 
-  } catch (err) {
-    yield put(addRetweetFailure(err.response?.data?.message || err.message));
+// //  리트윗 추가
+// export function* addRetweet(action) {
+//   try {
+//     const { originalPostId } = action.payload;  // react 에서 던지는값
+//     const { data } = yield call(() => axios.post(`/api/retweets`, { originalPostId: originalPostId }));
+//     yield put(addRetweetSuccess({ originalPostId: data.originalPostId, retweetCount: data.retweetCount })); 
+//   } catch (err) {
+//     yield put(addRetweetFailure(err.response?.data?.message || err.message));
+//   }
+// }
+
+  //  리트윗 추가
+  export function* addRetweet(action) {
+    try {
+      const { postId } = action.payload;  // react 에서 던지는값
+      const { data } = yield call(() => axios.post(`/api/retweets`, { originalPostId: postId }));
+      yield put(addRetweetSuccess({ postId: data.originalPostId, retweetCount: data.retweetCount })); 
+    } catch (err) {
+      yield put(addRetweetFailure(err.response?.data?.message || err.message));
+    }
   }
-}
-//리트윗 여부 확인
+
+
+
+//  리트윗 여부 확인
 export function* hasRetweeted(action) {
   try {
     const { postId } = action.payload;
@@ -28,7 +42,7 @@ export function* hasRetweeted(action) {
   }
 }
 
-//리트윗 삭제
+// 리트윗삭제
 export function* removeRetweet(action) {
   try {
     const { postId } = action.payload;
@@ -38,7 +52,7 @@ export function* removeRetweet(action) {
     yield put(removeRetweetFailure(err.response?.data?.message || err.message));
   }
 }
-//내가 리트윗한 글
+// 내가 리트윗한 글 목록
 export function* fetchMyRetweets(action) {
   try {
     const { userId } = action.payload;
@@ -51,6 +65,7 @@ export function* fetchMyRetweets(action) {
     yield put(fetchMyRetweetsFailure(err.response?.data?.message || err.message));
   }
 }
+
 
 export default function* retweetSaga() {
   yield takeLatest(addRetweetRequest.type, addRetweet);
