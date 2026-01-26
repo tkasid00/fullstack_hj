@@ -11,7 +11,7 @@ import {
 // export function* addRetweet(action) {
 //   try {
 //     const { originalPostId } = action.payload;  // react 에서 던지는값
-//     const { data } = yield call(() => axios.post(`/api/retweets`, { originalPostId: originalPostId }));
+//     const { data } = yield call(() => axios.post(`/api/retweets`, { originalPostId: originalPostId }));  
 //     yield put(addRetweetSuccess({ originalPostId: data.originalPostId, retweetCount: data.retweetCount })); 
 //   } catch (err) {
 //     yield put(addRetweetFailure(err.response?.data?.message || err.message));
