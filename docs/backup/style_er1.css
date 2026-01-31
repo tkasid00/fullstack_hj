@@ -1,0 +1,502 @@
+
+           * { margin:0; padding:0; box-sizing: border-box;}
+           body {background-color: rgb(29, 27, 27); overflow: hidden;}
+           
+            /* 가짜 페이지*/
+            .backpage.first {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 10px solid transparent; 
+                background: rgba(255, 255, 255, 0.05); 
+                z-index: 10; 
+                }
+           .slide-frame.first {
+                position: relative;
+                width: 700px;
+                height: 900px;
+                margin: 50px auto;
+                }
+
+
+            .container.first {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                border-bottom: 2px solid #FFF8DC;
+                border-right: 2px solid #FFF8DC;
+                background-color: #2C4F4F;
+                border-left: 50px solid #162727;
+                border-bottom-left-radius: 20px;
+                z-index: 20; 
+                }
+                        
+            .slide-frame.second { 
+                position: relative;
+                width: 1800px;
+                height: 900px;
+                margin: 50px auto;
+                }
+
+            .backpage.second {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10; /* container보다 아래 */
+                }
+
+            .container.second {
+                position: relative;  
+                width: 100%;
+                height: 100%;
+                border-radius: 15px;
+                padding: 30px;
+                background-color: #2C4F4F;
+                box-shadow: 0 0 5px rgba(0,0,0,0.5);
+                border-bottom-left-radius: 20px;
+                z-index: 20;
+                top: 0; 
+                margin: 0 auto; 
+                
+                }
+
+                .slide-frame.third { 
+                    position: relative;
+                    width: 1800px;
+                    height: 870px;
+                    margin: 100px auto;
+                    }
+
+                .backpage.third {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10;
+                    }
+
+
+                .container.third {
+                    position: relative;  
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 15px;
+                    padding: 30px;
+                    background-color: #2C4F4F;
+                    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+                    border-bottom-left-radius: 20px;
+                    z-index: 20;
+                    top: 0; 
+                    margin: 0 auto;
+                    } 
+
+
+            .row .page { background-color: white;  
+                     border-radius:15px; padding:20px; 
+                     box-shadow:0 0 5px rgba(0,0,0,0.5);
+                     padding: 30px;
+                     height: 900px;
+                     margin-top: -40px;
+                    } 
+                     
+            .column .page { background-color: white;  
+                     border-radius:15px; 
+                     box-shadow:0 0 5px rgba(0,0,0,0.5);
+                     padding: 20px;
+                     width: 1300px;
+                     margin-top: -70px;
+                     margin-right: 50px;
+                     }
+                     
+            .page.col-sm-10{height: 850px;
+                            margin-top: 0px;
+                        transform: translateX(-5px)}       
+            .page.col-sm-2{height: 15px;
+                border-left: 3px solid #777373;
+                border-bottom:  1px solid #5a5353;
+            transform: translateX(-10px);}
+
+
+            /*  포스트잇 파트  */
+            .postit-wrapper {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .postit-wrapper.first{
+                top: 30px;
+                right: -100px;
+                z-index: 15; 
+            }
+            .postit-wrapper.second{
+                top: 30px;
+                right: 140px;
+                z-index: 30; 
+                transform-origin: top right;
+            }
+            .postit-wrapper.third{
+                top: 30px;
+                right: 130px;
+                z-index: 15; 
+
+            }
+            .postit-wrapper.thirty{
+                top: 30px;
+                right: -110px;
+                z-index: 15; 
+            }
+            .postit-wrapper.forthy{
+                top: 30px;
+                right: -110px;
+                z-index: 15; 
+            }
+            
+            .postit-note {
+                padding: 8px 12px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+                transform: rotate(-3deg);
+                width: 120px;
+                text-align: center;
+            }
+            
+            .postit-note:nth-child(1) {
+                background-color:rgb(230, 230, 76);   position: relative; 
+
+            }
+            .postit-note:nth-child(2) {
+                background-color:rgb(96, 96, 214);  position: relative;
+                }
+            .postit-note:nth-child(3) {
+                background-color:rgb(211, 101, 119);  position: relative;
+                }
+            .postit-note:nth-child(4) {
+                background-color:rgb(5, 146, 165);  position: relative;
+                }        
+
+            .postit-note button{ font-weight: bold; 
+                                    font-family:NanumBarunpenB;
+                                    font-size: 20px;}    
+                 
+            /*gallery 포스트잇 위치+크기 개별 조정*/
+            .postit-wrapper.second .postit-note {
+                    width: 110px;
+                    }
+            .postit-wrapper.second .postit-note button[data-bs-slide-to="1"] {
+             transform: translateX(-10px); 
+            }
+            .postit-wrapper.second .postit-note button[data-bs-slide-to="0"] {
+             transform: translateX(-5px); 
+            }  
+            .postit-wrapper.second .postit-note button[data-bs-slide-to="3"] {
+             transform: translateX(-5px); 
+            }  
+            
+            .postit-wrapper.second .postit-note:nth-child(3) {
+                 transform: rotate(-3deg) translateX(-10px); width: 120px;
+                    }    
+            .postit-wrapper.second .postit-note:nth-child(1) {
+                 transform: rotate(-3deg); 
+                    }            
+            .postit-wrapper.second .postit-note:nth-child(2) {
+                 transform: rotate(-3deg); 
+                    }        
+            .postit-wrapper.second .postit-note:nth-child(4) {
+                 transform: rotate(-3deg); 
+                    }        
+
+            .postit-wrapper.thirty .postit-note:nth-child(1)   { opacity: 0;}     
+            .postit-wrapper.thirty .postit-note:nth-child(3)   { opacity: 0;}   
+            .postit-wrapper.thirty .postit-note:nth-child(4)   { opacity: 0;}
+
+            .postit-wrapper.forthy .postit-note:nth-child(1)   { opacity: 0;} 
+            .postit-wrapper.forthy .postit-note:nth-child(2)   { opacity: 0;} 
+            .postit-wrapper.forthy .postit-note:nth-child(3)   { opacity: 0;} 
+            
+            /*커서 고장남!!*/
+            .carousel-control-prev,
+            .carousel-control-next {
+                    z-index: 9999;
+                    }
+            .carousel-indicators {
+                    z-index: 9999;
+                    }
+
+                /* 전체 배경 애니메이션 :  별빛 효과 */
+                .star {
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    background: white;
+                    border-radius: 50%;
+                    animation: twinkle 2s infinite ease-in-out;
+                    }
+
+                    @keyframes twinkle {
+                    0%, 100% { opacity: 0.2; }
+                    50% { opacity: 1; }
+                    }
+
+
+
+         /* 여기까지가 레이아웃 기초 완료! */
+
+
+                 /* 표꾸 표지꾸미기 */
+
+                
+            .intro { padding-bottom: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center; 
+                    height: 100%;
+                 
+                    }
+
+            .coverpage img {
+                text-align: center;
+                width: 320px; padding: 10px; margin : 0 20px; 
+                border-radius: 10px;
+                box-shadow:
+                    0 0 15px rgba(0, 180, 200, 0.3),   
+                    0 0 30px rgba(0, 100, 120, 0.2);   
+                border: 2px solid rgba(180, 255, 250, 0.2); 
+                }       
+
+            .name {font-family: 'NanumSquareEB';
+                  color: #C7F9FF;
+                text-shadow: 0 0 4px rgba(0, 200, 255, 0.4);
+                font-size : 38px;
+                text-align: center;
+                
+                }
+            .name span {
+                color: #00C2FF;
+                }       
+                
+   
+            .coverExplain {font-family: 'NanumSquareEB';
+                            color: #CFECEC;
+                            font-size : 24px;
+                            padding-left: 20px;
+                            padding-top: 10px;
+                            margin-bottom: 10px;
+                             text-shadow: 0 0 2px rgba(0, 180, 255, 0.2);
+                             text-align: left;
+                    }        
+
+            .coverExplainUnder {color: #A6E3FF; margin: 10px 0;}
+            .coverExplainUnder a {
+                        font-size: 18px;
+                        padding-left: 20px;
+                        text-decoration: none;
+                        text-shadow: 0 0 2px rgba(0, 180, 255, 0.25);
+                        font-family: 'NanumSquareEB'
+                    }
+
+            .coverExplainUnder a:hover {
+                    color: #00C2FF; /* hover 시 상단 포인트 컬러와 연결 */
+                    text-shadow: 0 0 6px rgba(0, 200, 255, 0.5);
+                    }
+            .divider {
+                width: 100px;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, #00C2FF, transparent);
+                margin: 40px auto 0;
+                opacity: 0.6;
+                }
+
+                /* 자소설...너무힘드러따...... */
+
+            .card .whoiam {font-family: 'NanumGothic';}     
+            .abutme.one {text-align: center; margin-bottom: 40px;
+                        }
+            .one h1{font-size: 30px; color:  #1a2a52; font-weight: bold;
+                        padding-bottom: 10px; padding-top: 35px;}
+            .one p {font-size: 20px; color: #555;}    
+            .one a {text-decoration: none; color: #1a2a52; font-weight: bold;
+                    margin : 0 20px; font-size: 20px;}
+
+            .two h2 {text-align: left;
+                    border-left: 5px solid #1a2a52 ;
+                    margin: 20px 70px;
+                    padding-left: 10px;
+                    font-size: 25px;}
+            .two p {font-size: 18px;
+                    margin: 5px 50px;}
+            .skills {display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;}
+            .skill {
+                    background: #1a2a52; color: #fff;
+                    padding: 8px 14px;
+                    border-radius: 20px; font-size: 16px;}
+            .skill:nth-child(1) {margin-left: 50px;}  
+
+            .keywords {display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;}
+
+            .keyword {
+                    background: #1a2a52; color: #fff;
+                    padding: 8px 14px;
+                    border-radius: 20px; font-size: 16px;}
+            .keyword:nth-child(1) {margin-left: 50px;} 
+
+
+
+                /* 포폴페이지 작업 시작 시안02부터*/
+
+            .portcard {
+            width: 280px;
+            height: 250px;
+            perspective: 1000px; 
+            cursor: pointer;
+            margin-top: 10px;
+            position: relative;
+            }
+
+            /* 카드 회전 */
+            .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            }
+
+
+            .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            box-shadow: 4px 6px 12px rgba(0,0,0,0.3);
+            padding: 20px;
+            text-align: center;
+            transform-origin: center center;
+            font-family: 'NanumBarunpenB';
+            }
+
+            .card-front {
+            background-image: linear-gradient(180deg, #d6c7f7, #c2d5f8);
+            transform: rotate(-2deg);
+            }
+            .card-front::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 60px;
+            height: 20px;
+            background: rgba(255,255,200,0.7);
+            border: 1px dashed #ccc;
+            }
+
+            .card-back {
+            background-image: linear-gradient(180deg, #c2d5f8, #d6c7f7);
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            }
+
+            .portcard h4 {
+            padding-bottom: 5px;
+            font-family: 'nanumhippie';
+            font-size: 25px;
+            font-weight: bold;
+            }
+            .portcard p {
+            margin: 5px auto;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            }
+            .portcard a {
+            text-decoration: none;
+            background: #b791f3;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 20px;
+            margin: 0 30px;
+            }
+
+            /*클릭 시 카드 뒤집기 */
+            .portcard.flip .card-inner {
+            transform: rotateY(180deg);
+            }
+
+
+                        /*여기는 시안01*/
+            .portexplain h5 {font-weight: bold; font-size: 20px; margin-bottom: 10px;}           
+            
+            .portexplain p {margin : 5px;}
+
+            .portexplain h6 {font-weight: bold; font-size: 16px; }
+
+            .portexplain a {text-decoration: none; color: #1a2a52; font-size: 18px;}
+            
+
+
+                        /*contact me 부분*/
+                .sendm h3 {font-size: 30px; font-family: 'NanumSquare_acB'; }        
+
+                .col-sm-10 {position: relative;}
+
+
+
+                @font-face {
+                font-family: 'nanumdiligence';
+                src: url(./font/NanumSungsil.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'nanumhippie';
+                src: url(./font/NanumHippie.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'NanumGothic';
+                src: url(./font/NanumGothic.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'NanumGothicExtraBold';
+                src: url(./font/NanumGothicExtraBold.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'MaruBuri-SemiBold';
+                src: url(./font/MaruBuri-SemiBold.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'MaruBuri-Regular';
+                src: url(./font/MaruBuri-Regular.ttf) format('truetype');
+                }
+                
+                @font-face {
+                font-family: 'NanumSquare_acB';
+                src: url(./font/NanumSquare_acB.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'NanumSquareEB';
+                src: url(./font/NanumSquareEB.ttf) format('truetype');
+                }
+                @font-face {
+                font-family: 'NanumBarunpenB';
+                src: url(./font/NanumBarunpenB.otf) format('truetype');
+                }
