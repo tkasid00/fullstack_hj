@@ -25,7 +25,7 @@
   <img src="https://img.shields.io/badge/EMAIL-0A3D62?style=for-the-badge&logo=gmail&logoColor=white" />
 </a>
 <a href="https://tkasid00.github.io/fullstack_hj/">
-  <img src="https://img.shields.io/badge/GitHub%20Pages-0A3D62?style=for-the-badge&logo=githubpages&logoColor=white" />
+  <img src="https://img.shields.io/badge/PORTFOLIO-0A3D62?style=for-the-badge&logo=aboutdotme&logoColor=white" />
 </a>
 <a href="https://www.notion.so/Portfolio-2f91af5ceed28014af16f65453ed5b0b?source=copy_link">
   <img src="https://img.shields.io/badge/NOTION-0A3D62?style=for-the-badge&logo=notion&logoColor=white" />
@@ -101,7 +101,7 @@
 
 ### 1) System Architecture
 
- <img  src="./docs/img/portfolio/archi.png" alt="System Architecture" style="width:70%" />
+ <img  src="./docs/img/portfolio/archi.png" alt="System Architecture" />
 
 - **Frontend (Client)**: React SPA
 - **Backend (API Server)**: Spring Boot REST API
@@ -112,7 +112,7 @@
 
 ### 2) ERD
 
- <img  src="./docs/img/portfolio/개인erd.png" alt="v4_erd" style="width:70%" />
+ <img  src="./docs/img/portfolio/개인erd.png" alt="v4_erd"  />
 
 - 사용자(USERS) 중심으로 리뷰/사료/건강정보/체험단/고객센터 도메인을 연결했습니다.
 - 영양 정보는 교차 테이블 기반으로 정규화하여( N:M ) 확장 가능한 구조로 설계했습니다.
@@ -120,7 +120,7 @@
 ---
 
 ### 3) Auth Flow (JWT)
- <img  src="./docs/img/portfolio/authfloow.png" alt="Auth Flow" style="width:70%" />
+ <img  src="./docs/img/portfolio/authfloow.png" alt="Auth Flow"  />
 
 - 로그인 성공 시 JWT 발급
 - 이후 요청은 `Authorization: Bearer <token>` 형태로 JWT 전달
