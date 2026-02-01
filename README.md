@@ -36,53 +36,29 @@
 </table>
 ---
 
-**🔗 Links**
-- **Email**: tkasid00@gmail.com  
-- **GitHub**: https://github.com/tkasid00/fullstack_hj  
-- **Notion Portfolio**: https://www.notion.so/Portfolio-2f91af5ceed28014af16f65453ed5b0b?source=copy_link  
-
-
----
-
-## 💡 Contact
-- **Email**: tkasid00@gmail.com  
-- **GitHub**: https://github.com/tkasid00/fullstack_hj  
-- **Notion Portfolio** : https://www.notion.so/Portfolio-2f91af5ceed28014af16f65453ed5b0b?source=copy_link
-
-
-
----
-
 ## 🛠 Tech Stack
 
 ### Backend
-![Java](https://img.shields.io/badge/Java-11-007396?style=for-the-badge&logo=OpenJDK&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7%20%7C%203.4-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=OpenJDK&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
 ![Spring Security](https://img.shields.io/badge/Spring%20Security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white)
-![MyBatis](https://img.shields.io/badge/MyBatis-3.5-000000?style=for-the-badge&logoColor=white)
-![JPA](https://img.shields.io/badge/JPA-Hibernate-59666C?style=for-the-badge&logo=hibernate&logoColor=white)
+![MyBatis](https://img.shields.io/badge/MyBatis-000000?style=for-the-badge&logoColor=white)
+![JPA](https://img.shields.io/badge/JPA(Hibernate)-59666C?style=for-the-badge&logo=hibernate&logoColor=white)
 
 ### Database / Cache
-![Oracle](https://img.shields.io/badge/Oracle%2011g-F80000?style=for-the-badge&logo=oracle&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-Cache%20%26%20Session-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
 ### Frontend
-![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=000000)
-![Ant Design](https://img.shields.io/badge/Ant%20Design-UI-0170FE?style=for-the-badge&logo=antdesign&logoColor=white)
-![Chart.js](https://img.shields.io/badge/Chart.js-Data%20Viz-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES11-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000000)
-![jQuery](https://img.shields.io/badge/jQuery-3.7-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
-![AJAX](https://img.shields.io/badge/AJAX-Async%20Request-2F74C0?style=for-the-badge&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=000000)
+![Ant Design](https://img.shields.io/badge/Ant%20Design-0170FE?style=for-the-badge&logo=antdesign&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000000)
 
 ### DevOps / Collaboration
-![Git](https://img.shields.io/badge/Git-Version%20Control-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-Repo%20%26%20Collab-181717?style=for-the-badge&logo=github&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-EC2%20%7C%20S3%20%7C%20RDS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
-
-### External API
-![OpenAI](https://img.shields.io/badge/ChatGPT(OpenAI%20API)-Integration-412991?style=for-the-badge&logo=openai&logoColor=white)
-![JSON](https://img.shields.io/badge/JSON-Data-000000?style=for-the-badge&logo=json&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
 
 ---
 
@@ -175,11 +151,9 @@
   - [Oracle](docs/troubleshooting/oracle.md)
 ---
 
-## 🎮 Other Project
-## from Stray to Home (Java Console Project)
-> 유기묘 임시 보호 시뮬레이션 콘솔 프로젝트  
-> **인터페이스 기반 객체지향 구조로 리팩토링**하여 확장성과 유지보수성을 개선했습니다.
+### 🎮 Other Project (Mini)
 
-[![Watch the video](https://img.youtube.com/vi/3VYnhNOxX_8/hqdefault.jpg)](https://youtu.be/3VYnhNOxX_8)
-
+- **from Stray to Home** (Java Console Project)  
+  유기묘 임시 보호 시뮬레이션 콘솔 프로젝트 · 객체지향 리팩토링 적용  
+  🔗 [Demo Video](https://youtu.be/3VYnhNOxX_8)
 ---
