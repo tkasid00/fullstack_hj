@@ -63,19 +63,19 @@
 ---
 
 ## 🏆 Featured Project
-## 🐾 Pawject (v1~v4) | 반려동물 건강 & 사료 종합 플랫폼
+## 🐾 반려동물 건강&사료 종합 플랫폼 (v1~v4) | 반려동물 건강 & 사료 종합 플랫폼
 
 > 게시판 기반 MVP에서 출발해  
 > 검색/페이징/AJAX/업로드 → 외부 API 연동(OCR/ChatGPT/채널톡/지도·날씨) →  
 > React 분리 아키텍처 + JWT + Redis + CI/CD 적용까지  
 > **버전업 형태로 점진적 확장/고도화한 팀 프로젝트**입니다.
 
-| Version | 기간 / 인원 | 핵심 키워드 | README |
+| 버전 | 기간 | 핵심 키워드 | README |
 |---|---|---|---|
-| **v1** | 2025.11.03 ~ 2025.11.07 (5명) | JSP/Servlet MVC2 · 게시판 MVP · CRUD | [v1 README](https://github.com/taehun00/thejoeun/tree/master/pawject4) |
-| **v2** | 2025.12.01 ~ 2025.12.07 (4명) | Spring Boot · 검색/페이징 · AJAX · 다중 이미지 | [v2 README](https://github.com/taehun00/thejoeun/tree/master/pawject3) |
-| **v3** | 2025.12.22 ~ 2026.01.02 (4명) | OCR/ChatGPT/채널톡 · 고객센터 · 사료검색 · 운영형 확장 | [v3 README](https://github.com/taehun00/thejoeun/tree/master/pawject2) |
-| **v4** | 2026.01.19 ~ 2026.01.31 (3명) | React 분리 아키텍처 · JWT · Redis · CI/CD | [v4 README](https://github.com/taehun00/thejoeun/tree/master/pawject1) |
+| **v1** | 2025.11.03 ~ 2025.11.07 | JSP/Servlet MVC2 · 게시판 MVP · CRUD | [README](https://github.com/taehun00/thejoeun/tree/master/pawject4) |
+| **v2** | 2025.12.01 ~ 2025.12.07 | Spring Boot · 검색/페이징 · AJAX · 다중 이미지 | [README](https://github.com/taehun00/thejoeun/tree/master/pawject3) |
+| **v3** | 2025.12.22 ~ 2026.01.02 | OCR/ChatGPT/채널톡 · 고객센터 · 사료검색 · 운영형 확장 | [README](https://github.com/taehun00/thejoeun/tree/master/pawject2) |
+| **v4** | 2026.01.19 ~ 2026.01.31 | React 분리 아키텍처 · JWT · Redis · CI/CD | [README](https://github.com/taehun00/thejoeun/tree/master/pawject1) |
 
 ---
 
