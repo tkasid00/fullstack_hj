@@ -25,7 +25,7 @@
   <img src="https://img.shields.io/badge/EMAIL-0A3D62?style=for-the-badge&logo=gmail&logoColor=white" />
 </a>
 <a href="https://tkasid00.github.io/fullstack_hj/">
-  <img src="https://img.shields.io/badge/PORTFOLIO-0A3D62?style=for-the-badge&logo=aboutdotme&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub%20Pages-0A3D62?style=for-the-badge&logo=githubpages&logoColor=white" />
 </a>
 <a href="https://www.notion.so/Portfolio-2f91af5ceed28014af16f65453ed5b0b?source=copy_link">
   <img src="https://img.shields.io/badge/NOTION-0A3D62?style=for-the-badge&logo=notion&logoColor=white" />
