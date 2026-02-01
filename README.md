@@ -34,6 +34,7 @@
 </td>
 </tr>
 </table>
+
 ---
 
 ## 🛠 Tech Stack
