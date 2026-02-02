@@ -83,10 +83,9 @@
 ## 🎬 Demo Videos
 > 시연 영상을 클릭하면 해당 유튜브 페이지로 연결됩니다 
 
-| v4  | v3 | v2 |
+| v4 | v3 | v2 |
 |---|---|---|
-| [![v4](https://via.placeholder.com/150?text=촬영예정)](#) | [![v3](https://img.youtube.com/vi/ZDb0pKXf4I8/0.jpg)](https://youtu.be/ZDb0pKXf4I8?si=b6lUqrv4nmD-QVcs) | [![v2](https://img.youtube.com/vi/ZDb0pKXf4I8/0.jpg)](https://youtu.be/ZDb0pKXf4I8?si=b6lUqrv4nmD-QVcs) |
-
+| [![v4](https://img.youtube.com/vi/pZOSRqIKZ6s/0.jpg)](https://youtu.be/pZOSRqIKZ6s?si=lzPm4VY2YeDzePXH) | [![v3](https://img.youtube.com/vi/ZDb0pKXf4I8/0.jpg)](https://youtu.be/ZDb0pKXf4I8?si=b6lUqrv4nmD-QVcs) | [![v2](https://img.youtube.com/vi/1OgiHFzOJ4M/0.jpg)](https://youtu.be/1OgiHFzOJ4M?si=JmPWupndOvcYXLZL) |
 <!-- 
 - **Pawject v2**: [Demo 바로가기](https://youtu.be/1OgiHFzOJ4M?si=H2PXJA83mKoEiYQf)  
 - **Pawject v3**: [Demo 바로가기](https://youtu.be/ZDb0pKXf4I8?si=b6lUqrv4nmD-QVcs)  
