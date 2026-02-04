@@ -117,3 +117,5 @@ coverage/
 .vscode/
 .idea/
 *.sublime-workspace
+
+/cicd
