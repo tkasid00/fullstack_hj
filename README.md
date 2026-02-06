@@ -29,6 +29,14 @@
 </a>
 <a href="https://www.notion.so/Portfolio-2f91af5ceed28014af16f65453ed5b0b?source=copy_link">
   <img src="https://img.shields.io/badge/NOTION-0A3D62?style=for-the-badge&logo=notion&logoColor=white" />
+</a><br/>
+
+<a href="http://13.236.66.10/">
+  <img src="https://img.shields.io/badge/LIVE-DEMO-0A3D62?style=for-the-badge&logo=googlechrome&logoColor=white" />
+</a>
+
+<a href="https://github.com/tkasid00">
+  <img src="https://img.shields.io/badge/GITHUB-0A3D62?style=for-the-badge&logo=github&logoColor=white" />
 </a>
 
 </td>
@@ -73,10 +81,10 @@
 
 | 버전 | 기간 | 핵심 키워드 | README |
 |---|---|---|---|
-| **v1** | 2025.11.03 ~ 2025.11.07 | JSP/Servlet MVC2 · 게시판 MVP · CRUD | [README](https://github.com/taehun00/thejoeun/tree/master/pawject4) |
-| **v2** | 2025.12.01 ~ 2025.12.07 | Spring Boot · 검색/페이징 · AJAX · 다중 이미지 | [README](https://github.com/taehun00/thejoeun/tree/master/pawject3) |
-| **v3** | 2025.12.22 ~ 2026.01.02 | OCR/ChatGPT/채널톡 · 고객센터 · 사료검색 · 운영형 확장 | [README](https://github.com/taehun00/thejoeun/tree/master/pawject2) |
-| **v4** | 2026.01.19 ~ 2026.01.31 | React 분리 아키텍처 · JWT · Redis · CI/CD | [README](https://github.com/taehun00/thejoeun/tree/master/pawject1) |
+| **v4** | 2025.11.03 ~ 2025.11.07 | JSP/Servlet MVC2 · 게시판 MVP · CRUD | [README](https://github.com/taehun00/thejoeun/tree/master/pawject4) |
+| **v3** | 2025.12.01 ~ 2025.12.07 | Spring Boot · 검색/페이징 · AJAX · 다중 이미지 | [README](https://github.com/taehun00/thejoeun/tree/master/pawject3) |
+| **v2** | 2025.12.22 ~ 2026.01.02 | OCR/ChatGPT/채널톡 · 고객센터 · 사료검색 · 운영형 확장 | [README](https://github.com/taehun00/thejoeun/tree/master/pawject2) |
+| **v1** | 2026.01.19 ~ 2026.01.31 | React 분리 아키텍처 · JWT · Redis · CI/CD | [README](https://github.com/taehun00/thejoeun/tree/master/pawject1) |
 
 ---
 
@@ -143,15 +151,14 @@
 - 서버에서 토큰 검증 후 Role 기반 접근 제어 적용
 
 ---
-
 ### 4) CI/CD Pipeline
 
-- GitHub 기반 협업 및 버전 관리
-- CI/CD Pipeline: 예정 (배포 이후 업데이트)
+ <img  src="./docs/img/portfolio/리드미용흐름도.png" alt="CI/CD Pipeline"  />
 
-📌 CI/CD Diagram (Planned)
-- GitHub → Actions(Build/Test) → Deploy → Running
-
+- GitHub Actions 기반 자동 빌드 및 배포 파이프라인 구성
+- SSH 기반 서버 접근 후 Docker 컨테이너 갱신 및 pm2 재시작 수행
+- 수동 배포 제거 및 반복 배포 작업 최소화
+- 코드 변경 시 EC2 환경에 자동 반영되는 운영 흐름 구축
 ---
 
 ## 📘 Troubleshooting Notes
@@ -173,3 +180,15 @@
   유기묘 임시 보호 시뮬레이션 콘솔 프로젝트 · 객체지향 리팩토링 적용  
   🔗 [Demo Video](https://youtu.be/3VYnhNOxX_8)
 ---
+
+
+## 📊 GitHub Activity
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=tkasid00&show_icons=true&theme=default" height="150"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tkasid00&layout=compact" height="150"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=tkasid00&theme=minimal" />
+</p>
