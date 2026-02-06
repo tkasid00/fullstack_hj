@@ -38,10 +38,16 @@
 <a href="https://github.com/tkasid00">
   <img src="https://img.shields.io/badge/GITHUB-0A3D62?style=for-the-badge&logo=github&logoColor=white" />
 </a>
-
 </td>
 </tr>
 </table>
+
+```
+  🔑Demo Accounts
+  ▶ 관리자 기능 확인  ID : admin@test.com / PW : admin
+  ▶ 일반 사용자 체험  ID : user@test.com / PW : user
+```
+※ 초기 접속 시 서버 활성화까지 몇 초 소요될 수 있습니다.
 
 ---
 
@@ -185,10 +191,9 @@
 ## 📊 GitHub Activity
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=tkasid00&show_icons=true&theme=default" height="150"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tkasid00&layout=compact" height="150"/>
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=tkasid00&show_icons=true&hide_border=true" height="150"/>
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=tkasid00&layout=compact&hide_border=true" height="150"/>
 </p>
-
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=tkasid00&theme=minimal" />
 </p>
