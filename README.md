@@ -178,7 +178,7 @@
   - [Java](docs/troubleshooting/java.md)
   - [Spring](docs/troubleshooting/spring.md)
   - [Oracle](docs/troubleshooting/oracle.md)
-  - **Deployment**
+- **Deployment**
   - [AWS](docs/troubleshooting/aws.md)
 ---
 
